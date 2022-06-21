@@ -89,6 +89,21 @@ function hello() {
 }
 ```
 
+### `safe`
+
+Applies [`tryCatch`](https://github.com/coderaiser/try-catch):
+
+```gs
+safe hello(1, 2, 3);
+```
+
+Is the same as:
+
+```js
+import tryCatch from 'try-catch';
+tryCatch(1, 2, 3);
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

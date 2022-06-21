@@ -12,7 +12,8 @@ import {extend} from 'supertape';
 import {extendParser} from '../parser/index.js';
 import {print} from 'putout';
 
-const {UPDATE} = process.env;
+const {stringify} = JSON;
+const {UPDATE, AST} = process.env;
 
 export const createTest = (url, ...keywords) => {
     const filename = fileURLToPath(url);
@@ -33,7 +34,13 @@ const compile = ({dir, parser}) => (t) => (name) => {
     const to = join(dir, 'fixture', `${name}.js`);
     const fromData = readFileSync(from, 'utf8');
     const toData = readFileSync(to, 'utf8');
-    const result = print(parser.parse(fromData));
+    
+    const ast = parser.parse(fromData);
+    
+    if (AST === '1')
+        process.stdout.write(stringify(ast, null, 4));
+    
+    const result = print(ast);
     
     if (UPDATE === '1')
         writeFileSync(to, result);

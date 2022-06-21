@@ -36,3 +36,16 @@ test('goldstein: compile: guard', (t) => {
     t.end();
 });
 
+test('goldstein: compile: safe', (t) => {
+    const result = compile(montag`
+        safe hello(a, b, c);
+    `);
+    const expected = montag`
+        import tryCatch from 'try-catch';
+        tryCatch(hello, a, b, c);
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
