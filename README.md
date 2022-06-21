@@ -93,7 +93,12 @@ function hello() {
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!
 
-Then goes test and implimentation in `index.js` and `index.spec.js` accordingly.
+Then goes test and implimentation in `index.js` and `index.spec.js` accordingly. Use scripts:
+- `npm test`;
+- `npm run coverage`;
+- `npm run fix:lint`;
+
+Update docs and make PR, that's it!
 
 ## License
 
