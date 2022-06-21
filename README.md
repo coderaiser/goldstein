@@ -1,4 +1,13 @@
-# Goldstein
+# Goldstein [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
+
+[NPMURL]: https://npmjs.org/package/goldstein "npm"
+[NPMIMGURL]: https://img.shields.io/npm/v/goldstein.svg?style=flat
+[BuildStatusURL]: https://github.com/coderaiser/goldstein/actions?query=workflow%3A%22Node+CI%22 "Build Status"
+[BuildStatusIMGURL]: https://github.com/coderaiser/goldstein/workflows/Node%20CI/badge.svg
+[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
+[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[CoverageURL]: https://coveralls.io/github/coderaiser/goldstein?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/goldstein/badge.svg?branch=master&service=github
 
 > *"You haven't a real appreciation of Newspeak, Winston," he said almost sadly. "Even when you write it you're still thinking in Oldspeak. I've read some of those pieces that you write in The Times occasionally. They're good enough, but they're translations. In your heart you'd prefer to stick to Oldspeak, with all its vagueness and its useless shades of meaning. You don't grasp the beauty of the destruction of words. Do you know that Newspeak is the only language in the world whose vocabulary gets smaller every year?"*
 >
