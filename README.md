@@ -117,12 +117,14 @@ function hello() {
 }
 ```
 
-### `safe`
+### `try`
+
+`try` can be used as an expression.
 
 Applies [`tryCatch`](https://github.com/coderaiser/try-catch):
 
 ```gs
-const [error, result] = safe hello(1, 2, 3);
+const [error, result] = try hello(1, 2, 3);
 ```
 
 Is the same as:
@@ -135,7 +137,7 @@ const [error, result] = tryCatch(1, 2, 3);
 and
 
 ```gs
-const [error, result] = safe await hello(1, 2, 3);
+const [error, result] = try await hello(1, 2, 3);
 ```
 
 Is the same as:

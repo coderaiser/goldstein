@@ -4,13 +4,13 @@ import putout, {
 import {extendParser} from '../parser/index.js';
 import keywordFn from '../keyword-fn/index.js';
 import keywordGuard from '../keyword-guard/index.js';
-import keywordSafe from '../keyword-safe/index.js';
+import keywordTry from '../keyword-try/index.js';
 
 export const compile = (source) => {
     const {parse} = extendParser([
         keywordFn,
         keywordGuard,
-        keywordSafe,
+        keywordTry,
     ]);
     
     const ast = parse(source);

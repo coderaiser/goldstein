@@ -1,7 +1,9 @@
 import {types} from 'putout';
 import {
-    addKeyword,
-    TokenType,
+    BIND_LEXICAL,
+    BIND_SIMPLE_CATCH,
+    SCOPE_SIMPLE_CATCH,
+    tokTypes as tt,
 } from '../operator/index.js';
 
 const {
@@ -9,39 +11,24 @@ const {
     isAwaitExpression,
 } = types;
 
-// why not 'try'?
-// because acorn internals should be copied, and added tests.
-// there is no such thing as this.previous(), only this.next() 🤷‍
-
 export default function newSpeak(Parser) {
     const {keywordTypes} = Parser.acorn;
-    keywordTypes.safe = new TokenType('safe', {
-        keyword: 'safe',
-    });
     
     return class extends Parser {
-        parse() {
-            this.keywords = addKeyword('safe', this.keywords);
-            
-            return super.parse();
-        }
-        parseStatement(context, topLevel, exports) {
-            if (this.type === keywordTypes.safe)
-                return this.parseSafe();
-            
-            return super.parseStatement(context, topLevel, exports);
-        }
         parseExprAtom(refDestructuringErrors, forInit) {
-            if (this.type === keywordTypes.safe)
-                return this.parseSafe();
+            if (this.type === keywordTypes.try)
+                return this.parseTryStatement();
             
             return super.parseExprAtom(refDestructuringErrors, forInit);
         }
         
-        parseSafe() {
+        parseTryStatement() {
             this.next();
-            
             const node = super.startNode();
+            
+            if (this.type === tt.braceL)
+                return this.parseUglyTry(node);
+            
             const expression = this.parseExpression();
             
             if (isCallExpression(expression))
@@ -74,9 +61,41 @@ export default function newSpeak(Parser) {
                 };
             
             else
-                this.raise(this.start, `After 'safe' only 'await' and 'function call' can come`);
+                this.raise(this.start, `After 'try' only '{', 'await' and 'function call' can come`);
             
             return super.finishNode(node, 'ExpressionStatement');
+        }
+        parseUglyTry(node) {
+            node.block = this.parseBlock();
+            node.handler = null;
+            
+            if (this.type === tt._catch) {
+                const clause = this.startNode();
+                this.next();
+                
+                if (this.eat(tt.parenL)) {
+                    clause.param = this.parseBindingAtom();
+                    const simple = clause.param.type === 'Identifier';
+                    
+                    this.enterScope(simple ? SCOPE_SIMPLE_CATCH : 0);
+                    this.checkLValPattern(clause.param, simple ? BIND_SIMPLE_CATCH : BIND_LEXICAL);
+                    this.expect(tt.parenR);
+                } else {
+                    clause.param = null;
+                    this.enterScope(0);
+                }
+                
+                clause.body = this.parseBlock(false);
+                this.exitScope();
+                node.handler = this.finishNode(clause, 'CatchClause');
+            }
+            
+            node.finalizer = this.eat(tt._finally) ? this.parseBlock() : null;
+            
+            if (!node.handler && !node.finalizer)
+                this.raise(node.start, 'Missing catch or finally clause');
+            
+            return this.finishNode(node, 'TryStatement');
         }
     };
 }
