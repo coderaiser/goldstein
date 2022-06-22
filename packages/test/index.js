@@ -12,6 +12,8 @@ import {extend} from 'supertape';
 import {extendParser} from '../parser/index.js';
 import {print} from 'putout';
 
+import tryCatch from 'try-catch';
+
 const {stringify} = JSON;
 const {UPDATE, AST} = process.env;
 
@@ -23,6 +25,10 @@ export const createTest = (url, ...keywords) => {
     
     return extend({
         compile: compile({
+            dir,
+            parser,
+        }),
+        raise: raise({
             dir,
             parser,
         }),
@@ -46,5 +52,14 @@ const compile = ({dir, parser}) => (t) => (name) => {
         writeFileSync(to, result);
     
     return t.equal(result, toData);
+};
+
+const raise = ({dir, parser}) => (t) => (name, message) => {
+    const from = join(dir, 'fixture', `${name}.gs`);
+    const fromData = readFileSync(from, 'utf8');
+    
+    const [error] = tryCatch(parser.parse, fromData);
+    
+    return t.equal(error.message, message);
 };
 

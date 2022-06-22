@@ -12,3 +12,8 @@ test('goldstein: keyword: fn: export', (t) => {
     t.compile('export');
     t.end();
 });
+
+test('goldstein: keyword: fn: other-export', (t) => {
+    t.compile('other-export');
+    t.end();
+});

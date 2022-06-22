@@ -132,6 +132,19 @@ import tryCatch from 'try-catch';
 tryCatch(1, 2, 3);
 ```
 
+and
+
+```gs
+safe await hello(1, 2, 3);
+```
+
+Is the same as:
+
+```js
+import tryToCatch from 'try-catch';
+await tryToCatch(1, 2, 3);
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

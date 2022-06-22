@@ -1,7 +1,13 @@
+import {types} from 'putout';
 import {
     addKeyword,
     TokenType,
 } from '../operator/index.js';
+
+const {
+    isCallExpression,
+    isAwaitExpression,
+} = types;
 
 // why not 'try'?
 // because acorn internals should be copied, and added tests.
@@ -30,19 +36,39 @@ export default function newSpeak(Parser) {
             this.next();
             
             const node = super.startNode();
-            const callExpression = this.parseExpression();
+            const expression = this.parseExpression();
             
-            node.expression = {
-                type: 'CallExpression',
-                callee: {
-                    type: 'Identifier',
-                    name: 'tryCatch',
-                },
-                arguments: [
-                    callExpression.callee,
-                    ...callExpression.arguments,
-                ],
-            };
+            if (isCallExpression(expression))
+                node.expression = {
+                    type: 'CallExpression',
+                    callee: {
+                        type: 'Identifier',
+                        name: 'tryCatch',
+                    },
+                    arguments: [
+                        expression.callee,
+                        ...expression.arguments,
+                    ],
+                };
+            
+            else if (isAwaitExpression(expression))
+                node.expression = {
+                    type: 'AwaitExpression',
+                    argument: {
+                        type: 'CallExpression',
+                        callee: {
+                            type: 'Identifier',
+                            name: 'tryToCatch',
+                        },
+                        arguments: [
+                            expression.argument.callee,
+                            ...expression.argument.arguments,
+                        ],
+                    },
+                };
+            
+            else
+                this.raise(this.start, `After 'safe' only 'await' and 'function call' can come`);
             
             return super.finishNode(node, 'ExpressionStatement');
         }
