@@ -1,4 +1,4 @@
-const [arg] = process.argv.slice(2);
+#!/usr/bin/env node
 import esbuild from 'esbuild';
 import {
     readFileSync,
@@ -6,6 +6,8 @@ import {
     unlinkSync,
 } from 'fs';
 import {compile} from '../packages/goldstein/index.js';
+
+const [arg] = process.argv.slice(2);
 
 if (!arg) {
     console.log('gs <filename>');
