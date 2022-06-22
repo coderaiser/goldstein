@@ -12,7 +12,7 @@
   "exports": "./packages/goldstein/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coderaiser/mock-import.git"
+    "url": "git://github.com/coderaiser/goldstein.git"
   },
   "keywords": [
     "JavaScript",
