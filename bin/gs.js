@@ -27,7 +27,7 @@ esbuild.buildSync({
     bundle: true,
     write: true,
     outfile,
-    platform: 'neutral',
+    mainFields: ['main'],
 });
 
 unlinkSync(compiledName);
