@@ -6,6 +6,9 @@
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "JavaScript with no limits",
   "main": "./packages/goldstein/index.js",
+  "bin": {
+    "gs": "bin/gs.js"
+  },
   "exports": "./packages/goldstein/index.js",
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
   },
   "dependencies": {
     "acorn": "^8.7.1",
+    "esbuild": "^0.14.47",
     "putout": "^26.17.0"
   },
   "license": "MIT",

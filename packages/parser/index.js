@@ -14,4 +14,5 @@ export const extendParser = (keywords) => {
 
 const createParse = (parser) => (a) => parser.parse(a, {
     ecmaVersion: 'latest',
+    sourceType: 'module',
 });

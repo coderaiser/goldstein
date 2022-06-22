@@ -49,3 +49,15 @@ test('goldstein: compile: safe', (t) => {
     t.end();
 });
 
+test('goldstein: compile: sourceType', (t) => {
+    const result = compile(montag`
+        export fn hello() {};
+    `);
+    const expected = montag`
+        export function hello() {}
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+

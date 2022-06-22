@@ -21,6 +21,13 @@ export default function fn(Parser) {
             
             return super.parseStatement(context, topLevel, exports);
         }
+        shouldParseExportStatement() {
+            if (this.type === Parser.acorn.keywordTypes.fn) {
+                return true;
+            }
+            
+            return super.shouldParseExportStatement();
+        }
     };
 }
 

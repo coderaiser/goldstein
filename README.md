@@ -20,7 +20,26 @@ Language ruled by the users, [create an issue](https://github.com/coderaiser/gol
 ## Install
 
 ```
-npm i goldstein
+npm i goldstein -g
+```
+
+## CLI
+
+```
+$ cat > 1.gs
+export fn hello() {
+    return 'world';
+}
+
+$ gs 1.gs
+$ cat 1.js
+// ~1.js
+function hello() {
+  return "world";
+}
+export {
+  hello
+};
 ```
 
 ## API
@@ -119,7 +138,9 @@ Clone the registry, create a new keyword with a prefix `keyword-`, then create d
 
 Then goes test and implementation in `index.js` and `index.spec.js` accordingly. Use scripts:
 
-- `npm test`;
+- `npm test`
+- `UPDATE=1 npm test` - update `fixtures`;
+- `AST=1 npm test` - log `AST`;
 - `npm run coverage`;
 - `npm run fix:lint`;
 

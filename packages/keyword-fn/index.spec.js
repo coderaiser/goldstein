@@ -7,3 +7,8 @@ test('goldstein: keyword: fn', (t) => {
     t.compile('fn');
     t.end();
 });
+
+test('goldstein: keyword: fn: export', (t) => {
+    t.compile('export');
+    t.end();
+});
