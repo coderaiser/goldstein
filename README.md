@@ -49,7 +49,7 @@ import {compile} from 'goldstein';
 
 compile(`
     fn hello() {
-        guard (text !== "world") else {
+        guard text !== "world" else {
             return ""
         }
         
