@@ -33,7 +33,7 @@ export default function newSpeak(Parser) {
             } = tokTypes;
             
             const node = super.startNode();
-            super.expect(parenL);
+            const isParenL = super.eat(parenL);
             
             node.test = {
                 type: 'UnaryExpression',
@@ -42,7 +42,11 @@ export default function newSpeak(Parser) {
                 argument: super.parseExpression(),
             };
             
-            super.expect(parenR);
+            const isParenR = super.eat(parenR);
+            
+            if (isParenL !== isParenR)
+                this.raise(this.start, `Use both parens ('(', ')') or none`);
+            
             super.expect(_else);
             
             node.consequent = this.parseStatement();

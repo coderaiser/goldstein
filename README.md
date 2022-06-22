@@ -97,7 +97,7 @@ Applies not to `IfCondition`:
 
 ```gs
 fn hello() {
-    guard (text !== "world") else {
+    guard text !== "world" else {
         return ""
     }
 
