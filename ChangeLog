@@ -1,3 +1,9 @@
+2022.06.22, v1.2.1
+
+fix:
+- package: repository url
+
+
 2022.06.22, v1.2.0
 
 feature:
