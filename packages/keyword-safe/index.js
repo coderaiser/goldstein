@@ -31,6 +31,12 @@ export default function newSpeak(Parser) {
             
             return super.parseStatement(context, topLevel, exports);
         }
+        parseExprAtom(refDestructuringErrors, forInit) {
+            if (this.type === keywordTypes.safe)
+                return this.parseSafe();
+            
+            return super.parseExprAtom(refDestructuringErrors, forInit);
+        }
         
         parseSafe() {
             this.next();
