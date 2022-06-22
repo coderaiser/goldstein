@@ -60,6 +60,9 @@ const raise = ({dir, parser}) => (t) => (name, message) => {
     
     const [error] = tryCatch(parser.parse, fromData);
     
+    if (!error)
+        return t.fail('No raise happened');
+    
     return t.equal(error.message, message);
 };
 
