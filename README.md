@@ -77,7 +77,7 @@ Here is the list.
 
 You can use `fn` to declare a `function`:
 
-```gs
+```rust
 fn hello() {
     return 'world';
 }
@@ -95,7 +95,7 @@ function hello() {
 
 Applies not to `IfCondition`:
 
-```gs
+```swift
 fn hello() {
     guard text !== "world" else {
         return ""
@@ -149,7 +149,7 @@ const [error, result] = await tryToCatch(1, 2, 3);
 
 You can omit parens. But you must use braces in this case.
 
-```gs
+```rust
 if a > 3 {
     hello();
 }
