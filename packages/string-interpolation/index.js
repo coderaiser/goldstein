@@ -44,10 +44,17 @@ export default function newSpeak(Parser) {
             })
 
             if (isTeplateLiteral) {
-                let ast = template.default.ast('`' + out.join('') + '`');
-
-                // this return doesn't work!!!
-                return ast.expression;
+               const node = this.startNode();
+                const ast = template.default.ast('`' + out.join('') + '`');
+                const {quasis, expressions} = ast.expression;
+                
+                assign(node, {
+                    quasis,
+                    expressions,
+                });
+                this.next();
+                
+                return this.finishNode(node, 'TemplateLiteral');
             }
 
             return super.parseLiteral(out.join(''));
