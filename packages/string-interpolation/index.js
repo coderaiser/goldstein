@@ -1,7 +1,7 @@
 import {template} from 'putout';
 const {assign} = Object;
 
-export default function newSpeak(Parser) {
+export default function stringInterpolation(Parser) {
     return class extends Parser {
         parseLiteral(value) {
             const chars = value.split('');
