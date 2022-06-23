@@ -45,7 +45,7 @@ test('goldstein: compile: try', (t) => {
         tryCatch(hello, a, b, c);
     `;
     
-    t.equal(result, expected);
+    t.equal(toString(result), toString(expected));
     t.end();
 });
 
