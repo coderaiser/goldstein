@@ -11,7 +11,7 @@ export default function stringInterpolation(Parser) {
             const out = [];
             let isTemplateLiteral = false;
             
-            chars.forEach((char, index) => {
+            for (let [index, char] of chars.entries()) {
                 if (char === '(') {
                     // keep count of parenthesis
                     parenthesis++;
@@ -42,7 +42,7 @@ export default function stringInterpolation(Parser) {
                 }
                 
                 out.push(char);
-            });
+            }
             
             if (isTemplateLiteral) {
                 const node = this.startNode();
