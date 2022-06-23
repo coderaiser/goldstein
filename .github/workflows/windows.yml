@@ -1,0 +1,63 @@
+name: Node Windows CI
+on:
+  - push
+  - pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NAME: goldstein
+    strategy:
+      matrix:
+        node-version:
+          - 16.x
+          - 18.x
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+    
+      - name: Install
+        run: npm install
+    
+      - name: Lint
+        run: npm run fix:lint
+      
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+        
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        
+      - name: Typos Install
+        run: cargo install typos-cli || echo 'already installed'
+      
+      - name: Typos
+        run: typos --write-changes
+      
+      - name: Commit fixes
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: 'chore: ${{ env.NAME }}: actions: lint ☘️'
+      
+      - name: Coverage
+        run: npm run coverage
+      
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
