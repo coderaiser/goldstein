@@ -9,6 +9,9 @@
 [CoverageURL]: https://coveralls.io/github/coderaiser/goldstein?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/goldstein/badge.svg?branch=master&service=github
 
+![image](https://user-images.githubusercontent.com/1573141/175353192-9867d3ba-beaf-46d5-adbc-e2eb736bfef1.png)
+
+
 > *"You haven't a real appreciation of Newspeak, Winston," he said almost sadly. "Even when you write it you're still thinking in Oldspeak. I've read some of those pieces that you write in The Times occasionally. They're good enough, but they're translations. In your heart you'd prefer to stick to Oldspeak, with all its vagueness and its useless shades of meaning. You don't grasp the beauty of the destruction of words. Do you know that Newspeak is the only language in the world whose vocabulary gets smaller every year?"*
 >
 > *(c) “1984”, George Orwell*
