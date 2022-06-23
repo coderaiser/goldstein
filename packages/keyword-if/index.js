@@ -8,6 +8,7 @@ export default function fn(Parser) {
             this.next();
             
             const isParenL = this.eat(tt.parenL);
+            
             node.test = this.parseExpression();
             const isParenR = this.eat(tt.parenR);
             

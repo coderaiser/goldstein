@@ -24,6 +24,7 @@ export default function newSpeak(Parser) {
         
         parseTryStatement() {
             this.next();
+            
             const node = super.startNode();
             
             if (this.type === tt.braceL)
