@@ -50,6 +50,8 @@ jobs:
       - name: Commit fixes
         uses: EndBug/add-and-commit@v7
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
           message: 'chore: ${{ env.NAME }}: lint with actions ☘️'
       
       - name: Coverage
