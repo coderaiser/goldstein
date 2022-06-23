@@ -26,7 +26,6 @@
     "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
-    "@babel/template": "^7.16.7",
     "acorn": "^8.7.1",
     "esbuild": "^0.14.47",
     "putout": "^26.17.0",

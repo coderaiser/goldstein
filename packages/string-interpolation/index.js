@@ -1,5 +1,4 @@
-import template from '@babel/template';
-
+import {template} from 'putout';
 const {assign} = Object;
 
 export default function newSpeak(Parser) {
@@ -10,7 +9,7 @@ export default function newSpeak(Parser) {
             let literalOpened = false;
             let parenthesis = 0;
             const out = [];
-            let isTeplateLiteral = false;
+            let isTemplateLiteral = false;
             
             chars.forEach((char, index) => {
                 if (char === '(') {
@@ -29,7 +28,7 @@ export default function newSpeak(Parser) {
                         // set literalOpened to true
                         literalOpened = true;
                         // match TemplateLiteral instead of StringLiteral
-                        isTeplateLiteral = true;
+                        isTemplateLiteral = true;
                     }
                 } else if (char === ')') {
                     parenthesis--;
@@ -45,16 +44,16 @@ export default function newSpeak(Parser) {
                 out.push(char);
             });
             
-            if (isTeplateLiteral) {
+            if (isTemplateLiteral) {
                 const node = this.startNode();
-                const ast = template.default.ast('`' + out.join('') + '`');
-                const {quasis, expressions} = ast.expression;
+                this.next();
+                
+                const {quasis, expressions} = template.ast('`' + out.join('') + '`');
                 
                 assign(node, {
                     quasis,
                     expressions,
                 });
-                this.next();
                 
                 return this.finishNode(node, 'TemplateLiteral');
             }
