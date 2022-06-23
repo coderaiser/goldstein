@@ -32,7 +32,7 @@ test('goldstein: compile: guard', (t) => {
         }
     `;
     
-    t.equal(result, expected);
+    t.equal(toString(result), toString(expected));
     t.end();
 });
 
