@@ -166,7 +166,7 @@ try {
 } catch (e) {};
 ```
 
-> Warning: this feature can be helpful but also dangerous especially if you're debugging your application. In fact, this is made to be used as an optional function call (ex. should load content, but not necessary and knowing this feature is optional), if you call a function in this way while debugging, no error will be printed and the application will contine run as nothing happened.
+> Warning: this feature can be helpful but also dangerous especially if you're debugging your application. In fact, this is made to be used as an optional function call (ex. should load content, but not necessary and knowing this feature is optional), if you call a function in this way while debugging, no error will be printed and the application will continue run as nothing happened.
 
 ### `if`
 
