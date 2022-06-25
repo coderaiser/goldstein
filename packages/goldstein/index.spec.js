@@ -54,9 +54,8 @@ test('goldstein: compile: should', (t) => {
         should hello(a, b, c);
     `);
     const expected = montag`
-        try {
-            hello(a, b, c);
-        } catch {};
+        import tryCatch from 'try-catch';
+        tryCatch(hello, a, b, c);
     `;
     
     t.equal(result, expected);
