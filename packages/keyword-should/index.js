@@ -55,10 +55,6 @@ export default function newSpeak(Parser) {
                     },
                     handler: {
                         type: 'CatchClause',
-                        param: {
-                            type: 'Identifier',
-                            name: 'e',
-                        },
                         body: {
                             type: 'BlockStatement',
                             body: [],
@@ -78,10 +74,6 @@ export default function newSpeak(Parser) {
                     },
                     handler: {
                         type: 'CatchClause',
-                        param: {
-                            type: 'Identifier',
-                            name: 'e',
-                        },
                         body: {
                             type: 'BlockStatement',
                             body: [],

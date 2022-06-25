@@ -1,3 +1,3 @@
 try {
     hello();
-} catch (e) {};
+} catch {};

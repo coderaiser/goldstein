@@ -49,6 +49,20 @@ test('goldstein: compile: try', (t) => {
     t.end();
 });
 
+test('goldstein: compile: should', (t) => {
+    const result = compile(montag`
+        should hello(a, b, c);
+    `);
+    const expected = montag`
+        try {
+            hello(a, b, c);
+        } catch {};
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: compile: sourceType', (t) => {
     const result = compile(montag`
         export fn hello() {};
