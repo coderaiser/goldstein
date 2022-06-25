@@ -151,7 +151,7 @@ const [error, result] = await tryToCatch(1, 2, 3);
 
 ### `should`
 
-`should` can be used as an expression.
+`should` can be used as an expression (just like [`try`](https://github.com/coderaiser/goldstein/edit/master/README.md#try)).
 This keyword is useful if you want to prevent a function call (also async) to throw an error because you don't need to have any result and the real execution is just optional (so runs if supported).
 
 ```gs
