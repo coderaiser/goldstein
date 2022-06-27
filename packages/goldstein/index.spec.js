@@ -74,3 +74,14 @@ test('goldstein: compile: sourceType', (t) => {
     t.end();
 });
 
+test('goldstein: compile: throw expression', (t) => {
+    const result = compile(montag`
+        const a = () => throw 'hello';
+    `);
+    const expected = montag`
+        const a = () => throw 'hello';
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

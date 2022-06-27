@@ -6,6 +6,7 @@ import keywordFn from '../keyword-fn/index.js';
 import keywordGuard from '../keyword-guard/index.js';
 import keywordTry from '../keyword-try/index.js';
 import keywordShould from '../keyword-should/index.js';
+import keywordThrow from '../keyword-throw/index.js';
 import stringInterpolation from '../string-interpolation/index.js';
 
 export const compile = (source) => {
@@ -14,6 +15,7 @@ export const compile = (source) => {
         keywordGuard,
         keywordTry,
         keywordShould,
+        keywordThrow,
         stringInterpolation,
     ]);
     

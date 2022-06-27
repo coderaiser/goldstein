@@ -176,6 +176,14 @@ if a > 3 {
 }
 ```
 
+### `throw expression`
+
+You can use [throw as expression](https://github.com/tc39/proposal-throw-expressions), just like that:
+
+```js
+const a = () => throw 'hello';
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!
