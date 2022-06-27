@@ -69,9 +69,6 @@ const noCompile = ({dir, parser}) => (t) => (name) => {
     
     const result = print(ast);
     
-    if (UPDATE === '1')
-        writeFileSync(to, result);
-    
     return t.equal(result, fromData);
 };
 
