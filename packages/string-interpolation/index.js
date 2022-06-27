@@ -1,9 +1,13 @@
 import {template} from 'putout';
+const isString = (a) => typeof a === 'string';
 const {assign} = Object;
 
 export default function stringInterpolation(Parser) {
     return class extends Parser {
         parseLiteral(value) {
+            if (!isString(value))
+                return super.parseLiteral(value);
+            
             const chars = value.split('');
             
             let literalOpened = false;

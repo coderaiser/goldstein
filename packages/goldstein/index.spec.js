@@ -85,3 +85,16 @@ test('goldstein: compile: throw expression', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: compile: curry', (t) => {
+    const result = compile(montag`
+        sum~(5);
+    `);
+    const expected = montag`
+        import currify from 'currify';
+        currify(sum, 5);
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

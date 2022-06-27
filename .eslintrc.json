@@ -1,4 +1,7 @@
 {
+    "rules": {
+        "no-extra-parens": "error"
+    },
     "extends": [
         "plugin:node/recommended",
         "plugin:putout/safe+align"

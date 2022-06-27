@@ -28,6 +28,10 @@ export const createTest = (url, ...keywords) => {
             dir,
             parser,
         }),
+        noCompile: noCompile({
+            dir,
+            parser,
+        }),
         raise: raise({
             dir,
             parser,
@@ -52,6 +56,23 @@ const compile = ({dir, parser}) => (t) => (name) => {
         writeFileSync(to, result);
     
     return t.equal(result, toData);
+};
+
+const noCompile = ({dir, parser}) => (t) => (name) => {
+    const from = join(dir, 'fixture', `${name}.gs`);
+    const fromData = readFileSync(from, 'utf8');
+    
+    const ast = parser.parse(fromData);
+    
+    if (AST === '1')
+        process.stdout.write(stringify(ast, null, 4));
+    
+    const result = print(ast);
+    
+    if (UPDATE === '1')
+        writeFileSync(to, result);
+    
+    return t.equal(result, fromData);
 };
 
 const raise = ({dir, parser}) => (t) => (name, message) => {

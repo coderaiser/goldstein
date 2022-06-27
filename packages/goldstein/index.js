@@ -8,6 +8,7 @@ import keywordTry from '../keyword-try/index.js';
 import keywordShould from '../keyword-should/index.js';
 import keywordThrow from '../keyword-throw/index.js';
 import stringInterpolation from '../string-interpolation/index.js';
+import keywordCurry from '../keyword-curry/index.js';
 
 export const compile = (source) => {
     const {parse} = extendParser([
@@ -16,6 +17,7 @@ export const compile = (source) => {
         keywordTry,
         keywordShould,
         keywordThrow,
+        keywordCurry,
         stringInterpolation,
     ]);
     
@@ -25,6 +27,7 @@ export const compile = (source) => {
     const {code} = putout(jsCode, {
         plugins: [
             'try-catch',
+            'declare-undefined-variables',
         ],
     });
     

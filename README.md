@@ -184,6 +184,19 @@ You can use [throw as expression](https://github.com/tc39/proposal-throw-express
 const a = () => throw 'hello';
 ```
 
+### Curry
+
+Similar to [partial application](https://github.com/tc39/proposal-partial-application):
+
+```gs
+const sum = a + b;
+const inc = sum~(1);
+
+inc(5);
+// returns
+6
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

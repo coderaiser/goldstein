@@ -8,3 +8,7 @@ test('goldstein: string-interpolation: simple', (t) => {
     t.end();
 });
 
+test('goldstein: string-interpolation: number', (t) => {
+    t.noCompile('number');
+    t.end();
+});
