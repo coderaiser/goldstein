@@ -184,7 +184,7 @@ You can use [throw as expression](https://github.com/tc39/proposal-throw-express
 const a = () => throw 'hello';
 ```
 
-### Curry
+### `Curry`
 
 Similar to [partial application](https://github.com/tc39/proposal-partial-application):
 
