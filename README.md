@@ -189,7 +189,7 @@ const a = () => throw 'hello';
 Similar to [partial application](https://github.com/tc39/proposal-partial-application):
 
 ```gs
-const sum = a + b;
+const sum = (a, b) => a + b;
 const inc = sum~(1);
 
 inc(5);
