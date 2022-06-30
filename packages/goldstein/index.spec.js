@@ -62,6 +62,20 @@ test('goldstein: compile: should', (t) => {
     t.end();
 });
 
+test('goldstein: compile: freeze', (t) => {
+    const result = compile(montag`
+        freeze {example: true}
+    `);
+    const expected = montag`
+        Object.freeze({
+            example: true
+        });;
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: compile: sourceType', (t) => {
     const result = compile(montag`
         export fn hello() {};

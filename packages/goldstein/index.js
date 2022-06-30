@@ -9,6 +9,7 @@ import keywordShould from '../keyword-should/index.js';
 import keywordThrow from '../keyword-throw/index.js';
 import stringInterpolation from '../string-interpolation/index.js';
 import keywordCurry from '../keyword-curry/index.js';
+import keywordFreeze from '../keyword-freeze/index.js';
 
 export const compile = (source) => {
     const {parse} = extendParser([
@@ -18,6 +19,7 @@ export const compile = (source) => {
         keywordShould,
         keywordThrow,
         keywordCurry,
+        keywordFreeze,
         stringInterpolation,
     ]);
     
