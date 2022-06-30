@@ -13,7 +13,7 @@ test('goldstein: keyword: freeze (using array)', (t) => {
     t.end();
 });
 
-test('goldstein: keyword: should (invalid)', (t) => {
+test('goldstein: keyword: freeze (invalid)', (t) => {
     t.raise('not-supported', `After 'freeze' only objects and arrays can come (1:11)`);
     t.end();
 });
