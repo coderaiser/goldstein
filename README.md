@@ -169,6 +169,7 @@ try hello();
 ### `freeze`
 
 You can use `freeze` instead of `Object.freeze()` like that:
+
 ```gs
 freeze {
     'example': true
@@ -179,8 +180,8 @@ Is the same as:
 
 ```js
 Object.freeze({
-    'example': true
-})
+    example: true,
+});
 ```
 
 ### `if`

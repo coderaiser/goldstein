@@ -2,12 +2,11 @@ import {types} from 'putout';
 import {
     addKeyword,
     TokenType,
-    tokTypes as tt,
 } from '../operator/index.js';
 
 const {
     isObjectExpression,
-    isArrayExpression
+    isArrayExpression,
 } = types;
 
 export default function newSpeak(Parser) {
@@ -37,27 +36,27 @@ export default function newSpeak(Parser) {
             
             if (isObjectExpression(expression) || isArrayExpression(expression))
                 node.expression = {
-                    "type": "ExpressionStatement",
-                    "expression": {
-                        "type": "CallExpression",
-                        "callee": {
-                            "type": "MemberExpression",
-                            "object": {
-                                "type": "Identifier",
-                                "name": "Object"
+                    type: 'ExpressionStatement',
+                    expression: {
+                        type: 'CallExpression',
+                        callee: {
+                            type: 'MemberExpression',
+                            object: {
+                                type: 'Identifier',
+                                name: 'Object',
                             },
-                            "property": {
-                                "type": "Identifier",
-                                "name": "freeze"
+                            property: {
+                                type: 'Identifier',
+                                name: 'freeze',
                             },
-                            "computed": false
+                            computed: false,
                         },
-                        "arguments": [
-                            expression
-                        ]
-                    }
-                }
-                
+                        arguments: [
+                            expression,
+                        ],
+                    },
+                };
+            
             else
                 this.raise(this.start, `After 'freeze' only objects and arrays can come`);
             
