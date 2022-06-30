@@ -67,9 +67,13 @@ test('goldstein: compile: freeze', (t) => {
         freeze {example: true}
     `);
     const expected = montag`
-        Object.freeze({
+        const {
+            freeze
+        } = Object;
+        
+        freeze({
             example: true
-        });;
+        });
     `;
     
     t.equal(result, expected);

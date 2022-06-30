@@ -9,7 +9,7 @@ const {
     isArrayExpression,
 } = types;
 
-export default function newSpeak(Parser) {
+export default function keywordFreeze(Parser) {
     const {keywordTypes} = Parser.acorn;
     keywordTypes.freeze = new TokenType('freeze', {
         keyword: 'freeze',
@@ -40,16 +40,8 @@ export default function newSpeak(Parser) {
                     expression: {
                         type: 'CallExpression',
                         callee: {
-                            type: 'MemberExpression',
-                            object: {
-                                type: 'Identifier',
-                                name: 'Object',
-                            },
-                            property: {
-                                type: 'Identifier',
-                                name: 'freeze',
-                            },
-                            computed: false,
+                            type: 'Identifier',
+                            name: 'freeze',
                         },
                         arguments: [
                             expression,

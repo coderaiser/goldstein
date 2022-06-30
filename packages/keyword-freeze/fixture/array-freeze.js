@@ -1,4 +1,4 @@
-Object.freeze([{
+freeze([{
     'test': true
 }, {
     'example': 'Hello World!'
