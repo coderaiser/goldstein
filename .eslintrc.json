@@ -3,12 +3,12 @@
         "no-extra-parens": "error"
     },
     "extends": [
-        "plugin:node/recommended",
+        "plugin:n/recommended",
         "plugin:putout/safe+align"
     ],
     "plugins": [
         "putout",
-        "node"
+        "n"
     ],
     "ignorePatterns": ["fixture"]
 }
