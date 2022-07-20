@@ -1,3 +1,11 @@
+2022.07.20, v2.4.1
+
+feature:
+- package: eslint-plugin-n v15.2.4
+- package: eslint-plugin-putout v16.0.0
+- package: putout v27.0.1
+
+
 2022.06.30, v2.4.0
 
 feature:
