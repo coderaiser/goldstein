@@ -46,7 +46,7 @@
     "montag": "^1.2.1",
     "nodemon": "^2.0.2",
     "runsome": "^1.0.0",
-    "supertape": "^7.0.0",
+    "supertape": "^8.0.1",
     "typescript": "^4.4.4",
     "zenload": "^2.0.0"
   },
