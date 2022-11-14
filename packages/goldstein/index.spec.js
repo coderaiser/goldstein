@@ -1,6 +1,9 @@
 import {test} from 'supertape';
 import montag from 'montag';
-import {compile} from './index.js';
+import {
+    compile,
+    parse,
+} from './index.js';
 
 test('goldstein: compile', (t) => {
     const result = compile(`
@@ -114,5 +117,30 @@ test('goldstein: compile: curry', (t) => {
     `;
     
     t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: parse: curry', (t) => {
+    const result = parse(montag`
+        sum~(5);
+    `);
+    
+    const expected = {
+        type: 'CallExpression',
+        start: 0,
+        end: 7,
+        callee: {
+            type: 'Identifier',
+            name: 'currify',
+        },
+        arguments: [{
+            type: 'Identifier', start: 0, end: 3, name: 'sum',
+        }, {
+            type: 'Literal', start: 5, end: 6, value: 5, raw: '5',
+        }],
+    };
+    const {expression} = result.body[0];
+    
+    t.deepEqual(expression, expected);
     t.end();
 });

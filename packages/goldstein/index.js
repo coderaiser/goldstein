@@ -11,7 +11,7 @@ import stringInterpolation from '../string-interpolation/index.js';
 import keywordCurry from '../keyword-curry/index.js';
 import keywordFreeze from '../keyword-freeze/index.js';
 
-export const compile = (source) => {
+export const parse = (source) => {
     const {parse} = extendParser([
         keywordFn,
         keywordGuard,
@@ -23,8 +23,11 @@ export const compile = (source) => {
         stringInterpolation,
     ]);
     
+    return parse(source);
+};
+
+export const compile = (source) => {
     const ast = parse(source);
-    
     const jsCode = print(ast);
     const {code} = putout(jsCode, {
         plugins: [

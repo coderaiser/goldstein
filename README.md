@@ -45,6 +45,10 @@ export {
 
 ## API
 
+### `compile(source)`
+
+When you need to compile **Goldstein** to **JavaScript** use:
+
 ```js
 import {compile} from 'goldstein';
 
@@ -67,6 +71,25 @@ function hello() {
     return 'Hello ' + text;
 }
 `;
+```
+
+### `parse(source)`
+
+When you need to get **JavaScript** ESTree AST use `parse`:
+
+```js
+import {parse} from 'goldstein';
+
+parse(`
+    fn hello() {
+        guard text !== "world" else {
+            return ""
+        }
+        
+        return "Hello " + text
+    }
+`);
+// returns ESTree AST
 ```
 
 ## Keywords
