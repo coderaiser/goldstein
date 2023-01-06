@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "acorn": "^8.7.1",
-    "esbuild": "^0.15.7",
+    "esbuild": "^0.16.14",
     "putout": "^28.5.0",
     "try-catch": "^3.0.1"
   },
