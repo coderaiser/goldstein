@@ -148,20 +148,20 @@ function hello() {
 Applies [`tryCatch`](https://github.com/coderaiser/try-catch):
 
 ```gs
-const [error, result] = try hello(1, 2, 3);
+const [error, result] = try hello('world');
 ```
 
 Is the same as:
 
 ```js
 import tryCatch from 'try-catch';
-const [error, result] = tryCatch(1, 2, 3);
+const [error, result] = tryCatch(hello, 'world');
 ```
 
 and
 
 ```gs
-const [error, result] = try await hello(1, 2, 3);
+const [error, result] = try await hello('world');
 ```
 
 Is the same as:
