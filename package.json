@@ -28,7 +28,7 @@
   "dependencies": {
     "acorn": "^8.7.1",
     "esbuild": "^0.16.14",
-    "putout": "^28.5.0",
+    "putout": "^29.1.11",
     "try-catch": "^3.0.1"
   },
   "license": "MIT",

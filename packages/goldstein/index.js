@@ -32,7 +32,7 @@ export const compile = (source) => {
     const {code} = putout(jsCode, {
         plugins: [
             'try-catch',
-            'declare-undefined-variables',
+            'declare',
         ],
     });
     
