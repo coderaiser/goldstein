@@ -2,7 +2,6 @@
   "name": "goldstein",
   "version": "2.5.1",
   "type": "module",
-  "commitType": "colon",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "JavaScript with no limits",
   "main": "./packages/goldstein/index.js",
