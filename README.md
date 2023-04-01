@@ -137,7 +137,7 @@ function hello() {
         return '';
     }
     
-    return 'Hello ' + text;
+    return `Hello ${text}`;
 }
 ```
 
