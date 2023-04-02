@@ -263,6 +263,25 @@ inc(5);
 6
 ```
 
+### `Import`
+
+When you import `.gs` files during compile step it will be replaced with `.js`:
+
+```gs
+// hello.js
+export const hello = () => 'world';
+
+// index.js
+import hello from './hello.gs';
+```
+
+Will be converted to:
+
+```js
+// index.js
+import hello from './hello.js';
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

@@ -167,3 +167,18 @@ test('goldstein: parse: if', (t) => {
     t.end();
 });
 
+test('goldstein: parse: import', (t) => {
+    const result = compile(montag`
+        import hello from './hello.gs';
+    `);
+    
+    const expected = montag`
+        import hello from './hello.js';
+    
+    
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
