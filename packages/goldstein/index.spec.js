@@ -30,7 +30,7 @@ test('goldstein: compile: guard', (t) => {
     
     const expected = montag`
         function hello() {
-            if (!(text !== 'world')) {
+            if (text === 'world') {
                 return '';
             }
             return 'Hello ' + text;
@@ -173,10 +173,7 @@ test('goldstein: parse: import', (t) => {
     `);
     
     const expected = montag`
-        import hello from './hello.js';
-    
-    
-    
+        import hello from './hello.js';\n\n\n
     `;
     
     t.equal(result, expected);

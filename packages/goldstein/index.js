@@ -39,6 +39,7 @@ export const compile = (source) => {
         plugins: [
             'try-catch',
             'declare',
+            'logical-expressions',
         ],
     });
     

@@ -159,7 +159,7 @@ Is the same as:
 
 ```js
 function hello() {
-    if (!(text !== 'world')) {
+    if (text === 'world') {
         return '';
     }
     
