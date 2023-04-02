@@ -173,7 +173,7 @@ test('goldstein: parse: import', (t) => {
     `);
     
     const expected = montag`
-        import hello from './hello.js';\n\n\n
+        import hello from './hello.js';\n
     `;
     
     t.equal(result, expected);
