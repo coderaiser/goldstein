@@ -123,7 +123,7 @@ compile(source, {
             const {keywordTypes} = Parser.acorn;
             return class extends Parser {
             };
-        }
+        },
     ],
     rules: {
         declare: ['on', {
