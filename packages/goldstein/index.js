@@ -31,9 +31,7 @@ const defaultKeywords = {
 export const keywords = defaultKeywords;
 
 export const parse = (source, keywords = defaultKeywords) => {
-    const {parse} = extendParser([
-        ...Object.values(keywords),
-    ]);
+    const {parse} = extendParser(Object.values(keywords));
     
     return estreeToBabel(parse(source));
 };

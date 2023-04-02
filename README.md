@@ -103,30 +103,35 @@ By default, all keywords mentioned in the next section used, but you can limit t
 You can add any keywords, and even create your own:
 
 ```js
-
-import {compile, keywords} from 'goldstein';
+import {
+    compile,
+    keywords,
+} from 'goldstein';
 
 const source = `
     fn hello() {
         return id('hello');
     }
-`);
+`;
+
+const {keywordFn} = keywords;
 
 compile(source, {
     keywords: [
-        keywords.keywordFn,
-        function keywordAnyNew(Parser) {
+        keywordFn,
+        function id(Parser) {
             const {keywordTypes} = Parser.acorn;
             return class extends Parser {
-            }    
-         }],
+            };
+        }
+    ],
     rules: {
         declare: ['on', {
             declarations: {
                 id: 'const id = (a) => a',
-            }
-         }],
-    }
+            },
+        }],
+    },
 });
 
 // returns
@@ -146,7 +151,6 @@ You can declare variables with using [`@putout/operator-declare`](https://github
 When you need to get **JavaScript** Babel AST use `parse`:
 
 ```js
-
 import {parse} from 'goldstein';
 
 parse(`
