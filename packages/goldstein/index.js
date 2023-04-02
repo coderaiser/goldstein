@@ -10,6 +10,7 @@ import keywordThrow from '../keyword-throw/index.js';
 import stringInterpolation from '../string-interpolation/index.js';
 import keywordCurry from '../keyword-curry/index.js';
 import keywordFreeze from '../keyword-freeze/index.js';
+import keywordIf from '../keyword-if/index.js';
 
 import estreeToBabel from 'estree-to-babel';
 
@@ -22,6 +23,7 @@ export const parse = (source) => {
         keywordThrow,
         keywordCurry,
         keywordFreeze,
+        keywordIf,
         stringInterpolation,
     ]);
     

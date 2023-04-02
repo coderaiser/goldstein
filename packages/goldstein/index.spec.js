@@ -174,3 +174,20 @@ test('goldstein: parse: curry', (t) => {
     t.deepEqual(expression, expected);
     t.end();
 });
+
+test('goldstein: parse: if', (t) => {
+    const result = compile(montag`
+        if a > 3 {
+            log('hello');
+        }
+    `);
+    
+    const expected = montag`
+        if (a > 3) {
+            log('hello');
+        }\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

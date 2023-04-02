@@ -43,6 +43,35 @@ export {
 };
 ```
 
+Let's do a bit more!
+
+```js
+const a = () => throw 'hello';
+
+if a > 2 {
+    log('hello');
+}
+
+fn hello() {
+    console.log('hello');
+}
+```
+
+Will give us:
+
+```js
+(() => {
+  // ~1.js
+  var a = () => {
+    throw "hello";
+  };
+  if (a > 2) {
+    log("hello");
+  }
+})();
+```
+
+
 ## API
 
 ### `compile(source)`
