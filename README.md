@@ -45,7 +45,7 @@ export {
 
 Let's do a bit more!
 
-```js
+```gs
 const a = () => throw 'hello';
 
 if a > 2 {
@@ -60,17 +60,14 @@ fn hello() {
 Will give us:
 
 ```js
-(() => {
-  // ~1.js
-  var a = () => {
-    throw "hello";
-  };
-  if (a > 2) {
-    log("hello");
-  }
-})();
-```
+const a = () => {
+    throw 'hello';
+};
 
+if (a > 2) {
+    log('hello');
+}
+```
 
 ## API
 

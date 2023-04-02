@@ -1,5 +1,8 @@
 {
     "rules": {
         "putout": "on"
-    }
+    },
+    "ignore": [
+        "examples/*.js"
+    ]
 }

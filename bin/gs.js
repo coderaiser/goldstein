@@ -24,7 +24,7 @@ const outfile = compiledName.replace('~', '');
 
 esbuild.buildSync({
     entryPoints: [compiledName],
-    bundle: true,
+    bundle: false,
     write: true,
     outfile,
     mainFields: ['main'],
