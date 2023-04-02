@@ -1,3 +1,12 @@
+2023.04.02, v3.0.0
+
+feature:
+- 3eeeab7 goldstein: add ability to simplify logical expressions during compilation
+- 7959e57 goldstein: add ability to compile import gs to js
+- c61e500 goldstein: improve compiler, disable bundling
+- 6cd279e goldstein: enable support of ifStatments with no round braces
+- 0ba6f9c major: goldstein: compile: use @putout/pinter instead of recast, parse: provide Babel AST
+
 2023.04.01, v2.6.0
 
 feature:
