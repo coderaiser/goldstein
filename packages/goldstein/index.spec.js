@@ -2,6 +2,7 @@ import {test} from 'supertape';
 import montag from 'montag';
 import {
     compile,
+    keywords,
     parse,
 } from './index.js';
 
@@ -133,6 +134,36 @@ test('goldstein: compile: curry', (t) => {
         
         currify(sum, 5);
     
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: compile: options', (t) => {
+    const source = montag`
+        fn hello() {
+            return id('hello');
+        }
+    `;
+    const {keywordFn} = keywords;
+    const result = compile(source, {
+        keywords: [keywordFn],
+        rules: {
+            declare: ['on', {
+                declarations: {
+                    id: 'const id = (a) => a',
+                },
+            }],
+        },
+    });
+    
+    const expected = montag`
+        const id = (a) => a;
+        
+        function hello() {
+            return id('hello');
+        }\n
     `;
     
     t.equal(result, expected);

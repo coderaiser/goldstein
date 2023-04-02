@@ -15,27 +15,36 @@ import keywordImport from '../keyword-import/index.js';
 
 import estreeToBabel from 'estree-to-babel';
 
-export const parse = (source) => {
+const defaultKeywords = {
+    keywordFn,
+    keywordGuard,
+    keywordTry,
+    keywordShould,
+    keywordThrow,
+    keywordCurry,
+    keywordFreeze,
+    keywordIf,
+    keywordImport,
+    stringInterpolation,
+};
+
+export const keywords = defaultKeywords;
+
+export const parse = (source, keywords = defaultKeywords) => {
     const {parse} = extendParser([
-        keywordFn,
-        keywordGuard,
-        keywordTry,
-        keywordShould,
-        keywordThrow,
-        keywordCurry,
-        keywordFreeze,
-        keywordIf,
-        keywordImport,
-        stringInterpolation,
+        ...Object.values(keywords),
     ]);
     
     return estreeToBabel(parse(source));
 };
 
-export const compile = (source) => {
+export const compile = (source, options = {}) => {
     const ast = parse(source);
     
     transform(ast, source, {
+        rules: {
+            ...options.rules,
+        },
         plugins: [
             'try-catch',
             'declare',
@@ -43,7 +52,9 @@ export const compile = (source) => {
         ],
     });
     
-    return fixEmpty(print(ast));
+    const {keywords} = options;
+    
+    return fixEmpty(print(ast, {keywords}));
 };
 
 const fixEmpty = (source) => {

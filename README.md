@@ -99,15 +99,16 @@ function hello() {
 `;
 ```
 
-You can add any keywords you want, and even create your own:
+By default, all keywords mentioned in the next section used, but you can limit the list setting with `keywords` option.
+You can add any keywords, and even create your own:
 
 ```js
 
 import {compile, keywords} from 'goldstein';
 
 const source = `
-    fn hello() {              
-        return "Hello " + text
+    fn hello() {
+        return id('hello');
     }
 `);
 
@@ -122,18 +123,23 @@ compile(source, {
     rules: {
         declare: ['on', {
             declarations: {
-                anyFn: 'const anyFn = () => {}',
+                id: 'const id = (a) => a',
             }
          }],
     }
 });
 
 // returns
-function hello() {              
-    return "Hello " + text;
-}
+`
+const id = (a) => a;
 
+function hello() {
+    return id('hello');
+}
+`;
 ```
+
+You can declare variables with using [`@putout/operator-declare`](https://github.com/coderaiser/putout/tree/master/packages/operator-declare).
 
 ### `parse(source)`
 
