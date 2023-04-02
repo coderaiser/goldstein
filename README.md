@@ -99,11 +99,48 @@ function hello() {
 `;
 ```
 
-### `parse(source)`
-
-When you need to get **JavaScript** ESTree AST use `parse`:
+You can add any keywords you want, and even create your own:
 
 ```js
+
+import {compile, keywords} from 'goldstein';
+
+const source = `
+    fn hello() {              
+        return "Hello " + text
+    }
+`);
+
+compile(source, {
+    keywords: [
+        keywords.keywordFn,
+        function keywordAnyNew(Parser) {
+            const {keywordTypes} = Parser.acorn;
+            return class extends Parser {
+            }    
+         }],
+    rules: {
+        declare: ['on', {
+            declarations: {
+                anyFn: 'const anyFn = () => {}',
+            }
+         }],
+    }
+});
+
+// returns
+function hello() {              
+    return "Hello " + text;
+}
+
+```
+
+### `parse(source)`
+
+When you need to get **JavaScript** Babel AST use `parse`:
+
+```js
+
 import {parse} from 'goldstein';
 
 parse(`
@@ -115,7 +152,8 @@ parse(`
         return "Hello " + text
     }
 `);
-// returns ESTree AST
+
+// returns Babel AST
 ```
 
 ## Keywords
