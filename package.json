@@ -25,8 +25,10 @@
     "fix:lint": "madrun fix:lint"
   },
   "dependencies": {
+    "@putout/printer": "^1.16.0",
     "acorn": "^8.7.1",
     "esbuild": "^0.17.14",
+    "estree-to-babel": "^5.0.1",
     "putout": "^29.1.11",
     "try-catch": "^3.0.1"
   },

@@ -1,1 +1,3 @@
-const a = () => throw 'hello';
+const a = () => {
+    throw 'hello';
+};

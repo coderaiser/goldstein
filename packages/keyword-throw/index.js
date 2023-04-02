@@ -19,11 +19,13 @@ export default function keywordThrow(Parser) {
             const expression = this.parseExpression();
             
             assign(node, {
-                operator: 'throw',
-                argument: expression,
+                body: [{
+                    type: 'ThrowStatement',
+                    argument: expression,
+                }],
             });
             
-            return super.finishNode(node, 'UnaryExpression');
+            return super.finishNode(node, 'BlockStatement');
         }
     };
 }
