@@ -144,7 +144,7 @@ function hello() {
 `;
 ```
 
-You can declare variables with using [`@putout/operator-declare`](https://github.com/coderaiser/putout/tree/master/packages/operator-declare).
+You can declare variables with [`@putout/operator-declare`](https://github.com/coderaiser/putout/tree/master/packages/operator-declare).
 
 ### `parse(source)`
 
