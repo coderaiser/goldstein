@@ -1,3 +1,9 @@
+2023.04.18, v3.1.0
+
+feature:
+- 4236346 goldstein: add ability to use arrow in FunctionDeclaration
+- 8e2197f goldstein: add ability tot pass keywords and 🐊Putout optionts
+
 2023.04.02, v3.0.0
 
 feature:
