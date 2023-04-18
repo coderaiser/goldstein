@@ -36,10 +36,10 @@ export fn hello() {
 $ gs 1.gs
 $ cat 1.js
 function hello() {
-  return "world";
+    return "world";
 }
 export {
-  hello
+    hello,
 };
 ```
 
