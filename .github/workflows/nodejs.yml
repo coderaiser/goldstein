@@ -23,8 +23,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install
         run: npm install
+
       - name: Lint
         run: npm run fix:lint
+        
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
@@ -39,14 +41,17 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       - name: Typos Install
         run: cargo install typos-cli || echo 'already installed'
+      
       - name: Typos
         run: typos --write-changes
+
       - name: Commit fixes
         uses: EndBug/add-and-commit@v9
         with:
           message: "chore: ${{ env.NAME }}: actions: lint ☘️"
       - name: Coverage
         run: npm run coverage
+        
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
