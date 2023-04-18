@@ -140,6 +140,20 @@ test('goldstein: compile: curry', (t) => {
     t.end();
 });
 
+test('goldstein: compile: arrow', (t) => {
+    const result = compile(montag`
+        function hello() => {
+        }
+    `);
+    
+    const expected = montag`
+        function hello() {}\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: compile: options', (t) => {
     const source = montag`
         fn hello() {
@@ -175,7 +189,7 @@ test('goldstein: parse: curry', (t) => {
         sum~(5);
     `);
     
-    const {expression} = result.program.body[0];
+    const {expression} = result.body[0];
     
     t.equal(expression.callee.name, 'currify');
     t.end();

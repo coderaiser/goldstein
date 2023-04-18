@@ -4,11 +4,13 @@
   "type": "module",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "JavaScript with no limits",
-  "main": "./packages/goldstein/index.js",
+  "exports": {
+    "import": "./packages/goldstein/index.js",
+    "require": "./build/parser.cjs"
+  },
   "bin": {
     "gs": "bin/gs.js"
   },
-  "exports": "./packages/goldstein/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/goldstein.git"
@@ -22,12 +24,15 @@
     "test": "madrun test",
     "coverage": "madrun coverage",
     "lint": "madrun lint",
-    "fix:lint": "madrun fix:lint"
+    "fix:lint": "madrun fix:lint",
+    "build": "madrun build",
+    "prepublish": "madrun prepublish"
   },
   "dependencies": {
     "@putout/printer": "^1.16.0",
     "acorn": "^8.7.1",
     "esbuild": "^0.17.14",
+    "esbuild-node-builtins": "^0.1.0",
     "estree-to-babel": "^5.0.1",
     "putout": "^29.1.11",
     "try-catch": "^3.0.1"
