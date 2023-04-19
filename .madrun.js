@@ -6,5 +6,5 @@ export default {
     'lint': () => `putout .`,
     'fix:lint': () => run('lint', '--fix'),
     'build': () => 'node .build.js',
-    'prepublish': () => run(['lint', 'coverage', 'build']),
+    'wisdom': () => run(['lint', 'coverage', 'build']),
 };

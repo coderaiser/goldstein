@@ -26,7 +26,7 @@
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
     "build": "madrun build",
-    "prepublish": "madrun prepublish"
+    "wisdom": "madrun wisdom"
   },
   "dependencies": {
     "@putout/printer": "^1.16.0",
