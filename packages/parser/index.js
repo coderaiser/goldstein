@@ -12,8 +12,18 @@ export const extendParser = (keywords) => {
     };
 };
 
-const createParse = (parser) => (a) => parser.parse(a, {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    locations: true,
-});
+const createParse = (parser) => (source) => {
+    const options = {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        locations: true,
+    };
+    
+    const result = parser.parse(source, options);
+    const tokens = Array.from(parser.tokenizer(source, options));
+    
+    return {
+        ...result,
+        tokens,
+    };
+};
