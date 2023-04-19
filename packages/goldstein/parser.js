@@ -27,7 +27,7 @@ const defaultKeywords = {
 
 export const keywords = defaultKeywords;
 
-export const parse = (source, keywords = defaultKeywords) => {
+export const parse = (source, options, keywords = defaultKeywords) => {
     const {parse} = extendParser(Object.values(keywords));
     return parse(source);
 };
