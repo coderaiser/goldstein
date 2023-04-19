@@ -17,6 +17,7 @@ const createParse = (parser) => (source) => {
         ecmaVersion: 'latest',
         sourceType: 'module',
         locations: true,
+        comment: true,
     };
     
     const result = parser.parse(source, options);
