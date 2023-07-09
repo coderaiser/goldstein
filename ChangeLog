@@ -1,3 +1,17 @@
+2023.07.09, v3.3.0
+
+feature:
+- bbe6942 goldstein: update fixtures
+- 34e8be9 package: @putout/printer v2.61.0
+- 483a094 package: esbuild v0.18.11
+- 2ccfc8b package: escover v3.4.0
+- c49f5b6 package: eslint-plugin-putout v18.0.0
+- 86e8467 package: estree-to-babel v6.0.0
+- eee1ae4 package: c8 v8.0.0
+- 92dce62 package: putout v30.2.0
+- d7f423b package: eslint-plugin-n v16.0.1
+- 430bceb package: nodemon v3.0.1
+
 2023.04.19, v3.2.4
 
 fix:
