@@ -42,7 +42,7 @@
     "@cloudcmd/stub": "^4.0.1",
     "c8": "^8.0.0",
     "check-dts": "^0.7.1",
-    "escover": "^2.0.2",
+    "escover": "^3.4.0",
     "eslint": "^8.0.0-beta.1",
     "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-putout": "^18.0.0",
