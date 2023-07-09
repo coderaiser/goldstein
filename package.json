@@ -31,7 +31,7 @@
   "dependencies": {
     "@putout/printer": "^1.16.0",
     "acorn": "^8.7.1",
-    "esbuild": "^0.17.14",
+    "esbuild": "^0.18.11",
     "esbuild-node-builtins": "^0.1.0",
     "estree-to-babel": "^6.0.0",
     "putout": "^30.2.0",
