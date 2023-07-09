@@ -9,10 +9,13 @@ import {
 } from 'path';
 
 import {extend} from 'supertape';
-import {extendParser} from '../parser/index.js';
 import {print} from 'putout';
 
 import tryCatch from 'try-catch';
+import estreeToBabel from 'estree-to-babel';
+
+import {extendParser} from '../parser/index.js';
+import {fixEmpty} from '../goldstein/index.js';
 
 const {stringify} = JSON;
 const {UPDATE, AST} = process.env;
@@ -45,12 +48,12 @@ const compile = ({dir, parser}) => (t) => (name) => {
     const fromData = readFileSync(from, 'utf8');
     const toData = readFileSync(to, 'utf8');
     
-    const ast = parser.parse(fromData);
+    const ast = estreeToBabel(parser.parse(fromData));
     
     if (AST === '1')
         process.stdout.write(stringify(ast, null, 4));
     
-    const result = print(ast);
+    const result = fixEmpty(print(ast));
     
     if (UPDATE === '1')
         writeFileSync(to, result);
@@ -62,12 +65,12 @@ const noCompile = ({dir, parser}) => (t) => (name) => {
     const from = join(dir, 'fixture', `${name}.gs`);
     const fromData = readFileSync(from, 'utf8');
     
-    const ast = parser.parse(fromData);
+    const ast = estreeToBabel(parser.parse(fromData));
     
     if (AST === '1')
         process.stdout.write(stringify(ast, null, 4));
     
-    const result = print(ast);
+    const result = fixEmpty(print(ast));
     
     return t.equal(result, fromData);
 };

@@ -1,1 +1,1 @@
-const [error, result] = await tryToCatch(hello);;
+const [error, result] = await tryToCatch(hello);

@@ -1,3 +1,3 @@
 freeze({
-    'test': true
-});;
+    "test": true,
+});

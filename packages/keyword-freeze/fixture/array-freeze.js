@@ -1,5 +1,5 @@
 freeze([{
-    'test': true
+    "test": true,
 }, {
-    'example': 'Hello World!'
-}]);;
+    "example": "Hello World!",
+}]);
