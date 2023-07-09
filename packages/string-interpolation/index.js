@@ -1,4 +1,5 @@
 import {template} from 'putout';
+
 const isString = (a) => typeof a === 'string';
 const {assign} = Object;
 
@@ -19,7 +20,6 @@ export default function stringInterpolation(Parser) {
                 if (char === '(') {
                     // keep count of parenthesis
                     parenthesis++;
-                    
                     // check if previous token was "/" (only if literal is not opened yet)
                     const prev = index - 1;
                     
@@ -28,7 +28,6 @@ export default function stringInterpolation(Parser) {
                         out[prev] = '$';
                         // set current char to "{"
                         char = '{';
-                        
                         // set literalOpened to true
                         literalOpened = true;
                         // match TemplateLiteral instead of StringLiteral
@@ -37,9 +36,8 @@ export default function stringInterpolation(Parser) {
                 } else if (char === ')') {
                     parenthesis--;
                     
-                    if (parenthesis === 0 && literalOpened) {
+                    if (!parenthesis && literalOpened) {
                         char = '}';
-                        
                         // reset literalOpened to false
                         literalOpened = false;
                     }
@@ -52,7 +50,7 @@ export default function stringInterpolation(Parser) {
                 const node = this.startNode();
                 this.next();
                 
-                const {quasis, expressions} = template.ast('`' + out.join('') + '`');
+                const {quasis, expressions} = template.ast(`\`${out.join('')}\``);
                 
                 assign(node, {
                     quasis,

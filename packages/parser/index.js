@@ -1,9 +1,7 @@
 import {Parser} from 'acorn';
 
 export const extendParser = (keywords) => {
-    const parser = Parser.extend(
-        ...keywords,
-    );
+    const parser = Parser.extend(...keywords);
     
     const parse = createParse(parser);
     

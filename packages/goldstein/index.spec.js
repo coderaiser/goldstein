@@ -160,6 +160,7 @@ test('goldstein: compile: options', (t) => {
             return id('hello');
         }
     `;
+    
     const {keywordFn} = keywords;
     const result = compile(source, {
         keywords: [keywordFn],

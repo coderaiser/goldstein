@@ -1,6 +1,4 @@
-import {
-    tokTypes as tt,
-} from 'acorn';
+import {tokTypes as tt} from 'acorn';
 
 export default function fn(Parser) {
     return class extends Parser {
@@ -12,7 +10,6 @@ export default function fn(Parser) {
                 node = this.startNode();
             
             node.body = [];
-            
             // optionally parse arrow
             this.eat(tt.arrow);
             this.expect(tt.braceL);

@@ -24,4 +24,3 @@ export const compile = (source, options = {}) => {
 export const fixEmpty = (source) => {
     return source.replace(/;(\s+)?;/g, ';');
 };
-

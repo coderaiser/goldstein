@@ -87,6 +87,7 @@ compile(`
         return "Hello " + text
     }
 `);
+
 // returns
 `
 function hello() {
@@ -121,8 +122,8 @@ compile(source, {
         keywordFn,
         function id(Parser) {
             const {keywordTypes} = Parser.acorn;
-            return class extends Parser {
-            };
+            
+            return class extends Parser {};
         },
     ],
     rules: {
@@ -229,6 +230,7 @@ Is the same as:
 
 ```js
 import tryCatch from 'try-catch';
+
 const [error, result] = tryCatch(hello, 'world');
 ```
 
@@ -242,6 +244,7 @@ Is the same as:
 
 ```js
 import tryToCatch from 'try-catch';
+
 const [error, result] = await tryToCatch(1, 2, 3);
 ```
 
@@ -342,8 +345,7 @@ function hello() => {
 That absolutely fine, it will be converted to:
 
 ```js
-function hello() {
-}
+function hello() {}
 ```
 
 ## How to contribute?

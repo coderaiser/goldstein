@@ -6,6 +6,7 @@ import {
 
 export default function newSpeak(Parser) {
     const {keywordTypes} = Parser.acorn;
+    
     keywordTypes.guard = new TokenType('guard', {
         keyword: 'guard',
     });
@@ -15,6 +16,7 @@ export default function newSpeak(Parser) {
             this.keywords = addKeyword('guard', this.keywords);
             return super.parse();
         }
+        
         parseStatement(context, topLevel, exports) {
             if (this.type === keywordTypes.guard) {
                 return this.parseGuard();

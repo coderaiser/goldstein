@@ -1,6 +1,5 @@
 export * from 'acorn';
 export * from './scopeflags.js';
-
 export function addKeyword(keyword, keywords) {
     const str = keywords
         .toString()
@@ -9,3 +8,4 @@ export function addKeyword(keyword, keywords) {
     
     return RegExp(str);
 }
+

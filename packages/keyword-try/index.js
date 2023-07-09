@@ -44,7 +44,6 @@ export default function newSpeak(Parser) {
                         ...expression.arguments,
                     ],
                 };
-            
             else if (isAwaitExpression(expression))
                 node.expression = {
                     type: 'AwaitExpression',
@@ -60,12 +59,12 @@ export default function newSpeak(Parser) {
                         ],
                     },
                 };
-            
             else
                 this.raise(this.start, `After 'try' only '{', 'await' and 'function call' can come`);
             
             return super.finishNode(node, 'ExpressionStatement');
         }
+        
         parseUglyTry(node) {
             node.block = this.parseBlock();
             node.handler = null;

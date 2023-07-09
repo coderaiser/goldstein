@@ -12,6 +12,7 @@ const {
 
 export default function newSpeak(Parser) {
     const {keywordTypes} = Parser.acorn;
+    
     keywordTypes.should = new TokenType('should', {
         keyword: 'should',
     });
@@ -21,6 +22,7 @@ export default function newSpeak(Parser) {
             this.keywords = addKeyword('should', this.keywords);
             return super.parse();
         }
+        
         parseStatement(context, topLevel, exports) {
             if (this.type === keywordTypes.should) {
                 return this.parseShould();
@@ -61,7 +63,6 @@ export default function newSpeak(Parser) {
                         },
                     },
                 };
-            
             else if (isAwaitExpression(expression))
                 node.expression = {
                     type: 'TryStatement',
@@ -80,7 +81,6 @@ export default function newSpeak(Parser) {
                         },
                     },
                 };
-            
             else
                 this.raise(this.start, `After 'should' only 'await' and 'function call' can come`);
             

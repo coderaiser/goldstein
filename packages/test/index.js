@@ -7,13 +7,10 @@ import {
     dirname,
     join,
 } from 'path';
-
 import {extend} from 'supertape';
 import {print} from 'putout';
-
 import tryCatch from 'try-catch';
 import estreeToBabel from 'estree-to-babel';
-
 import {extendParser} from '../parser/index.js';
 import {fixEmpty} from '../goldstein/index.js';
 
@@ -86,4 +83,3 @@ const raise = ({dir, parser}) => (t) => (name, message) => {
     
     return t.equal(error.message, message);
 };
-

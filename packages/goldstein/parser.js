@@ -32,5 +32,6 @@ export const parse = (source, options = {}, keywords = defaultKeywords) => {
         ...options.keywords,
         ...keywords,
     }));
+    
     return parse(source);
 };

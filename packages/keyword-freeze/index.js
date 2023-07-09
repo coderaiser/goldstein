@@ -11,6 +11,7 @@ const {
 
 export default function keywordFreeze(Parser) {
     const {keywordTypes} = Parser.acorn;
+    
     keywordTypes.freeze = new TokenType('freeze', {
         keyword: 'freeze',
     });
@@ -20,6 +21,7 @@ export default function keywordFreeze(Parser) {
             this.keywords = addKeyword('freeze', this.keywords);
             return super.parse();
         }
+        
         parseStatement(context, topLevel, exports) {
             if (this.type === keywordTypes.freeze) {
                 return this.parseFreeze();
@@ -43,12 +45,9 @@ export default function keywordFreeze(Parser) {
                             type: 'Identifier',
                             name: 'freeze',
                         },
-                        arguments: [
-                            expression,
-                        ],
+                        arguments: [expression],
                     },
                 };
-            
             else
                 this.raise(this.start, `After 'freeze' only objects and arrays can come`);
             

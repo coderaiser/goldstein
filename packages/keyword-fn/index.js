@@ -14,6 +14,7 @@ export default function fn(Parser) {
             
             return super.parse();
         }
+        
         parseStatement(context, topLevel, exports) {
             if (this.type === Parser.acorn.keywordTypes.fn) {
                 this.type = Parser.acorn.keywordTypes.function;
@@ -21,6 +22,7 @@ export default function fn(Parser) {
             
             return super.parseStatement(context, topLevel, exports);
         }
+        
         shouldParseExportStatement() {
             if (this.type === Parser.acorn.keywordTypes.fn) {
                 return true;

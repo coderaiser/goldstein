@@ -7,4 +7,3 @@ test('goldstein: curry', (t) => {
     t.compile('curry');
     t.end();
 });
-

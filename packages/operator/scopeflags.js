@@ -1,6 +1,5 @@
 // Each scope gets a bitset that may contain these flags
-export const
-    SCOPE_TOP = 1,
+export const SCOPE_TOP = 1,
     SCOPE_FUNCTION = 2,
     SCOPE_ASYNC = 4,
     SCOPE_GENERATOR = 8,
@@ -12,8 +11,7 @@ export const
     SCOPE_VAR = SCOPE_TOP | SCOPE_FUNCTION | SCOPE_CLASS_STATIC_BLOCK;
 
 // Used in checkLVal* and declareName to determine the type of a binding
-export const
-    BIND_NONE = 0, // Not a binding
+export const BIND_NONE = 0, // Not a binding
     BIND_VAR = 1, // Var-style binding
     BIND_LEXICAL = 2, // Let- or const-style binding
     BIND_FUNCTION = 3, // Function declaration

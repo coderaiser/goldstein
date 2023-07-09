@@ -13,6 +13,7 @@ export default function keywordCurry(Parser) {
             
             return super.parseSubscript(base, startPos, startLoc, noCalls, maybeAsyncArrow, optionalChained, forInit);
         }
+        
         parseCurry(base, startPos, startLoc) {
             const node = this.startNodeAt(startPos, startLoc);
             const isParenL = this.eat(tt.parenL);

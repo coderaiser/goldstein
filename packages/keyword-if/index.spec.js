@@ -17,4 +17,3 @@ test('goldstein: keyword: if: diff-parens', (t) => {
     t.raise('diff-parens', `Use both parens ('(', ')') or none (2:4)`);
     t.end();
 });
-

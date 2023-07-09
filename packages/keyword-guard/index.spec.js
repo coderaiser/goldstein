@@ -17,4 +17,3 @@ test('goldstein: keyword: guard: diff-parens', (t) => {
     t.raise('diff-parens', `Use both parens ('(', ')') or none (2:28)`);
     t.end();
 });
-
