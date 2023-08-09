@@ -13,7 +13,7 @@ test('goldstein: keyword: should (with await)', (t) => {
     t.end();
 });
 
-test('goldstein: keyword: should (brakets)', (t) => {
-    t.raise('not-supported', `After 'should' only 'await' and 'function call' can come, brakets are not supported (1:7)`);
+test('goldstein: keyword: should (brackets)', (t) => {
+    t.raise('not-supported', `After 'should' only 'await' and 'function call' can come, brackets are not supported (1:7)`);
     t.end();
 });

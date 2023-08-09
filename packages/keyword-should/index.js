@@ -37,7 +37,7 @@ export default function newSpeak(Parser) {
             const node = super.startNode();
             
             if (this.type === tt.braceL)
-                return this.raise(this.start, `After 'should' only 'await' and 'function call' can come, brakets are not supported`);
+                return this.raise(this.start, `After 'should' only 'await' and 'function call' can come, brackets are not supported`);
             
             const expression = this.parseExpression();
             
