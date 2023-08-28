@@ -10,8 +10,10 @@ const test = createTest(import.meta.url, {
 
 test('plugin-goldstein: transform: convert-t-compile-to-compile', (t) => {
     t.transform('convert-t-compile-to-compile');
+    t.end();
 });
 
 test('plugin-goldstein: transform: convert-t-raise-to-raise', (t) => {
     t.transform('convert-t-raise-to-raise');
+    t.end();
 });

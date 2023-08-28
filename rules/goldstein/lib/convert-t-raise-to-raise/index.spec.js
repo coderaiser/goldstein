@@ -10,8 +10,10 @@ const test = createTest(import.meta.url, {
 
 test('rules: convert-t-raise-to-raise: report', (t) => {
     t.report('convert-t-raise-to-raise', `Use 'raise()' instead of 't.raise()'`);
+    t.end();
 });
 
 test('rules: convert-t-raise-to-raise: transform', (t) => {
     t.transform('convert-t-raise-to-raise');
+    t.end();
 });
