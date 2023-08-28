@@ -6,8 +6,8 @@ import {
     parse,
 } from './index.js';
 
-test('goldstein: compile', (t) => {
-    const result = compile(`
+test('goldstein: compile', async (t) => {
+    const result = await compile(`
         fn hello() {
         }
     `);
@@ -18,8 +18,8 @@ test('goldstein: compile', (t) => {
     t.end();
 });
 
-test('goldstein: compile: guard', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: guard', async (t) => {
+    const result = await compile(montag`
         fn hello() {
             guard (text !== 'world') else {
                 return ''
@@ -34,6 +34,7 @@ test('goldstein: compile: guard', (t) => {
             if (text === 'world') {
                 return '';
             }
+            
             return 'Hello ' + text;
         }
     
@@ -43,8 +44,8 @@ test('goldstein: compile: guard', (t) => {
     t.end();
 });
 
-test('goldstein: compile: try', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: try', async (t) => {
+    const result = await compile(montag`
         try hello(a, b, c);
     `);
     
@@ -59,8 +60,8 @@ test('goldstein: compile: try', (t) => {
     t.end();
 });
 
-test('goldstein: compile: should', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: should', async (t) => {
+    const result = await compile(montag`
         should hello(a, b, c);
     `);
     
@@ -75,8 +76,8 @@ test('goldstein: compile: should', (t) => {
     t.end();
 });
 
-test('goldstein: compile: freeze', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: freeze', async (t) => {
+    const result = await compile(montag`
         freeze {
             example: true
         }
@@ -94,8 +95,8 @@ test('goldstein: compile: freeze', (t) => {
     t.end();
 });
 
-test('goldstein: compile: sourceType', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: sourceType', async (t) => {
+    const result = await compile(montag`
         export fn hello() {};
     `);
     
@@ -108,8 +109,8 @@ test('goldstein: compile: sourceType', (t) => {
     t.end();
 });
 
-test('goldstein: compile: throw expression', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: throw expression', async (t) => {
+    const result = await compile(montag`
         const a = () => throw 'hello';
     `);
     
@@ -124,8 +125,8 @@ test('goldstein: compile: throw expression', (t) => {
     t.end();
 });
 
-test('goldstein: compile: curry', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: curry', async (t) => {
+    const result = await compile(montag`
         sum~(5);
     `);
     
@@ -140,8 +141,8 @@ test('goldstein: compile: curry', (t) => {
     t.end();
 });
 
-test('goldstein: compile: arrow', (t) => {
-    const result = compile(montag`
+test('goldstein: compile: arrow', async (t) => {
+    const result = await compile(montag`
         function hello() => {
         }
     `);
@@ -154,7 +155,7 @@ test('goldstein: compile: arrow', (t) => {
     t.end();
 });
 
-test('goldstein: compile: options', (t) => {
+test('goldstein: compile: options', async (t) => {
     const source = montag`
         fn hello() {
             return id('hello');
@@ -162,7 +163,7 @@ test('goldstein: compile: options', (t) => {
     `;
     
     const {keywordFn} = keywords;
-    const result = compile(source, {
+    const result = await compile(source, {
         keywords: [keywordFn],
         rules: {
             declare: ['on', {
@@ -196,8 +197,8 @@ test('goldstein: parse: curry', (t) => {
     t.end();
 });
 
-test('goldstein: parse: if', (t) => {
-    const result = compile(montag`
+test('goldstein: parse: if', async (t) => {
+    const result = await compile(montag`
         if a > 3 {
             log('hello');
         }
@@ -213,8 +214,8 @@ test('goldstein: parse: if', (t) => {
     t.end();
 });
 
-test('goldstein: parse: import', (t) => {
-    const result = compile(montag`
+test('goldstein: parse: import', async (t) => {
+    const result = await compile(montag`
         import hello from './hello.gs';
     `);
     
@@ -225,3 +226,4 @@ test('goldstein: parse: import', (t) => {
     t.equal(result, expected);
     t.end();
 });
+

@@ -117,7 +117,7 @@ const source = `
 
 const {keywordFn} = keywords;
 
-compile(source, {
+await compile(source, {
     keywords: [
         keywordFn,
         function id(Parser) {

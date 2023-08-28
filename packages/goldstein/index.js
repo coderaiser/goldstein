@@ -1,13 +1,13 @@
-import {transform} from 'putout';
+import {transformAsync} from 'putout';
 import {print} from '@putout/printer';
 import {parse} from './parser.js';
 import estreeToBabel from 'estree-to-babel';
 
 export * from './parser.js';
-export const compile = (source, options = {}) => {
+export const compile = async (source, options = {}) => {
     const ast = estreeToBabel(parse(source, options));
     
-    transform(ast, source, {
+    await transformAsync(ast, source, {
         rules: {
             ...options.rules,
         },
