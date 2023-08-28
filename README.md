@@ -78,7 +78,7 @@ When you need to compile **Goldstein** to **JavaScript** use:
 ```js
 import {compile} from 'goldstein';
 
-compile(`
+await compile(`
     fn hello() {
         guard text !== "world" else {
             return ""

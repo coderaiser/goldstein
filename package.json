@@ -53,7 +53,8 @@
     "runsome": "^1.0.0",
     "supertape": "^8.0.1",
     "typescript": "^5.0.3",
-    "zenload": "^2.0.0"
+    "zenload": "^2.0.0",
+    "rules": "./rules/goldstein"
   },
   "engines": {
     "node": ">=16"

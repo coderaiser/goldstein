@@ -1,6 +1,7 @@
 {
     "rules": {
-        "putout": "on"
+        "putout": "on",
+        "putout/apply-namaspace-specifier": "off"
     },
     "ignore": [
         "examples/*.js"

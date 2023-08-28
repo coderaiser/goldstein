@@ -17,17 +17,19 @@ jobs:
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install
-        run: npm install
+        run: bun i --no-save
       - name: Lint
         run: npm run fix:lint
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+      - name: Install Rust
+        run: rustup update
       - uses: actions/cache@v3
         with:
           path: |

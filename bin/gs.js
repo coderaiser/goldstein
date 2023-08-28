@@ -5,7 +5,7 @@ import {
     readFileSync,
     writeFileSync,
     unlinkSync,
-} from 'fs';
+} from 'node:fs';
 import {compile} from '../packages/goldstein/index.js';
 
 const [arg] = process.argv.slice(2);
