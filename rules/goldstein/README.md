@@ -48,6 +48,27 @@ test('goldstein: keyword: import', async ({compile}) => {
 });
 ```
 
+## convert-t-compile-to-compile
+
+Checkout in 🐊[**Putout Editor**](https://putout.cloudcmd.io/#/gist/5272c99178bbf9e75f30177e7e9c15a9/9a3e81a9e9dd756915cbecff32acc5c50cddeca3).
+
+### ❌ Example of incorrect code
+
+```js
+test('goldstein: keyword: try: not-supported', (t) => {
+    t.raise('not-supported', `After 'try' only '{', 'await' and 'function call' can come (1:8)`);
+});
+```
+
+### ✅ Example of correct code
+
+```js
+test('goldstein: keyword: try: not-supported', async ({raise}) => {
+    await raise('not-supported', `After 'try' only '{', 'await' and 'function call' can come (1:8)`);
+});
+
+```
+
 ## License
 
 MIT

@@ -10,9 +10,9 @@ const {
 const COMPUTED = false;
 const SHORTHAND = true;
 
-export const report = () => `Use 'compile()' instead of 't.compile()'`;
+export const report = () => `Use 'raise()' instead of 't.raise()'`;
 
 export const replace = () => ({
     't.end()': '',
-    't.compile(__a)': transform('compile', '__a'),
+    't.raise(__a, __b)': transform('raise', '__a, __b'),
 });
