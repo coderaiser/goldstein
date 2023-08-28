@@ -1,9 +1,9 @@
 {
     "rules": {
-        "putout": "on",
-        "putout/apply-namaspace-specifier": "off"
+        "putout/apply-namespace-specifier": "off"
     },
     "ignore": [
         "examples/*.js"
-    ]
+    ],
+    "plugins": ["putout"]
 }

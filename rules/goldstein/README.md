@@ -35,7 +35,6 @@ Checkout in 🐊[**Putout Editor**](https://putout.cloudcmd.io/#/gist/a10dd187dc
 ```js
 test('goldstein: keyword: import', async ({compile}) => {
     await compile('import');
-    t.end();
 });
 ```
 
@@ -44,7 +43,6 @@ test('goldstein: keyword: import', async ({compile}) => {
 ```js
 test('goldstein: keyword: import', async ({compile}) => {
     await compile('import');
-    t.end();
 });
 ```
 
@@ -55,8 +53,8 @@ Checkout in 🐊[**Putout Editor**](https://putout.cloudcmd.io/#/gist/5272c99178
 ### ❌ Example of incorrect code
 
 ```js
-test('goldstein: keyword: try: not-supported', (t) => {
-    t.raise('not-supported', `After 'try' only '{', 'await' and 'function call' can come (1:8)`);
+test('goldstein: keyword: try: not-supported', async ({raise}) => {
+    await raise('not-supported', `After 'try' only '{', 'await' and 'function call' can come (1:8)`);
 });
 ```
 
@@ -66,7 +64,6 @@ test('goldstein: keyword: try: not-supported', (t) => {
 test('goldstein: keyword: try: not-supported', async ({raise}) => {
     await raise('not-supported', `After 'try' only '{', 'await' and 'function call' can come (1:8)`);
 });
-
 ```
 
 ## License

@@ -10,15 +10,12 @@ const test = createTest(import.meta.url, {
 
 test('rules: convert-t-compile-to-compile: report', (t) => {
     t.report('convert-t-compile-to-compile', `Use 'compile()' instead of 't.compile()'`);
-    t.end();
 });
 
 test('rules: convert-t-compile-to-compile: transform', (t) => {
     t.transform('convert-t-compile-to-compile');
-    t.end();
 });
 
 test('rules: convert-t-compile-to-compile: no report: done', (t) => {
     t.noReport('done');
-    t.end();
 });
