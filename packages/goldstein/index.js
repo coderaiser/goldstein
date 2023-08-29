@@ -1,20 +1,23 @@
-import {transformAsync} from 'putout';
+import {transform} from 'putout';
 import {print} from '@putout/printer';
 import {parse} from './parser.js';
 import estreeToBabel from 'estree-to-babel';
+import tryCatchPlugin from '@putout/plugin-try-catch';
+import declarePlugin from '@putout/plugin-declare';
+import logicalExpressionsPlugin from '@putout/plugin-logical-expressions';
 
 export * from './parser.js';
-export const compile = async (source, options = {}) => {
+export const compile = (source, options = {}) => {
     const ast = estreeToBabel(parse(source, options));
     
-    await transformAsync(ast, source, {
+    transform(ast, source, {
         rules: {
             ...options.rules,
         },
         plugins: [
-            'try-catch',
-            'declare',
-            'logical-expressions',
+            ['try-catch', tryCatchPlugin],
+            ['declare', declarePlugin],
+            ['logical-expressions', logicalExpressionsPlugin],
         ],
     });
     

@@ -78,7 +78,7 @@ When you need to compile **Goldstein** to **JavaScript** use:
 ```js
 import {compile} from 'goldstein';
 
-await compile(`
+compile(`
     fn hello() {
         guard text !== "world" else {
             return ""
@@ -117,7 +117,7 @@ const source = `
 
 const {keywordFn} = keywords;
 
-await compile(source, {
+compile(source, {
     keywords: [
         keywordFn,
         function id(Parser) {
