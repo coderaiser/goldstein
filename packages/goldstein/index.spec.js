@@ -226,4 +226,3 @@ test('goldstein: parse: import', (t) => {
     t.equal(result, expected);
     t.end();
 });
-
