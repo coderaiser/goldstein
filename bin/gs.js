@@ -6,6 +6,7 @@ import {
     writeFileSync,
     unlinkSync,
 } from 'node:fs';
+import process from 'node:process';
 import {compile} from '../packages/goldstein/index.js';
 
 const [arg] = process.argv.slice(2);
