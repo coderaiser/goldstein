@@ -60,6 +60,22 @@ test('goldstein: compile: try', (t) => {
     t.end();
 });
 
+test('goldstein: compile: try await', (t) => {
+    const result = compile(montag`
+        const [error] = try await hello();
+    `);
+    
+    const expected = montag`
+        import tryToCatch from 'try-to-catch';
+        
+        const [error] = await tryToCatch(hello);
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: compile: should', (t) => {
     const result = compile(montag`
         should hello(a, b, c);

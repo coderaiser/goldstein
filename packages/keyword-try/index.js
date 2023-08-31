@@ -11,7 +11,7 @@ const {
     isAwaitExpression,
 } = types;
 
-export default function newSpeak(Parser) {
+export default function keywordTry(Parser) {
     const {keywordTypes} = Parser.acorn;
     
     return class extends Parser {

@@ -4,6 +4,5 @@
     },
     "ignore": [
         "examples/*.js"
-    ],
-    "plugins": ["putout"]
+    ]
 }
