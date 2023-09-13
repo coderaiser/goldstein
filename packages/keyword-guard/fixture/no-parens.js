@@ -1,7 +1,7 @@
 function hello() {
-    if (!text !== "world") {
-        return "";
+    if (!text !== 'world') {
+        return '';
     }
     
-    return "Hello " + text;
+    return 'Hello ' + text;
 }
