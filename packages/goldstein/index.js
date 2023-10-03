@@ -7,6 +7,7 @@ import {parse} from './parser.js';
 
 export * from './parser.js';
 export {print} from '../printer/index.js';
+export {convert} from '../convert/index.js';
 export const compile = (source, options = {}) => {
     const ast = parse(source, options);
     

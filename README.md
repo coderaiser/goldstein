@@ -179,6 +179,30 @@ parse(`
 `, options);
 ```
 
+### `print(ast)`
+
+You can make any modifications to **Goldstein AST** and then `print` back to **Goldstein**:
+
+```
+import {parse, print} from 'goldstein';
+
+const ast = parse(`const t = try f('hello')`);
+const source = print(ast);
+```
+
+### `convert(source)`
+
+You can even convert **JavaScript** to **Goldstein** with:
+
+```
+import {convert} from 'goldstein';
+
+const ast = convert(`const t = tryCatch(f, 'hello');`;
+
+// returns
+`const t = try f('hello')`)
+```
+
 ## Keywords
 
 **Goldstein** is absolutely compatible with JavaScript, and it has extensions.

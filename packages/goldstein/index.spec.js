@@ -5,6 +5,7 @@ import {
     keywords,
     parse,
     print,
+    convert,
 } from './index.js';
 
 test('goldstein: compile', (t) => {
@@ -252,5 +253,15 @@ test('goldstein: print', (t) => {
     const result = print(ast);
     
     t.equal(result, `${source}\n`);
+    t.end();
+});
+
+test('goldstein: convert', (t) => {
+    const source = `const a = tryCatch(f, 'hello');`;
+    const result = convert(source);
+    
+    const expected = `const a = try f('hello');\n`;
+    
+    t.equal(result, expected);
     t.end();
 });
