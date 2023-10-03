@@ -13,4 +13,3 @@ test('goldstein: convert', (t) => {
     t.equal(result, expected);
     t.end();
 });
-
