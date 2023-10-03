@@ -1,5 +1,4 @@
 import {print as printJS} from '@putout/printer';
-
 import {fixEmpty} from '../goldstein/index.js';
 import {AwaitExpression} from './visitors/await-expression.js';
 import {CallExpression} from './visitors/call-expression.js';

@@ -36,8 +36,10 @@ test('goldstein: printer: if', (t) => {
             console.log('x');
         }
     `;
+    
     const ast = estreeToBabel(parse(source));
     const result = print(ast);
+    
     const expected = montag`
         if a > 3 {
             console.log('x');
@@ -56,8 +58,10 @@ test('goldstein: printer: if: else', (t) => {
             console.log('y');
         }
     `;
+    
     const ast = estreeToBabel(parse(source));
     const result = print(ast);
+    
     const expected = montag`
         if a > 3 {
             console.log('x');
