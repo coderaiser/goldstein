@@ -1,10 +1,11 @@
 import {transform} from 'putout';
 import {print} from '@putout/printer';
-import {parse} from './parser.js';
 import estreeToBabel from 'estree-to-babel';
 import tryCatchPlugin from '@putout/plugin-try-catch';
 import declarePlugin from '@putout/plugin-declare';
 import logicalExpressionsPlugin from '@putout/plugin-logical-expressions';
+
+import {parse} from './parser.js';
 
 export * from './parser.js';
 export const compile = (source, options = {}) => {
