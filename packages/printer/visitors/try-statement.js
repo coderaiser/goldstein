@@ -1,4 +1,5 @@
 import {visitors as v} from '@putout/printer';
+
 export const TryStatement = (path, printer, semantics) => {
     const {maybe, print} = printer;
     const {node} = path;

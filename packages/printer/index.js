@@ -1,5 +1,4 @@
 import {print as printJS} from '@putout/printer';
-
 import {AwaitExpression} from './visitors/await-expression.js';
 import {CallExpression} from './visitors/call-expression.js';
 import {TryStatement} from './visitors/try-statement.js';
