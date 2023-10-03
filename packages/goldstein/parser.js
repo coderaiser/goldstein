@@ -1,3 +1,5 @@
+import estreeToBabel from 'estree-to-babel';
+
 import {extendParser} from '../parser/index.js';
 import keywordFn from '../keyword-fn/index.js';
 import keywordGuard from '../keyword-guard/index.js';
@@ -33,5 +35,10 @@ export const parse = (source, options = {}, keywords = defaultKeywords) => {
         ...keywords,
     }));
     
-    return parse(source);
+    const ast = parse(source);
+    
+    if (options.type === 'estree')
+        return ast;
+    
+    return estreeToBabel(ast);
 };

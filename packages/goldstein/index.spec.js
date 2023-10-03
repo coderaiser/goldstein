@@ -4,6 +4,7 @@ import {
     compile,
     keywords,
     parse,
+    print,
 } from './index.js';
 
 test('goldstein: compile', (t) => {
@@ -205,7 +206,9 @@ test('goldstein: compile: options', (t) => {
 test('goldstein: parse: curry', (t) => {
     const result = parse(montag`
         sum~(5);
-    `);
+    `, {
+        type: 'estree',
+    });
     
     const {expression} = result.body[0];
     
@@ -240,5 +243,14 @@ test('goldstein: parse: import', (t) => {
     `;
     
     t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: print', (t) => {
+    const source = `const a = try f('hello');`;
+    const ast = parse(source);
+    const result = print(ast);
+    
+    t.equal(result, `${source}\n`);
     t.end();
 });
