@@ -43,19 +43,19 @@ export default function keywordTry(Parser) {
                         expression.callee,
                         ...expression.arguments,
                     ],
-                    goldstein: createGoldsteinNode({
+                    goldstein: createGoldsteinTry({
                         await: false,
                         callee: expression.callee,
-                        arguments: expression.arguments,
+                        args: expression.arguments,
                     }),
                 };
             else if (isAwaitExpression(expression))
                 node.expression = {
                     type: 'AwaitExpression',
-                    goldstein: createGoldsteinNode({
+                    goldstein: createGoldsteinTry({
                         await: true,
                         callee: expression.argument.callee,
-                        arguments: expression.argument.arguments,
+                        args: expression.argument.arguments,
                     }),
                     argument: {
                         type: 'CallExpression',
@@ -110,7 +110,7 @@ export default function keywordTry(Parser) {
     };
 }
 
-function createGoldsteinNode(args) {
+export function createGoldsteinTry(args) {
     return {
         type: 'TryStatement',
         expression: true,
@@ -118,7 +118,7 @@ function createGoldsteinNode(args) {
         argument: {
             type: 'CallExpression',
             callee: args.callee,
-            arguments: args.arguments,
+            arguments: args.args,
         },
     };
 }
