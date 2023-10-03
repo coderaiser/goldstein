@@ -1,20 +1,20 @@
-import {createGoldsteinTry} from '../../keyword-try/index.js';
+import {createGoldsteinTry} from '../../types/try.js';
 
 export const report = () => `Use 'try' instead of 'tryCatch/tryToCatch'`;
 export const replace = () => ({
     'tryCatch(__args)': createTry({
-        awaitType: false,
+        async: false,
     }),
     'await tryToCatch(__args)': createTry({
-        awaitType: true,
+        async: true,
     }),
 });
 
-const createTry = ({awaitType}) => ({__args}, path) => {
+const createTry = ({async}) => ({__args}, path) => {
     const [callee, ...args] = __args;
     
     path.node.goldstein = createGoldsteinTry({
-        await: awaitType,
+        async,
         callee,
         args,
     });

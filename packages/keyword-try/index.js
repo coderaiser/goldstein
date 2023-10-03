@@ -5,6 +5,7 @@ import {
     SCOPE_SIMPLE_CATCH,
     tokTypes as tt,
 } from '../operator/index.js';
+import {setGoldsteinTry} from '../types/try.js';
 
 const {
     isCallExpression,
@@ -43,20 +44,10 @@ export default function keywordTry(Parser) {
                         expression.callee,
                         ...expression.arguments,
                     ],
-                    goldstein: createGoldsteinTry({
-                        await: false,
-                        callee: expression.callee,
-                        args: expression.arguments,
-                    }),
                 };
             else if (isAwaitExpression(expression))
                 node.expression = {
                     type: 'AwaitExpression',
-                    goldstein: createGoldsteinTry({
-                        await: true,
-                        callee: expression.argument.callee,
-                        args: expression.argument.arguments,
-                    }),
                     argument: {
                         type: 'CallExpression',
                         callee: {
@@ -71,6 +62,8 @@ export default function keywordTry(Parser) {
                 };
             else
                 this.raise(this.start, `After 'try' only '{', 'await' and 'function call' can come`);
+            
+            setGoldsteinTry(node.expression);
             
             return super.finishNode(node, 'ExpressionStatement');
         }
@@ -104,6 +97,8 @@ export default function keywordTry(Parser) {
             
             if (!node.handler && !node.finalizer)
                 this.raise(node.start, 'Missing catch or finally clause');
+            
+            setGoldsteinTry(node);
             
             return this.finishNode(node, 'TryStatement');
         }

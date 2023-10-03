@@ -1,4 +1,5 @@
 import {tokTypes as tt} from '../operator/index.js';
+import {setGoldsteinIf} from '../types/if.js';
 
 export default function fn(Parser) {
     return class extends Parser {
@@ -19,7 +20,7 @@ export default function fn(Parser) {
             node.consequent = this.parseStatement('if');
             node.alternate = this.eat(tt._else) ? this.parseStatement('if') : null;
             
-            node.goldsteinIf = true;
+            setGoldsteinIf(node);
             
             return this.finishNode(node, 'IfStatement');
         }

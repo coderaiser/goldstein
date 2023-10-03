@@ -8,6 +8,6 @@ export const TryStatement = (path, printer, semantics) => {
         return v.TryStatement(path, printer, semantics);
     
     print('try ');
-    maybe.print(node.await, 'await ');
+    maybe.print(node.async, 'await ');
     print('__argument');
 };
