@@ -164,6 +164,7 @@ parse(`
 ```
 
 You can parse to **ESTree**:
+
 ```
 const options = {
     type: 'estree',
