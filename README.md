@@ -143,7 +143,7 @@ function hello() {
 
 You can declare variables with [`@putout/operator-declare`](https://github.com/coderaiser/putout/tree/master/packages/operator-declare).
 
-### `parse(source)`
+### `parse(source, {type, keywords})`
 
 When you need to get **JavaScript** Babel AST use `parse`:
 
@@ -161,6 +161,22 @@ parse(`
 `);
 
 // returns Babel AST
+```
+
+You can parse to **ESTree**:
+```
+const options = {
+    type: 'estree',
+};
+
+parse(`
+    fn hello() {
+        guard text !== "world" else {
+            return ""
+        }
+        
+        return "Hello " + text
+`, options);
 ```
 
 ## Keywords
