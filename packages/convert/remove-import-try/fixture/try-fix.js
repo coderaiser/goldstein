@@ -1,2 +1,1 @@
-import tryCatch from 'try-catch';
-const a = tryCatch(f, 'hello')
+const a = tryCatch(f, 'hello');

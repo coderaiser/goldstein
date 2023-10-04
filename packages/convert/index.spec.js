@@ -13,3 +13,19 @@ test('goldstein: convert: tryCatch', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: convert: tryCatch: import', (t) => {
+    const source = `
+        import tryCatch from 'try-catch';
+        const a = tryCatch(f, 'hello')
+    `;
+    
+    const result = convert(source);
+    
+    const expected = montag`
+        const a = try f('hello');\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

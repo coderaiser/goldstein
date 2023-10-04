@@ -1,6 +1,7 @@
 import estreeToBabel from 'estree-to-babel';
 import {transform} from 'putout';
 import {print} from '../printer/index.js';
+import * as removeImportTry from './remove-import-try/index.js';
 import * as applyTry from './apply-try/index.js';
 import {
     fixEmpty,
@@ -13,6 +14,7 @@ export const convert = (source) => {
     transform(ast, source, {
         plugins: [
             ['apply-try', applyTry],
+            ['remove-import-try', removeImportTry],
         ],
     });
     
