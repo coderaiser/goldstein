@@ -184,7 +184,7 @@ parse(`
 
 You can make any modifications to **Goldstein AST** and then `print` back to **Goldstein**:
 
-```
+```js
 import {parse, print} from 'goldstein';
 
 const ast = parse(`const t = try f('hello')`);
@@ -195,7 +195,7 @@ const source = print(ast);
 
 You can even convert **JavaScript** to **Goldstein** with:
 
-```
+```js
 import {convert} from 'goldstein';
 
 const ast = convert(`const t = tryCatch(f, 'hello');`;
