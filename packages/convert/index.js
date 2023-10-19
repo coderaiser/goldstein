@@ -4,6 +4,7 @@ import {print} from '../printer/index.js';
 import * as removeImportTry from './remove-import-try/index.js';
 import * as applyTry from './apply-try/index.js';
 import * as addArray from './add-array/index.js';
+import * as applyIfLet from './apply-if-let/index.js';
 import {
     fixEmpty,
     parse,
@@ -15,6 +16,7 @@ export const convert = (source) => {
     transform(ast, source, {
         plugins: [
             ['add-array', addArray],
+            ['apply-if-let', applyIfLet],
             ['apply-try', applyTry],
             ['remove-import-try', removeImportTry],
         ],

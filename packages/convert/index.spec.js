@@ -44,3 +44,26 @@ test('goldstein: convert: add-array', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: convert: convert-if-let', (t) => {
+    const source = montag`
+        {
+            let a = b?.c;
+            
+            if (a) {
+                log(a);
+            }
+        }
+    `;
+    
+    const result = convert(source);
+    
+    const expected = montag`
+        if let a = b?.c {
+            log(a);
+        }\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
