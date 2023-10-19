@@ -230,7 +230,9 @@ function hello() {
 
 ### `append array`
 
-```swift
+Append new elements to an array just like in Swift:
+
+```js
 const a = [1];
 
 a += [2, 3];
