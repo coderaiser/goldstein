@@ -227,6 +227,22 @@ function hello() {
 }
 ```
 
+
+### `append array`
+
+```swift
+const a = [1];
+
+a += [2, 3];
+```
+
+Is the same as:
+
+```js
+const a = [1];
+a.push(...[2, 3]);
+```
+
 ### `guard`
 
 Applies not to `IfCondition`:

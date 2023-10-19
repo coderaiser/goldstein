@@ -9,3 +9,10 @@ export function addKeyword(keyword, keywords) {
     return RegExp(str);
 }
 
+export class DestructuringErrors {
+    shorthandAssign = -1;
+    trailingComma = -1;
+    parenthesizedAssign = -1;
+    parenthesizedBind = -1;
+    doubleProto = -1;
+}

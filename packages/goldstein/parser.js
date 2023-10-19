@@ -11,6 +11,7 @@ import keywordFreeze from '../keyword-freeze/index.js';
 import keywordIf from '../keyword-if/index.js';
 import keywordImport from '../keyword-import/index.js';
 import keywordArrow from '../keyword-arrow/index.js';
+import keywordAddArray from '../keyword-add-array/index.js';
 
 const defaultKeywords = {
     keywordFn,
@@ -23,6 +24,7 @@ const defaultKeywords = {
     keywordIf,
     keywordImport,
     keywordArrow,
+    keywordAddArray,
     stringInterpolation,
 };
 

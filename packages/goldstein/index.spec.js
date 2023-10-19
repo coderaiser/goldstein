@@ -234,6 +234,21 @@ test('goldstein: parse: if', (t) => {
     t.end();
 });
 
+test('goldstein: parse: append array', (t) => {
+    const result = compile(montag`
+        const a = [1];
+        a += [2, 3];
+    `);
+    
+    const expected = montag`
+        const a = [1];
+        a.push(...[2, 3]);\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: parse: import', (t) => {
     const result = compile(montag`
         import hello from './hello.gs';
