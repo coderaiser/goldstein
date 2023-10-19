@@ -185,7 +185,10 @@ parse(`
 You can make any modifications to **Goldstein AST** and then `print` back to **Goldstein**:
 
 ```js
-import {parse, print} from 'goldstein';
+import {
+    parse,
+    print,
+} from 'goldstein';
 
 const ast = parse(`const t = try f('hello')`);
 const source = print(ast);
@@ -198,10 +201,10 @@ You can even convert **JavaScript** to **Goldstein** with:
 ```js
 import {convert} from 'goldstein';
 
-const ast = convert(`const t = tryCatch(f, 'hello');`;
+const ast = convert(`const t = tryCatch(f, 'hello')`);
 
 // returns
-`const t = try f('hello')`)
+`const t = try f('hello')`;
 ```
 
 ## Keywords
@@ -227,13 +230,12 @@ function hello() {
 }
 ```
 
-
 ### `append array`
 
 Append new elements to an array just like in Swift:
 
 ```js
-const a = [1];
+let a = [1];
 
 a += [2, 3];
 ```
