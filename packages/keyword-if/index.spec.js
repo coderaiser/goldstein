@@ -8,6 +8,11 @@ test('goldstein: keyword: if', (t) => {
     t.end();
 });
 
+test('goldstein: keyword: if: let', (t) => {
+    t.compile('if-let');
+    t.end();
+});
+
 test('goldstein: keyword: if: no brace', (t) => {
     t.raise('no-brace', `Use braces ('{', '}') when omit parens ('(', ')') (2:4)`);
     t.end();

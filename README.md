@@ -344,9 +344,17 @@ Object.freeze({
 
 You can omit parens. But you must use braces in this case.
 
-```rust
+```swift
 if a > 3 {
     hello();
+}
+```
+
+Also you can use `if let` syntax:
+
+```swift
+if let x = a?.b {
+    print(x);
 }
 ```
 

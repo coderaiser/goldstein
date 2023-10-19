@@ -44,3 +44,4 @@ test('goldstein: convert: add-array', (t) => {
     t.equal(result, expected);
     t.end();
 });
+

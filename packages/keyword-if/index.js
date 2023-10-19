@@ -3,27 +3,85 @@ import {setGoldsteinIf} from '../types/if.js';
 
 export default function fn(Parser) {
     return class extends Parser {
-        parseIfStatement(node) {
+        parseIfStatement() {
             this.next();
-            
             const isParenL = this.eat(tt.parenL);
             
-            node.test = this.parseExpression();
-            const isParenR = this.eat(tt.parenR);
+            if (this.isContextual('let'))
+                return createIfLet.call(this, {
+                    isParenL,
+                });
             
-            if (!isParenL && !isParenR && this.type !== tt.braceL)
-                this.raise(this.start, `Use braces ('{', '}') when omit parens ('(', ')')`);
+            const test = this.parseExpression();
             
-            if (isParenL !== isParenR)
-                this.raise(this.start, `Use both parens ('(', ')') or none`);
-            
-            node.consequent = this.parseStatement('if');
-            node.alternate = this.eat(tt._else) ? this.parseStatement('if') : null;
-            
-            setGoldsteinIf(node);
-            
-            return this.finishNode(node, 'IfStatement');
+            return createIf.call(this, {
+                test,
+                isParenL,
+            });
         }
     };
 }
 
+function check({isParenL, isParenR}) {
+    if (!isParenL && !isParenR && this.type !== tt.braceL)
+        this.raise(this.start, `Use braces ('{', '}') when omit parens ('(', ')')`);
+    
+    if (isParenL !== isParenR)
+        this.raise(this.start, `Use both parens ('(', ')') or none`);
+}
+
+function createIfLet({isParenL}) {
+    this.next();
+    this.eat(tt.assign);
+    
+    const assignmentExpression = this.parseExpression();
+    const isParenR = this.eat(tt.parenR);
+    
+    check.call(this, {
+        isParenL,
+        isParenR,
+    });
+    
+    const ifNode = createIf.call(this, {
+        test: assignmentExpression.left,
+        isParenL,
+    });
+    
+    const node = {
+        loc: {},
+        range: [],
+        body: [{
+            type: 'VariableDeclaration',
+            kind: 'let',
+            declarations: [{
+                type: 'VariableDeclarator',
+                id: assignmentExpression.left,
+                init: assignmentExpression.right,
+            }],
+        }, ifNode],
+    };
+    
+    return this.finishNode(node, 'BlockStatement');
+}
+
+function createIf({test, isParenL}) {
+    const node = {
+        test,
+    };
+    
+    const isParenR = this.eat(tt.parenR);
+    
+    check.call(this, {
+        isParenL,
+        isParenR,
+    });
+    
+    node.consequent = this.parseStatement('if');
+    node.alternate = this.eat(tt._else) ? this.parseStatement('if') : null;
+    node.loc = {};
+    node.range = [];
+    
+    setGoldsteinIf(node);
+    
+    return this.finishNode(node, 'IfStatement');
+}
