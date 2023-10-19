@@ -112,7 +112,6 @@ function createAppendNode(context, node) {
     const {left, right} = node;
     
     assign(node, {
-        a: 'x',
         callee: memberExpression(left, identifier('push')),
         arguments: [spreadElement(right)],
     });
