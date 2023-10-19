@@ -165,7 +165,7 @@ parse(`
 
 You can parse to **ESTree**:
 
-```
+```js
 const options = {
     type: 'estree',
 };
