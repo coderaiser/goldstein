@@ -29,3 +29,18 @@ test('goldstein: convert: tryCatch: import', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: convert: add-array', (t) => {
+    const source = `
+        a.push(...[2, 3]);
+    `;
+    
+    const result = convert(source);
+    
+    const expected = montag`
+        a += [2, 3];\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
