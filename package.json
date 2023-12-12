@@ -37,7 +37,7 @@
     "esbuild": "^0.19.2",
     "esbuild-node-builtins": "^0.1.0",
     "estree-to-babel": "^9.0.0",
-    "putout": "^32.0.1",
+    "putout": "^34.0.7",
     "try-catch": "^3.0.1"
   },
   "license": "MIT",
