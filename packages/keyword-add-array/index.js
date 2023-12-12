@@ -15,9 +15,8 @@ export default function keywordAddArray(Parser) {
     return class extends Parser {
         parseMaybeAssign(forInit, refDestructuringErrors, afterLeftParse) {
             if (this.isContextual('yield')) {
-                if (this.inGenerator) {
+                if (this.inGenerator)
                     return this.parseYield(forInit);
-                }
                 
                 // The tokenizer will assume an expression is allowed after
                 // `yield`, but this isn't that kind of yield
@@ -49,41 +48,35 @@ export default function keywordAddArray(Parser) {
             
             let left = this.parseMaybeConditional(forInit, refDestructuringErrors);
             
-            if (afterLeftParse) {
+            if (afterLeftParse)
                 left = afterLeftParse.call(this, left, startPos, startLoc);
-            }
             
             if (this.type.isAssign) {
                 const node = this.startNodeAt(startPos, startLoc);
                 
                 node.operator = this.value;
                 
-                if (this.type === tt.eq) {
+                if (this.type === tt.eq)
                     left = this.toAssignable(left, false, refDestructuringErrors);
-                }
                 
-                if (!ownDestructuringErrors) {
+                if (!ownDestructuringErrors)
                     refDestructuringErrors.parenthesizedAssign = refDestructuringErrors.trailingComma = refDestructuringErrors.doubleProto = -1;
-                }
                 
-                if (refDestructuringErrors.shorthandAssign >= left.start) {
+                if (refDestructuringErrors.shorthandAssign >= left.start)
                     refDestructuringErrors.shorthandAssign = -1;
-                }
                 
                 // reset because shorthand default was used correctly
-                if (this.type === tt.eq) {
+                if (this.type === tt.eq)
                     this.checkLValPattern(left);
-                } else {
+                else
                     this.checkLValSimple(left);
-                }
                 
                 node.left = left;
                 this.next();
                 node.right = this.parseMaybeAssign(forInit);
                 
-                if (oldDoubleProto > -1) {
+                if (oldDoubleProto > -1)
                     refDestructuringErrors.doubleProto = oldDoubleProto;
-                }
                 
                 if (node.operator === '+=' && isArrayExpression(node.right))
                     return createAppendNode(this, node);
@@ -91,17 +84,14 @@ export default function keywordAddArray(Parser) {
                 return this.finishNode(node, 'AssignmentExpression');
             }
             
-            if (ownDestructuringErrors) {
+            if (ownDestructuringErrors)
                 this.checkExpressionErrors(refDestructuringErrors, true);
-            }
             
-            if (oldParenAssign > -1) {
+            if (oldParenAssign > -1)
                 refDestructuringErrors.parenthesizedAssign = oldParenAssign;
-            }
             
-            if (oldTrailingComma > -1) {
+            if (oldTrailingComma > -1)
                 refDestructuringErrors.trailingComma = oldTrailingComma;
-            }
             
             return left;
         }

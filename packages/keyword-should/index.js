@@ -24,9 +24,8 @@ export default function newSpeak(Parser) {
         }
         
         parseStatement(context, topLevel, exports) {
-            if (this.type === keywordTypes.should) {
+            if (this.type === keywordTypes.should)
                 return this.parseShould();
-            }
             
             return super.parseStatement(context, topLevel, exports);
         }

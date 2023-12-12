@@ -18,9 +18,8 @@ export default function newSpeak(Parser) {
         }
         
         parseStatement(context, topLevel, exports) {
-            if (this.type === keywordTypes.guard) {
+            if (this.type === keywordTypes.guard)
                 return this.parseGuard();
-            }
             
             return super.parseStatement(context, topLevel, exports);
         }

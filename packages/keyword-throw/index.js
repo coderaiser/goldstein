@@ -5,9 +5,8 @@ export default function keywordThrow(Parser) {
     
     return class extends Parser {
         parseExprAtom(refDestructuringErrors, forInit) {
-            if (this.type === keywordTypes.throw) {
+            if (this.type === keywordTypes.throw)
                 return this.parseThrowExpression();
-            }
             
             return super.parseExprAtom(refDestructuringErrors, forInit);
         }

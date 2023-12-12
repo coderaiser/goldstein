@@ -16,17 +16,15 @@ export default function fn(Parser) {
         }
         
         parseStatement(context, topLevel, exports) {
-            if (this.type === Parser.acorn.keywordTypes.fn) {
+            if (this.type === Parser.acorn.keywordTypes.fn)
                 this.type = Parser.acorn.keywordTypes.function;
-            }
             
             return super.parseStatement(context, topLevel, exports);
         }
         
         shouldParseExportStatement() {
-            if (this.type === Parser.acorn.keywordTypes.fn) {
+            if (this.type === Parser.acorn.keywordTypes.fn)
                 return true;
-            }
             
             return super.shouldParseExportStatement();
         }

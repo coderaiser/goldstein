@@ -23,9 +23,8 @@ export default function keywordFreeze(Parser) {
         }
         
         parseStatement(context, topLevel, exports) {
-            if (this.type === keywordTypes.freeze) {
+            if (this.type === keywordTypes.freeze)
                 return this.parseFreeze();
-            }
             
             return super.parseStatement(context, topLevel, exports);
         }

@@ -14,24 +14,21 @@ export default function fn(Parser) {
             this.eat(tt.arrow);
             this.expect(tt.braceL);
             
-            if (createNewLexicalScope) {
+            if (createNewLexicalScope)
                 this.enterScope(0);
-            }
             
             while (this.type !== tt.braceR) {
                 const stmt = this.parseStatement(null);
                 node.body.push(stmt);
             }
             
-            if (exitStrict) {
+            if (exitStrict)
                 this.strict = false;
-            }
             
             this.next();
             
-            if (createNewLexicalScope) {
+            if (createNewLexicalScope)
                 this.exitScope();
-            }
             
             return this.finishNode(node, 'BlockStatement');
         }
