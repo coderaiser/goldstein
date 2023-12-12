@@ -55,9 +55,8 @@
     "montag": "^1.2.1",
     "nodemon": "^3.0.1",
     "runsome": "^1.0.0",
-    "supertape": "^8.0.1",
-    "typescript": "^5.0.3",
-    "zenload": "^2.0.0"
+    "supertape": "^9.0.0",
+    "typescript": "^5.0.3"
   },
   "engines": {
     "node": ">=16"
