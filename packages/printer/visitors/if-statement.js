@@ -9,7 +9,23 @@ export const IfStatement = (path, printer, semantics) => {
     
     indent();
     print('if ');
-    print('__test');
+    
+    const testPath = path.get('test');
+    
+    if (testPath.isVariableDeclaration()) {
+        const first = testPath.get('declarations.0');
+        const id = first.get('id');
+        const init = first.get('init');
+        
+        print(testPath.node.kind);
+        print(' ');
+        print(id);
+        print(' = ');
+        print(init);
+    } else {
+        print('__test');
+    }
+    
     print(' ');
     print('__consequent');
     
