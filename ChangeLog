@@ -1,3 +1,11 @@
+2024.02.19, v5.0.2
+
+feature:
+- 7b1e60e goldstein: supertape v10.1.0
+- 448fd5b goldstein: @putout/test v9.0.1
+- 9e4433d goldstein: esbuild v0.20.1
+- 302b0c4 goldstein: @putout/plugin-declare v3.0.0
+
 2024.01.29, v5.0.1
 
 feature:
