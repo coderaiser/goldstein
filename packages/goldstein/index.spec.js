@@ -292,6 +292,15 @@ test('goldstein: print', (t) => {
     t.end();
 });
 
+test('goldstein: print: try catch', (t) => {
+    const source = `try {} catch {}`;
+    const ast = parse(source);
+    const result = print(ast);
+    
+    t.equal(result, `${source}\n`);
+    t.end();
+});
+
 test('goldstein: convert', (t) => {
     const source = `const a = tryCatch(f, 'hello');`;
     const result = convert(source);
