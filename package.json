@@ -34,7 +34,7 @@
     "@putout/plugin-try-catch": "^3.0.0",
     "@putout/printer": "^8.0.1",
     "acorn": "^8.7.1",
-    "esbuild": "^0.19.2",
+    "esbuild": "^0.20.1",
     "esbuild-node-builtins": "^0.1.0",
     "estree-to-babel": "^9.0.0",
     "putout": "^35.0.0",
