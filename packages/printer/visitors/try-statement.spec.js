@@ -40,3 +40,13 @@ test('goldstein: printer: visitors: try-catch', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: printer: visitors: try catch', (t) => {
+    const source = `try {} catch {}`;
+    const ast = parse(source);
+    const result = print(ast);
+    
+    t.equal(result, `${source}\n`);
+    t.end();
+});
+
