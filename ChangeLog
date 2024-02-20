@@ -1,3 +1,9 @@
+2024.02.20, v5.2.0
+
+feature:
+- 5728421 goldstein: improve support of comments
+- 0d997c3 goldstein: printer: visitors: await-expression: maybeVisitor
+
 2024.02.19, v5.1.0
 
 feature:
