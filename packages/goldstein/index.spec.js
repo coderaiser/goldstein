@@ -283,6 +283,25 @@ test('goldstein: parse: import', (t) => {
     t.end();
 });
 
+test('goldstein: parse: comment', (t) => {
+    const result = compile(montag`
+        import hello from './hello.js';
+        
+        // abc
+        const x = 5;
+    `);
+    
+    const expected = montag`
+        import hello from './hello.js';
+        
+        // abc
+        const x = 5;\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: print', (t) => {
     const source = `const a = try f('hello');`;
     const ast = parse(source);

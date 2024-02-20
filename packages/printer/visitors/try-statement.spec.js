@@ -49,4 +49,3 @@ test('goldstein: printer: visitors: try catch', (t) => {
     t.equal(result, `${source}\n`);
     t.end();
 });
-

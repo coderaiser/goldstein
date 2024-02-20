@@ -1,4 +1,5 @@
 import {Parser} from 'acorn';
+import {attachComments} from 'estree-util-attach-comments';
 
 export const extendParser = (keywords) => {
     const parser = Parser.extend(...keywords);
@@ -17,17 +18,16 @@ const createParse = (parser) => (source) => {
         locations: true,
         comment: true,
         ranges: true,
-        onComment: (a) => {
-            comments.push(a);
-        },
+        onComment: comments,
     };
     
-    const result = parser.parse(source, options);
-    const tokens = Array.from(parser.tokenizer(source, options));
+    const ast = parser.parse(source, options);
+    
+    attachComments(ast, comments);
     
     return {
-        ...result,
-        tokens,
+        ...ast,
+        tokens: Array.from(parser.tokenizer(source, options)),
         comments,
     };
 };
