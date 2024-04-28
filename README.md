@@ -302,7 +302,7 @@ Is the same as:
 ```js
 import tryToCatch from 'try-catch';
 
-const [error, result] = await tryToCatch(1, 2, 3);
+const [error, result] = await tryToCatch(hello, 'world');
 ```
 
 ### `should`
