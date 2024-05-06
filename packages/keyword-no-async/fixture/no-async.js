@@ -1,3 +1,3 @@
-function hello() {}
-
-function world() {}
+async function hello() {
+    await world();
+}

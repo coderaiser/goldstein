@@ -3,6 +3,7 @@ import {print} from '@putout/printer';
 import tryCatchPlugin from '@putout/plugin-try-catch';
 import declarePlugin from '@putout/plugin-declare';
 import logicalExpressionsPlugin from '@putout/plugin-logical-expressions';
+import promisesPlugin from '@putout/plugin-promises';
 import {parse} from './parser.js';
 
 export * from './parser.js';
@@ -19,6 +20,7 @@ export const compile = (source, options = {}) => {
             ['try-catch', tryCatchPlugin],
             ['declare', declarePlugin],
             ['logical-expressions', logicalExpressionsPlugin],
+            ['promises', promisesPlugin],
         ],
     });
     

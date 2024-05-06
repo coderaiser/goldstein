@@ -11,10 +11,15 @@ import {
 test('goldstein: compile', (t) => {
     const result = compile(`
         fn hello() {
+            return 'world'
         }
     `);
     
-    const expected = 'function hello() {}\n';
+    const expected = montag`
+        function hello() {
+            return 'world';
+        }\n
+    `;
     
     t.equal(result, expected);
     t.end();
@@ -115,11 +120,15 @@ test('goldstein: compile: freeze', (t) => {
 
 test('goldstein: compile: sourceType', (t) => {
     const result = compile(montag`
-        export fn hello() {};
+        export fn hello() {
+            return 'world';
+        };
     `);
     
     const expected = montag`
-        export function hello() {};
+        export function hello() {
+            return 'world';
+        };
     
     `;
     
@@ -162,11 +171,14 @@ test('goldstein: compile: curry', (t) => {
 test('goldstein: compile: arrow', (t) => {
     const result = compile(montag`
         function hello() => {
+            return 'world';
         }
     `);
     
     const expected = montag`
-        function hello() {}\n
+        function hello() {
+            return 'world';
+        }\n
     `;
     
     t.equal(result, expected);
@@ -316,6 +328,25 @@ test('goldstein: convert', (t) => {
     const result = convert(source);
     
     const expected = `const a = try f('hello');\n`;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: convert: no-async', (t) => {
+    const source = montag`
+        function hello() {
+            await world();
+        }
+    `;
+    
+    const result = convert(source);
+    
+    const expected = montag`
+        async function hello() {
+            await world();
+        }\n
+    `;
     
     t.equal(result, expected);
     t.end();

@@ -1,36 +1,36 @@
-import {tokTypes as tt} from 'acorn';
+const {defineProperty} = Object;
 
 export default function fn(Parser) {
     return class extends Parser {
-        parseBlock(createNewLexicalScope, node, exitStrict) {
-            if (createNewLexicalScope === void 0)
-                createNewLexicalScope = true;
+        parseFunction(node, statement, allowExpressionBody, isAsync, forInit) {
+            return super.parseFunction(node, statement, allowExpressionBody, true, forInit);
+        }
+        
+        checkUnreserved({start, end, name}) {
+            if (this.inGenerator && name === 'yield')
+                this.raiseRecoverable(start, `Cannot use 'yield' as identifier inside a generator`);
             
-            if (node === void 0)
-                node = this.startNode();
+            if (this.inAsync && name === 'await')
+                this.raiseRecoverable(start, `Cannot use 'await' as identifier inside an async function`);
             
-            node.body = [];
-            // optionally parse arrow
-            this.eat(tt.arrow);
-            this.expect(tt.braceL);
+            if (this.currentThisScope().inClassFieldInit && name === 'arguments')
+                this.raiseRecoverable(start, `Cannot use 'arguments' in class field initializer`);
             
-            if (createNewLexicalScope)
-                this.enterScope(0);
+            if (this.inClassStaticBlock && (name === 'arguments' || name === 'await'))
+                this.raise(start, `Cannot use ${name} in class static initialization block`);
             
-            while (this.type !== tt.braceR) {
-                const stmt = this.parseStatement(null);
-                node.body.push(stmt);
-            }
+            if (this.keywords.test(name))
+                this.raise(start, `Unexpected keyword '` + name + `'`);
             
-            if (exitStrict)
-                this.strict = false;
+            if (this.options.ecmaVersion < 6 && this.input.slice(start, end).includes('\\'))
+                return;
             
-            this.next();
+            const re = this.strict ? this.reservedWordsStrict : this.reservedWords;
             
-            if (createNewLexicalScope)
-                this.exitScope();
-            
-            return this.finishNode(node, 'BlockStatement');
+            if (re.test(name) && !this.inAsync && name === 'await')
+                defineProperty(this, 'inAsync', {
+                    value: true,
+                });
         }
     };
 }

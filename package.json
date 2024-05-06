@@ -32,6 +32,7 @@
     "@putout/plugin-declare": "^4.0.0",
     "@putout/plugin-logical-expressions": "^5.0.0",
     "@putout/plugin-try-catch": "^3.0.0",
+    "@putout/plugin-promises": "^14.1.0",
     "@putout/printer": "^8.0.1",
     "acorn": "^8.7.1",
     "esbuild": "^0.20.1",
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@babel/core": "^8.0.0-alpha.5",
     "@cloudcmd/stub": "^4.0.1",
+    "@putout/plugin-goldstein": "./rules/goldstein",
     "@putout/test": "^9.0.1",
     "c8": "^9.1.0",
     "check-dts": "^0.7.1",
@@ -58,8 +60,7 @@
     "redlint": "^3.14.1",
     "runsome": "^1.0.0",
     "supertape": "^10.1.0",
-    "typescript": "^5.0.3",
-    "@putout/plugin-goldstein": "./rules/goldstein"
+    "typescript": "^5.0.3"
   },
   "engines": {
     "node": ">=18"

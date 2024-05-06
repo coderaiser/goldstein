@@ -3,7 +3,7 @@ import keywordFn from './index.js';
 
 const test = createTest(import.meta.url, keywordFn);
 
-test('goldstein: keyword: arrow', (t) => {
-    t.compile('arrow');
+test('goldstein: keyword: no-async', (t) => {
+    t.compile('no-async');
     t.end();
 });
