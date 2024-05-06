@@ -1,7 +1,4 @@
-import {
-    addKeyword,
-    TokenType,
-} from '../operator/index.js';
+import {addKeyword, TokenType} from '../operator/index.js';
 
 export default function fn(Parser) {
     Parser.acorn.keywordTypes.fn = new TokenType('fn', {

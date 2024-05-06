@@ -8,3 +8,4 @@ coverage
 examples
 rules
 
+*.config.*

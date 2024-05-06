@@ -3,6 +3,11 @@
         "putout/apply-namespace-specifier": "off",
         "github/convert-npm-to-bun": "off"
     },
+    "match": {
+        ".filesystem.json": {
+            "eslint/convert-rc-to-flat": "on"
+        }
+    },
     "ignore": [
         "examples/*.js"
     ]

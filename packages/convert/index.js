@@ -5,10 +5,7 @@ import * as removeImportTry from './remove-import-try/index.js';
 import * as applyTry from './apply-try/index.js';
 import * as addArray from './add-array/index.js';
 import * as applyIfLet from './apply-if-let/index.js';
-import {
-    fixEmpty,
-    parse,
-} from '../goldstein/index.js';
+import {fixEmpty, parse} from '../goldstein/index.js';
 
 export const convert = (source) => {
     const ast = estreeToBabel(parse(source));

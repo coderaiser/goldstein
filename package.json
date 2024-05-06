@@ -58,7 +58,8 @@
     "redlint": "^3.14.1",
     "runsome": "^1.0.0",
     "supertape": "^10.1.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.3",
+    "@putout/plugin-goldstein": "./rules/goldstein"
   },
   "engines": {
     "node": ">=18"

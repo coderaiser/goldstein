@@ -58,7 +58,8 @@ function createIfLet({isParenL}) {
                 id: assignmentExpression.left,
                 init: assignmentExpression.right,
             }],
-        }, ifNode],
+        },
+        ifNode],
     };
     
     return this.finishNode(node, 'BlockStatement');

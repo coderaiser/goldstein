@@ -100,10 +100,7 @@ By default, all keywords mentioned in the next section used, but you can limit t
 You can add any keywords, and even create your own:
 
 ```js
-import {
-    compile,
-    keywords,
-} from 'goldstein';
+import {compile, keywords} from 'goldstein';
 
 const source = `
     fn hello() {
@@ -185,10 +182,7 @@ parse(`
 You can make any modifications to **Goldstein AST** and then `print` back to **Goldstein**:
 
 ```js
-import {
-    parse,
-    print,
-} from 'goldstein';
+import {parse, print} from 'goldstein';
 
 const ast = parse(`const t = try f('hello')`);
 const source = print(ast);

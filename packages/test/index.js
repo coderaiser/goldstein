@@ -1,12 +1,6 @@
-import {
-    readFileSync,
-    writeFileSync,
-} from 'node:fs';
+import {readFileSync, writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
-import {
-    dirname,
-    join,
-} from 'node:path';
+import {dirname, join} from 'node:path';
 import {extend} from 'supertape';
 import {print} from 'putout';
 import tryCatch from 'try-catch';
