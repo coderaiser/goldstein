@@ -25,7 +25,6 @@
     "coverage": "madrun coverage",
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
-    "build": "madrun build",
     "wisdom": "madrun wisdom"
   },
   "dependencies": {
