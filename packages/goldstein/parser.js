@@ -12,7 +12,6 @@ import keywordIf from '../keyword-if/index.js';
 import keywordImport from '../keyword-import/index.js';
 import keywordArrow from '../keyword-arrow/index.js';
 import keywordAddArray from '../keyword-add-array/index.js';
-import keywordNoAsync from '../keyword-no-async/index.js';
 
 const defaultKeywords = {
     keywordFn,
@@ -27,7 +26,6 @@ const defaultKeywords = {
     keywordArrow,
     keywordAddArray,
     stringInterpolation,
-    keywordNoAsync,
 };
 
 export const keywords = defaultKeywords;

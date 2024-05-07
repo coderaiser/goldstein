@@ -407,22 +407,6 @@ That absolutely fine, it will be converted to:
 function hello() {}
 ```
 
-### `asyn`-less `Function` with `await`
-
-```gs
-function hello() {
-    await world();
-}
-```
-
-In js:
-
-```js
-async function hello() {
-    await world();
-}
-```
-
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!
