@@ -1,3 +1,8 @@
+2024.05.09, v5.6.1
+
+fix:
+- ecd46b4 goldstein: override keywords
+
 2024.05.08, v5.6.0
 
 feature:
