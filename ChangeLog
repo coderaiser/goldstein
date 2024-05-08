@@ -1,3 +1,9 @@
+2024.05.08, v5.6.0
+
+feature:
+- 4be8b79 goldstein: keyword-fn: add constant
+- f0b7d54 goldstein: keyword-fn: add ability to use "fn" as function name
+
 2024.05.08, v5.5.2
 
 fix:
