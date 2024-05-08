@@ -8,6 +8,11 @@ test('goldstein: keyword: fn', (t) => {
     t.end();
 });
 
+test('goldstein: keyword: fn-function', (t) => {
+    t.noCompile('fn-function');
+    t.end();
+});
+
 test('goldstein: keyword: fn: export', (t) => {
     t.compile('export');
     t.end();
