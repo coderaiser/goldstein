@@ -5,7 +5,7 @@
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "JavaScript with no limits",
   "exports": {
-    "./": "./packages/goldstein/index.js"
+    ".": "./packages/goldstein/index.js"
   },
   "bin": {
     "gs": "bin/gs.js"
