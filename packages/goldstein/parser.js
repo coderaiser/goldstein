@@ -30,11 +30,8 @@ const defaultKeywords = {
 
 export const keywords = defaultKeywords;
 
-export const parse = (source, options = {}, keywords = defaultKeywords) => {
-    const {parse} = extendParser(Object.values({
-        ...options.keywords,
-        ...keywords,
-    }));
+export const parse = (source, options = {}) => {
+    const {parse} = extendParser(Object.values(options.keywords || defaultKeywords));
     
     const ast = parse(source);
     

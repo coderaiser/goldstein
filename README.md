@@ -111,14 +111,14 @@ const source = `
 const {keywordFn} = keywords;
 
 compile(source, {
-    keywords: [
+    keywords: {
         keywordFn,
-        function id(Parser) {
+        keywordId(Parser) {
             const {keywordTypes} = Parser.acorn;
             
             return class extends Parser {};
         },
-    ],
+    },
     rules: {
         declare: ['on', {
             declarations: {

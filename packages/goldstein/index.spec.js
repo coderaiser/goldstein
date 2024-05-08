@@ -320,3 +320,18 @@ test('goldstein: convert', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: compile: enable couple keywords', (t) => {
+    const source = montag`
+        function fn() {}
+        
+        fn();\n
+    `;
+    
+    const result = compile(source, {
+        keywords: {},
+    });
+    
+    t.equal(result, source);
+    t.end();
+});

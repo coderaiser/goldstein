@@ -1,5 +1,4 @@
 import {addKeyword, TokenType} from '../operator/index.js';
-import {tokTypes as tt} from 'acorn';
 
 const KEYWORD_FN = 'fn';
 
@@ -18,9 +17,7 @@ export default function fn(Parser) {
         }
         
         parseStatement(context, topLevel, exports) {
-            const isParen = this.eat(tt.parenL);
-            
-            if (!isParen && this.type === keywordTypes.fn)
+            if (this.type === keywordTypes.fn)
                 this.type = keywordTypes.function;
             
             return super.parseStatement(context, topLevel, exports);
@@ -43,4 +40,3 @@ export default function fn(Parser) {
         }
     };
 }
-
