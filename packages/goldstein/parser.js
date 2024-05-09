@@ -13,6 +13,8 @@ import keywordImport from '../keyword-import/index.js';
 import keywordArrow from '../keyword-arrow/index.js';
 import keywordAddArray from '../keyword-add-array/index.js';
 
+const {values} = Object;
+
 const defaultKeywords = {
     keywordFn,
     keywordGuard,
@@ -31,8 +33,10 @@ const defaultKeywords = {
 export const keywords = defaultKeywords;
 
 export const parse = (source, options = {}) => {
-    const {parse} = extendParser(Object.values(options.keywords || defaultKeywords));
+    const keywords = options.keywords || defaultKeywords;
+    const extensions = values(keywords).filter(Boolean);
     
+    const {parse} = extendParser(extensions);
     const ast = parse(source);
     
     if (options.type === 'estree')

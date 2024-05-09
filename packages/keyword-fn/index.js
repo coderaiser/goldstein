@@ -2,7 +2,7 @@ import {addKeyword, TokenType} from '../operator/index.js';
 
 const KEYWORD_FN = 'fn';
 
-export default function fn(Parser) {
+export default function keywordFn(Parser) {
     const {keywordTypes} = Parser.acorn;
     
     keywordTypes.fn = new TokenType(KEYWORD_FN, {

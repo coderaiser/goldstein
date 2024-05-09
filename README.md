@@ -112,7 +112,8 @@ const {keywordFn} = keywords;
 
 compile(source, {
     keywords: {
-        keywordFn,
+        ...keywords,
+        keywordFn: null,
         keywordId(Parser) {
             const {keywordTypes} = Parser.acorn;
             

@@ -335,3 +335,21 @@ test('goldstein: compile: enable couple keywords', (t) => {
     t.equal(result, source);
     t.end();
 });
+
+test('goldstein: compile: disable keywords', (t) => {
+    const source = montag`
+        function fn() {}
+        
+        fn();\n
+    `;
+    
+    const result = compile(source, {
+        keywords: {
+            ...keywords,
+            keywordFn: false,
+        },
+    });
+    
+    t.equal(result, source);
+    t.end();
+});
