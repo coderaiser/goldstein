@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install
-        run: npm i
+        run: bun install --no-save
       - name: Lint
         run: npm run fix:lint
       - name: Install Rust
