@@ -32,7 +32,7 @@
     "@putout/plugin-try-catch": "^3.0.0",
     "@putout/printer": "^8.0.1",
     "acorn": "^8.7.1",
-    "esbuild": "^0.20.1",
+    "esbuild": "^0.21.1",
     "esbuild-node-builtins": "^0.1.0",
     "estree-to-babel": "^9.0.0",
     "estree-util-attach-comments": "^3.0.0",
