@@ -7,3 +7,8 @@ test('goldstein: keyword: add-array', (t) => {
     t.compile('add-array');
     t.end();
 });
+
+test('goldstein: keyword: add-array: yield', (t) => {
+    t.noCompile('yield');
+    t.end();
+});
