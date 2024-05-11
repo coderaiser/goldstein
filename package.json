@@ -32,8 +32,6 @@
     "@putout/plugin-try-catch": "^3.0.0",
     "@putout/printer": "^8.0.1",
     "acorn": "^8.7.1",
-    "esbuild": "^0.21.1",
-    "esbuild-node-builtins": "^0.1.0",
     "estree-to-babel": "^9.0.0",
     "estree-util-attach-comments": "^3.0.0",
     "putout": "^35.0.0",
@@ -43,9 +41,13 @@
   "devDependencies": {
     "@babel/core": "^8.0.0-alpha.5",
     "@cloudcmd/stub": "^4.0.1",
+    "@putout/eslint-flat": "^2.0.0",
+    "@putout/plugin-goldstein": "./rules/goldstein",
     "@putout/test": "^9.0.1",
     "c8": "^9.1.0",
     "check-dts": "^0.7.1",
+    "esbuild": "^0.21.1",
+    "esbuild-node-builtins": "^0.1.0",
     "escover": "^4.0.1",
     "eslint": "^9.2.0",
     "eslint-plugin-putout": "^22.0.0",
@@ -56,8 +58,7 @@
     "redlint": "^3.14.1",
     "runsome": "^1.0.0",
     "supertape": "^10.1.0",
-    "typescript": "^5.0.3",
-    "@putout/plugin-goldstein": "./rules/goldstein"
+    "typescript": "^5.0.3"
   },
   "engines": {
     "node": ">=18"

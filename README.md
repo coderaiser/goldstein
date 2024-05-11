@@ -22,7 +22,7 @@ Language ruled by the users, [create an issue](https://github.com/coderaiser/gol
 ## Install
 
 ```
-npm i goldstein -g
+npm i goldstein esbuild -g
 ```
 
 ## CLI
