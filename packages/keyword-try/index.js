@@ -104,16 +104,3 @@ export default function keywordTry(Parser) {
         }
     };
 }
-
-export function createGoldsteinTry(args) {
-    return {
-        type: 'TryStatement',
-        expression: true,
-        await: args.await,
-        argument: {
-            type: 'CallExpression',
-            callee: args.callee,
-            arguments: args.args,
-        },
-    };
-}
