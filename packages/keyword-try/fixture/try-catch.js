@@ -6,3 +6,6 @@ try {
     hello();
 } catch (error) {} finally {}
 
+try {
+    hello();
+} catch ({message}) {}

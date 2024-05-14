@@ -11,3 +11,8 @@ try {
 } finally {
 
 }
+
+try {
+    hello();
+} catch({message}) {
+}
