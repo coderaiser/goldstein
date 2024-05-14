@@ -1,4 +1,4 @@
-export const IfStatement = (path, printer, semantics) => {
+export const IfStatement = (path, printer) => {
     const {print, indent} = printer;
     const {node} = path;
     
