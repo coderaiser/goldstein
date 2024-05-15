@@ -25,8 +25,8 @@ export default function fn(Parser) {
             /* c8 ignore start */
             if (exitStrict)
                 this.strict = false;
-            /* c8 ignore end */
             
+            /* c8 ignore end */
             this.next();
             
             if (createNewLexicalScope)

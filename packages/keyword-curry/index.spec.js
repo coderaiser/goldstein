@@ -12,4 +12,3 @@ test('goldstein: curry: raise', (t) => {
     t.raise('raise', `After '~' should always go '(' when you use curry (1:16)`);
     t.end();
 });
-

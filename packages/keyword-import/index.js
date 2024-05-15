@@ -11,8 +11,7 @@ export default function keywordImport(Parser) {
             /* c8 ignore start */
             if (this.type === tokTypes.string) {
                 node.specifiers = empty;
-                node.source = this.parseExprAtom();
-                /* c8 ignore end */
+                node.source = this.parseExprAtom(); /* c8 ignore end */
             } else {
                 node.specifiers = this.parseImportSpecifiers();
                 this.expectContextual('from');
