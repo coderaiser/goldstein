@@ -1,0 +1,1 @@
+const inc = sum~1;

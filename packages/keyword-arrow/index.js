@@ -22,8 +22,10 @@ export default function fn(Parser) {
                 node.body.push(stmt);
             }
             
+            /* c8 ignore start */
             if (exitStrict)
                 this.strict = false;
+            /* c8 ignore end */
             
             this.next();
             

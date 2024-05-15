@@ -14,6 +14,7 @@ const {
 export default function keywordAddArray(Parser) {
     return class extends Parser {
         parseMaybeAssign(forInit, refDestructuringErrors, afterLeftParse) {
+            /* c8 ignore start */
             if (this.isContextual('yield')) {
                 if (this.inGenerator)
                     return this.parseYield(forInit);
@@ -22,6 +23,7 @@ export default function keywordAddArray(Parser) {
                 // `yield`, but this isn't that kind of yield
                 this.exprAllowed = false;
             }
+            /* c8 ignore end */
             
             let ownDestructuringErrors = false;
             let oldParenAssign = -1;

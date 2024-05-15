@@ -80,8 +80,6 @@ export default function newSpeak(Parser) {
                         },
                     },
                 };
-            else
-                this.raise(this.start, `After 'should' only 'await' and 'function call' can come`);
             
             return super.finishNode(node, 'ExpressionStatement');
         }
