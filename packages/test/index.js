@@ -47,8 +47,10 @@ const compile = ({dir, parser}) => (t) => (name) => {
     
     const result = fixEmpty(print(ast));
     
-    if (UPDATE === '1')
+    if (UPDATE === '1') {
         writeFileSync(to, result);
+        return t.pass('update fixture');
+    }
     
     return t.equal(result, toData);
 };
