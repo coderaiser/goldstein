@@ -45,7 +45,7 @@
     "@putout/plugin-goldstein": "./rules/goldstein",
     "@putout/test": "^9.0.1",
     "c8": "^9.1.0",
-    "check-dts": "^0.7.1",
+    "check-dts": "^0.8.0",
     "esbuild": "^0.21.1",
     "esbuild-node-builtins": "^0.1.0",
     "eslint": "^9.2.0",
