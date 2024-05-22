@@ -12,6 +12,7 @@ import keywordIf from '../keyword-if/index.js';
 import keywordImport from '../keyword-import/index.js';
 import keywordArrow from '../keyword-arrow/index.js';
 import keywordAddArray from '../keyword-add-array/index.js';
+import keywordBrokenString from '../keyword-broken-string/index.js';
 
 const {values} = Object;
 
@@ -27,6 +28,7 @@ const defaultKeywords = {
     keywordImport,
     keywordArrow,
     keywordAddArray,
+    keywordBrokenString,
     stringInterpolation,
 };
 

@@ -283,6 +283,21 @@ test('goldstein: parse: import', (t) => {
     t.end();
 });
 
+test('goldstein: parse: broken string', (t) => {
+    const result = compile(montag`
+        const a = 'hello;
+        const b = 'world';
+    `);
+    
+    const expected = montag`
+        const a = 'hello';
+        const b = 'world';\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: parse: comment', (t) => {
     const result = compile(montag`
         import hello from './hello.js';

@@ -408,6 +408,23 @@ That absolutely fine, it will be converted to:
 function hello() {}
 ```
 
+### Broken String
+
+When you accidentally broke string:
+
+```gs
+const a = 'hello
+const b = 'world';
+```
+
+Golstein will fix it to:
+
+```js
+const a = 'hello';
+const b = 'world';
+```
+
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!
