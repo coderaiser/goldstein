@@ -36,7 +36,7 @@ export default function keywordBrokenString(Parser) {
                         this.curLine++;
                         this.lineStart = this.pos;
                     }
-                /* c8 ignore end */
+                    /* c8 ignore end */
                 } else {
                     if (isNewLine(ch)) {
                         if (this.input[this.pos - 1] === ';')
