@@ -1,3 +1,10 @@
+2024.05.22, v5.8.0
+
+feature:
+- 2bd6e8c test: do not fail when update tests
+- f4fb1d6 goldstein: broken strings
+- e80d132 goldstein: check-dts v0.8.0
+
 2024.05.11, v5.7.2
 
 fix:
