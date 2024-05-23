@@ -417,11 +417,20 @@ const a = 'hello
 const b = 'world';
 ```
 
-Golstein will fix it to:
+Goldstein will fix it to:
 
 ```js
 const a = 'hello';
 const b = 'world';
+```
+
+### Missing Initializer
+
+Forget to add assignment (`=`), not problem!
+
+```gs
+-const {code, places} await samadhi(source);
++const {code, places} = await samadhi(source);
 ```
 
 ## How to contribute?

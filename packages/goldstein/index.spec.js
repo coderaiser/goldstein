@@ -298,6 +298,19 @@ test('goldstein: parse: broken string', (t) => {
     t.end();
 });
 
+test('goldstein: parse: missing initializer', (t) => {
+    const result = compile(montag`
+        const {code, places} await samadhi(source);
+    `);
+    
+    const expected = montag`
+        const {code, places} = await samadhi(source);\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: parse: comment', (t) => {
     const result = compile(montag`
         import hello from './hello.js';
