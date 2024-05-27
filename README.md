@@ -393,6 +393,18 @@ Will be converted to:
 import hello from './hello.js';
 ```
 
+Also, also supported:
+
+```gs
+import hello from hello;
+```
+
+And will be converted to:
+
+```js
+import hello from 'hello';
+```
+
 ### `FunctionDeclaration` with `Arrow`
 
 If you mistakenly put `=>` in function declaration:

@@ -7,3 +7,8 @@ test('goldstein: keyword: import', (t) => {
     t.compile('import');
     t.end();
 });
+
+test('goldstein: keyword: import: identifier', (t) => {
+    t.compile('import-identifier');
+    t.end();
+});
