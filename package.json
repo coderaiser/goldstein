@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@putout/plugin-declare": "^4.0.0",
-    "@putout/plugin-logical-expressions": "^5.0.0",
+    "@putout/plugin-logical-expressions": "^6.0.0",
     "@putout/plugin-try-catch": "^3.0.0",
     "@putout/printer": "^8.0.1",
     "acorn": "^8.7.1",
