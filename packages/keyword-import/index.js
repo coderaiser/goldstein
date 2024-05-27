@@ -20,6 +20,7 @@ export default function keywordImport(Parser) {
                     node.source = this.parseLiteral(this.value);
                 else if (this.type === tokTypes.name) {
                     const {value} = this;
+                    
                     node.source = this.parseLiteral(this.value);
                     node.source.raw = `'${value}'`;
                 } else {
