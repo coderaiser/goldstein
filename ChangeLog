@@ -1,3 +1,9 @@
+2024.05.27, v5.10.0
+
+feature:
+- 05d0b92 goldstein: @putout/plugin-logical-expressions v6.0.0
+- 1554718 goldstein: Import: identifier
+
 2024.05.23, v5.9.0
 
 feature:
