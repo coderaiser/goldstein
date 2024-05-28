@@ -15,8 +15,7 @@
 >
 > *(c) “1984”, George Orwell*
 
-JavaScript with no limits 🤫.
-
+JavaScript with no limits 🤫 with built-in JSX and TypeScript.
 Language ruled by the users, [create an issue](https://github.com/coderaiser/goldstein/issues/new/choose) with ideas of a new language construction and what is look like in JavaScript, and most likely we implement it :).
 
 ## Install
