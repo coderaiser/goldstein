@@ -1,7 +1,8 @@
 import {createTest} from '../test/index.js';
 import keywordFn from './index.js';
+import ts from 'acorn-typescript';
 
-const test = createTest(import.meta.url, keywordFn);
+const test = createTest(import.meta.url, ts(), keywordFn);
 
 test('goldstein: keyword: if', (t) => {
     t.compile('if');

@@ -1,4 +1,5 @@
 import estreeToBabel from 'estree-to-babel';
+import typescript from 'acorn-typescript';
 import {extendParser} from '../parser/index.js';
 import keywordFn from '../keyword-fn/index.js';
 import keywordGuard from '../keyword-guard/index.js';
@@ -40,7 +41,11 @@ export const parse = (source, options = {}) => {
     const keywords = options.keywords || defaultKeywords;
     const extensions = values(keywords).filter(Boolean);
     
-    const {parse} = extendParser(extensions);
+    const {parse} = extendParser([
+        typescript(),
+        ...extensions,
+    ]);
+    
     const ast = parse(source);
     
     if (options.type === 'estree')

@@ -50,6 +50,7 @@ function createIfLet({isParenL}) {
     const node = {
         loc: {},
         range: [],
+        type: 'BlockStatement',
         body: [{
             type: 'VariableDeclaration',
             kind: 'let',
@@ -81,6 +82,7 @@ function createIf({test, isParenL}) {
     node.alternate = this.eat(tt._else) ? this.parseStatement('if') : null;
     node.loc = {};
     node.range = [];
+    node.type = 'IfStatement';
     
     setGoldsteinIf(node);
     

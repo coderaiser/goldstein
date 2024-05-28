@@ -259,7 +259,6 @@ test('goldstein: parse: if let', (t) => {
     const expected = montag`
         {
             let a = b?.c;
-            
             if (a) {
                 log(a);
             }
@@ -305,6 +304,47 @@ test('goldstein: parse: missing initializer', (t) => {
     
     const expected = montag`
         const {code, places} = await samadhi(source);\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: parse: import identifier', (t) => {
+    const result = compile(montag`
+        import hello from hello;
+    `);
+    
+    const expected = montag`
+        import hello from 'hello';\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: parse: ts', (t) => {
+    const result = compile(montag`
+        const a: string = 'hello';
+    `);
+    
+    const expected = montag`
+        const a: string = 'hello';\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('goldstein: parse: jsx', (t) => {
+    const result = compile(montag`
+        const a = <a>hello</a>;
+    `);
+    
+    const expected = montag`
+        const a = (
+            <a>hello</a>
+        );\n
     `;
     
     t.equal(result, expected);

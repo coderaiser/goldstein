@@ -16,9 +16,9 @@ export default function keywordImport(Parser) {
                 node.specifiers = this.parseImportSpecifiers();
                 this.expectContextual('from');
                 
-                if (this.type === tokTypes.string)
+                if (this.type === tokTypes.string) {
                     node.source = this.parseLiteral(this.value);
-                else if (this.type === tokTypes.name) {
+                } else if (this.type === tokTypes.name) {
                     const {value} = this;
                     
                     node.source = this.parseLiteral(this.value);
