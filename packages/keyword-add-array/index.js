@@ -34,7 +34,8 @@ export default function keywordAddArray(Parser) {
                 oldParenAssign = refDestructuringErrors.parenthesizedAssign;
                 oldTrailingComma = refDestructuringErrors.trailingComma;
                 oldDoubleProto = refDestructuringErrors.doubleProto;
-                refDestructuringErrors.parenthesizedAssign = refDestructuringErrors.trailingComma = -1;
+                refDestructuringErrors.parenthesizedAssign = -1;
+                refDestructuringErrors.trailingComma = -1;
             } else {
                 refDestructuringErrors = new DestructuringErrors();
                 ownDestructuringErrors = true;
@@ -61,8 +62,11 @@ export default function keywordAddArray(Parser) {
                 if (this.type === tt.eq)
                     left = this.toAssignable(left, false, refDestructuringErrors);
                 
-                if (!ownDestructuringErrors)
-                    refDestructuringErrors.parenthesizedAssign = refDestructuringErrors.trailingComma = refDestructuringErrors.doubleProto = -1;
+                if (!ownDestructuringErrors) {
+                    refDestructuringErrors.parenthesizedAssign = -1;
+                    refDestructuringErrors.trailingComma = -1;
+                    refDestructuringErrors.doubleProto = -1;
+                }
                 
                 if (refDestructuringErrors.shorthandAssign >= left.start)
                     refDestructuringErrors.shorthandAssign = -1;
