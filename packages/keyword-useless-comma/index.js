@@ -18,12 +18,10 @@ export default function fn(Parser) {
                 if ((node.name === 'class' || node.name === 'function') && (this.lastTokEnd !== this.lastTokStart + 1 || this.input.charCodeAt(this.lastTokStart) !== 46))
                     this.context.pop();
                 
-                this.type = tt.name;
-                /* c8 ignore end */
+                this.type = tt.name; /* c8 ignore end */
             }
             
             return node;
         }
     };
 }
-

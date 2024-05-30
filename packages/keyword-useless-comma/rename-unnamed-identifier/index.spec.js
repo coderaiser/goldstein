@@ -25,6 +25,7 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier', (t) => {
     });
     
     const code = print(ast);
+    
     const expected = montag`
        const a = {
            b,
@@ -34,4 +35,3 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier', (t) => {
     t.equal(code, expected);
     t.end();
 });
-
