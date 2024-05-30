@@ -381,7 +381,7 @@ When you import `.gs` files during compile step it will be replaced with `.js`:
 // hello.js
 export const hello = () => 'world';
 
-// index.js
+// index.js1
 import hello from './hello.gs';
 ```
 
@@ -439,16 +439,27 @@ const b = 'world';
 
 Forget to add assignment (`=`), not problem!
 
-```gs
+```diff
 -const {code, places} await samadhi(source);
 +const {code, places} = await samadhi(source);
+```
+
+### Useless comma
+
+Added useless comma (`,`)? no problem!
+
+```diff
+const a = {
+-    b,,
++    b,
+}
 ```
 
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!
 
-Then goes test and implementation in `index.js` and `index.spec.js` accordingly. Use scripts:
+Then goes test and implementation in `index.js1` and `index.spec.js` accordingly. Use scripts:
 
 - `npm test`
 - `UPDATE=1 npm test` - update `fixtures`;

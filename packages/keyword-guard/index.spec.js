@@ -4,6 +4,8 @@ import keywordFn from './index.js';
 const test = createTest(import.meta.url, keywordFn);
 
 test('goldstein: keyword: guard', (t) => {
+    debugger;
+    
     t.compile('guard');
     t.end();
 });

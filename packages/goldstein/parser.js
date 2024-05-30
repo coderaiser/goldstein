@@ -15,6 +15,7 @@ import keywordArrow from '../keyword-arrow/index.js';
 import keywordAddArray from '../keyword-add-array/index.js';
 import keywordBrokenString from '../keyword-broken-string/index.js';
 import keywordMissingInitializer from '../keyword-missing-initializer/index.js';
+import keywordUselessComma from '../keyword-useless-comma/index.js';
 
 const {values} = Object;
 
@@ -33,6 +34,7 @@ const defaultKeywords = {
     keywordBrokenString,
     stringInterpolation,
     keywordMissingInitializer,
+    keywordUselessComma,
 };
 
 export const keywords = defaultKeywords;
