@@ -1,3 +1,8 @@
+2024.05.31, v5.13.1
+
+fix:
+- 1d705cf goldstein: keyword-useless-comma: rename-unnamed-identifier: StringLiteral
+
 2024.05.31, v5.13.0
 
 feature:
