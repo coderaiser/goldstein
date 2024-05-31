@@ -340,6 +340,23 @@ test('goldstein: parse: useless comma', (t) => {
     t.end();
 });
 
+test('goldstein: parse: useless semicolon', (t) => {
+    const result = compile(montag`
+        const a = {
+            b;
+        };
+    `);
+    
+    const expected = montag`
+        const a = {
+            b,
+        };\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: parse: ts', (t) => {
     const result = compile(montag`
         const a: string = 'hello';

@@ -452,7 +452,18 @@ Added useless comma (`,`)? no problem!
 const a = {
 -    b,,
 +    b,
-}
+};
+```
+
+### Useless semicolon
+
+Added useless semicolon (`;`)? no problem!
+
+```diff
+const a = {
+-    b;
++    b,
+};
 ```
 
 ## How to contribute?
