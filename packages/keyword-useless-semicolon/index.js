@@ -30,8 +30,7 @@ export default function fn(Parser) {
             }
             
             /* c8 ignore start */
-            return this.finishNode(node, isPattern ? 'ObjectPattern' : 'ObjectExpression');
-            /* c8 ignore end */
+            return this.finishNode(node, isPattern ? 'ObjectPattern' : 'ObjectExpression'); /* c8 ignore end */
         }
     };
 }
