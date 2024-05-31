@@ -35,3 +35,34 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier', (t) => {
     t.equal(code, expected);
     t.end();
 });
+
+test('goldstein: keyword: useless-comma: rename-unnamed-identifier: StringLiteral', (t) => {
+    const source = montag`
+        const a = {
+            "hello": "world",,
+        };
+    `;
+    
+    const ast = parse(source, {
+        keywords: [
+            keywordUselessComma,
+        ],
+    });
+    
+    transform(ast, source, {
+        plugins: [
+            ['rename', renameUnnamedIdentifier],
+        ],
+    });
+    
+    const code = print(ast);
+    
+    const expected = montag`
+       const a = {
+           'hello': 'world',
+       };\n
+    `;
+    
+    t.equal(code, expected);
+    t.end();
+});

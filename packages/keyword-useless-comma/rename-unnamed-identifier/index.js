@@ -2,7 +2,9 @@ export const report = () => {};
 export const fix = (path) => path.remove();
 export const traverse = ({push}) => ({
     ObjectProperty(path) {
-        if (!path.node.key.name)
+        const keyPath = path.get('key');
+        
+        if (keyPath.isIdentifier() && !keyPath.node.name)
             push(path);
     },
 });
