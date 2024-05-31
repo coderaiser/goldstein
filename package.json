@@ -40,7 +40,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^8.0.0-alpha.5",
     "@cloudcmd/stub": "^4.0.1",
     "@putout/eslint-flat": "^2.0.0",
     "@putout/plugin-goldstein": "./rules/goldstein",

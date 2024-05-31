@@ -455,3 +455,29 @@ test('goldstein: compile: disable keywords', (t) => {
     t.equal(result, source);
     t.end();
 });
+
+test('goldstein: compile: new line before if', (t) => {
+    const source = montag`
+            const keyPath = path.get('key');
+            
+            if (keyPath.isIdentifier() && !keyPath.node.name)
+                push(path);
+    `;
+    
+    const result = compile(source, {
+        keywords: {
+            ...keywords,
+            keywordFn: false,
+        },
+    });
+    
+    const expected = montag`
+        const keyPath = path.get('key');
+        
+        if (keyPath.isIdentifier() && !keyPath.node.name)
+            push(path);\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
