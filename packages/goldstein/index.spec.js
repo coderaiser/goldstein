@@ -502,13 +502,10 @@ test('goldstein: compile: parse-maybe-array', (t) => {
         a += [1];
     `;
     
-    const [error, result] = tryCatch(compile, source, {
+    const [error] = tryCatch(compile, source, {
         keywords: {},
     });
-    
-    console.log(error, result);
     
     t.equal(error.message, `☝️Looks like 'keyword-add-array' is missing.`);
     t.end();
 });
-
