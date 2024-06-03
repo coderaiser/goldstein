@@ -1,3 +1,8 @@
+2024.06.03, v5.15.0
+
+feature:
+- 5d11929 goldstein: keyword-useless-comma: class methods
+
 2024.06.03, v5.14.0
 
 feature:
