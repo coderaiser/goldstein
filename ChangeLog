@@ -1,3 +1,11 @@
+2024.06.03, v5.13.2
+
+fix:
+- 775a6fc goldstein: keyword: broken-string: infinite loop
+
+feature:
+- 4eb6237 goldstein: @putout/test v10.0.0
+
 2024.05.31, v5.13.1
 
 fix:
