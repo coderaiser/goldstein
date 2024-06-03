@@ -259,6 +259,7 @@ test('goldstein: parse: if let', (t) => {
     const expected = montag`
         {
             let a = b?.c;
+            
             if (a) {
                 log(a);
             }

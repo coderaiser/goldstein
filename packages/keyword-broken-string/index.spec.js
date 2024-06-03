@@ -12,3 +12,8 @@ test('goldstein: broken-string: no-semi', (t) => {
     t.compile('no-semi');
     t.end();
 });
+
+test('goldstein: broken-string: infinite', (t) => {
+    t.compile('infinite');
+    t.end();
+});

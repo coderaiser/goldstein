@@ -17,6 +17,9 @@ export default function keywordBrokenString(Parser) {
             for (;;) {
                 const ch = this.input.charCodeAt(this.pos);
                 
+                if (!ch)
+                    break;
+                
                 if (ch === quote)
                     break;
                 
