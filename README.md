@@ -464,6 +464,11 @@ const a = {
 -    b;
 +    b,
 };
+
+const a = {
+-    b(){},
++    b(){}
+};
 ```
 
 ### Assign from

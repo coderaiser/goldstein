@@ -355,6 +355,23 @@ test('goldstein: parse: useless comma', (t) => {
     t.end();
 });
 
+test('goldstein: parse: useless comma: class', (t) => {
+    const result = compile(montag`
+        const a = class {
+            b() {},
+        };
+    `);
+    
+    const expected = montag`
+        const a = class {
+            b() {}
+        };\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: parse: useless semicolon', (t) => {
     const result = compile(montag`
         const a = {
@@ -503,7 +520,9 @@ test('goldstein: compile: parse-maybe-array', (t) => {
     `;
     
     const [error] = tryCatch(compile, source, {
-        keywords: {},
+        keywords: {
+            keywordAddArray: false,
+        },
     });
     
     t.equal(error.message, `☝️Looks like 'keyword-add-array' is missing.`);

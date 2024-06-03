@@ -1,11 +1,11 @@
 import {test} from 'supertape';
 import montag from 'montag';
 import {transform} from 'putout';
-import * as renameUnnamedIdentifier from './index.js';
+import * as removeUnnamedIdentifier from './index.js';
 import {parse, print} from '../../goldstein/index.js';
 import keywordUselessComma from '../index.js';
 
-test('goldstein: keyword: useless-comma: rename-unnamed-identifier', (t) => {
+test('goldstein: keyword: useless-comma: remove-unnamed-object-property', (t) => {
     const source = montag`
         const a = {
             b,,
@@ -20,7 +20,7 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier', (t) => {
     
     transform(ast, source, {
         plugins: [
-            ['rename', renameUnnamedIdentifier],
+            ['remove', removeUnnamedIdentifier],
         ],
     });
     
@@ -36,7 +36,7 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier', (t) => {
     t.end();
 });
 
-test('goldstein: keyword: useless-comma: rename-unnamed-identifier: StringLiteral', (t) => {
+test('goldstein: keyword: useless-comma: remove-unnamed-object-property: StringLiteral', (t) => {
     const source = montag`
         const a = {
             "hello": "world",,
@@ -51,7 +51,7 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier: StringLitera
     
     transform(ast, source, {
         plugins: [
-            ['rename', renameUnnamedIdentifier],
+            ['rename', removeUnnamedIdentifier],
         ],
     });
     
@@ -60,6 +60,40 @@ test('goldstein: keyword: useless-comma: rename-unnamed-identifier: StringLitera
     const expected = montag`
        const a = {
            'hello': 'world',
+       };\n
+    `;
+    
+    t.equal(code, expected);
+    t.end();
+});
+
+test('goldstein: keyword: useless-comma: remove-unnamed-class-property', (t) => {
+    const source = montag`
+        const a = class {
+            b() {},
+            c() {},
+        };
+    `;
+    
+    const ast = parse(source, {
+        keywords: [
+            keywordUselessComma,
+        ],
+    });
+    
+    transform(ast, source, {
+        plugins: [
+            ['remove', removeUnnamedIdentifier],
+        ],
+    });
+    
+    const code = print(ast);
+    
+    const expected = montag`
+       const a = class {
+           b() {}
+           
+           c() {}
        };\n
     `;
     

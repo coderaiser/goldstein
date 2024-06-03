@@ -8,7 +8,7 @@ import {parse} from './parser.js';
 export {convert} from '../convert/index.js';
 export {print} from '../printer/index.js';
 export * from './parser.js';
-import * as renameUnnamedIdentifier from '../keyword-useless-comma/rename-unnamed-identifier/index.js';
+import * as removeUnnamedObjectProperty from '../keyword-useless-comma/remove-unnamed-object-property/index.js';
 
 export const compile = (source, options = {}) => {
     const ast = parse(source, options);
@@ -21,7 +21,7 @@ export const compile = (source, options = {}) => {
             ['try-catch', tryCatchPlugin],
             ['declare', declarePlugin],
             ['logical-expressions', logicalExpressionsPlugin],
-            ['remove-unnamed-identifiers', renameUnnamedIdentifier],
+            ['remove-unnamed-identifiers', removeUnnamedObjectProperty],
         ],
     });
     
