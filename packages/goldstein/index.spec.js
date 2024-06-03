@@ -1,5 +1,6 @@
 import {test} from 'supertape';
 import montag from 'montag';
+import tryCatch from 'try-catch';
 import {
     compile,
     keywords,
@@ -283,6 +284,19 @@ test('goldstein: parse: import', (t) => {
     t.end();
 });
 
+test('goldstein: parse: assign from', (t) => {
+    const result = compile(montag`
+        const a = from 'x';
+    `);
+    
+    const expected = montag`
+        const a = require('x');\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: parse: broken string', (t) => {
     const result = compile(montag`
         const a = 'hello;
@@ -482,3 +496,19 @@ test('goldstein: compile: new line before if', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: compile: parse-maybe-array', (t) => {
+    const source = montag`
+        a += [1];
+    `;
+    
+    const [error, result] = tryCatch(compile, source, {
+        keywords: {},
+    });
+    
+    console.log(error, result);
+    
+    t.equal(error.message, `☝️Looks like 'keyword-add-array' is missing.`);
+    t.end();
+});
+

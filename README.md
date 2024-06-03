@@ -466,6 +466,18 @@ const a = {
 };
 ```
 
+### Assign from
+
+```gs
+const a = from 'a';
+```
+
+The same as:
+
+```js
+const a = require('a');
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

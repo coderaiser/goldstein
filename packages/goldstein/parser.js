@@ -17,6 +17,8 @@ import keywordBrokenString from '../keyword-broken-string/index.js';
 import keywordMissingInitializer from '../keyword-missing-initializer/index.js';
 import keywordUselessComma from '../keyword-useless-comma/index.js';
 import keywordUselessSemicolon from '../keyword-useless-semicolon/index.js';
+import keywordAssignFrom from '../keyword-assign-from/index.js';
+import internalParseMaybeAssign from '../internal-parse-maybe-assign/index.js';
 
 const {values} = Object;
 
@@ -37,7 +39,12 @@ const defaultKeywords = {
     keywordMissingInitializer,
     keywordUselessComma,
     keywordUselessSemicolon,
+    keywordAssignFrom,
 };
+
+const internals = [
+    internalParseMaybeAssign,
+];
 
 export const keywords = defaultKeywords;
 
@@ -47,6 +54,7 @@ export const parse = (source, options = {}) => {
     
     const {parse} = extendParser([
         typescript(),
+        ...internals,
         ...extensions,
     ]);
     
