@@ -30,7 +30,7 @@
     "@putout/plugin-declare": "^4.0.0",
     "@putout/plugin-logical-expressions": "^6.0.0",
     "@putout/plugin-try-catch": "^3.0.0",
-    "@putout/printer": "^8.0.1",
+    "@putout/printer": "^9.0.1",
     "acorn": "^8.7.1",
     "acorn-typescript": "^1.4.13",
     "estree-to-babel": "^9.0.0",
