@@ -19,6 +19,8 @@ export default function fn(Parser) {
                     this.context.pop();
                 
                 this.type = tt.name; /* c8 ignore end */
+            } else {
+                node.name = this.value;
             }
             
             return node;

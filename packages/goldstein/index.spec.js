@@ -528,3 +528,48 @@ test('goldstein: compile: parse-maybe-array', (t) => {
     t.equal(error.message, `☝️Looks like 'keyword-add-array' is missing.`);
     t.end();
 });
+
+test('goldstein: compile: missing comma', (t) => {
+    const source = montag`
+        const {
+            isCallExpression
+            isAwaitExpression
+        } = types;
+        
+        class X extends Parser {
+            parseExprAtom() {
+                if (this.type === x)
+                    return parseTryStatement();
+            }
+        };
+    `;
+    
+    const {
+        keywordUselessSemicolon,
+        keywordUselessComma,
+    } = keywords;
+    
+    const result = compile(source, {
+        keywords: {
+            keywordUselessComma,
+            keywordUselessSemicolon,
+        },
+    });
+    
+    const expected = montag`
+        const {
+            isCallExpression,
+            isAwaitExpression,
+        } = types;
+        
+        class X extends Parser {
+            parseExprAtom() {
+                if (this.type === x)
+                    return parseTryStatement();
+            }
+        };\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
