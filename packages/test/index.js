@@ -1,11 +1,11 @@
 import {readFileSync, writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname, join} from 'node:path';
+import process from 'node:process';
 import {extend} from 'supertape';
 import {print} from 'putout';
 import tryCatch from 'try-catch';
 import estreeToBabel from 'estree-to-babel';
-import process from 'node:process';
 import {extendParser} from '../parser/index.js';
 import {fixEmpty} from '../goldstein/index.js';
 

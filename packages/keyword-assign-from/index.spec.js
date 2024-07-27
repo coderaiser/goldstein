@@ -1,6 +1,6 @@
+import ts from 'acorn-typescript';
 import {createTest} from '../test/index.js';
 import keywordFn from './index.js';
-import ts from 'acorn-typescript';
 import internalParseMaybeAssign from '../internal-parse-maybe-assign/index.js';
 
 const test = createTest(

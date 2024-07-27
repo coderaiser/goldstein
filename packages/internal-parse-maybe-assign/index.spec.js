@@ -1,5 +1,5 @@
-import {createTest} from '../test/index.js';
 import ts from 'acorn-typescript';
+import {createTest} from '../test/index.js';
 import internalParseMaybeAssign from '../internal-parse-maybe-assign/index.js';
 
 const test = createTest(import.meta.url, ts(), internalParseMaybeAssign);

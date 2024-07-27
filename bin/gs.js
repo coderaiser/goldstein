@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import esbuild from 'esbuild';
 import {
     readFileSync,
     writeFileSync,
     unlinkSync,
 } from 'node:fs';
 import process from 'node:process';
+import esbuild from 'esbuild';
 import {compile} from '../packages/goldstein/index.js';
 
 const [arg] = process.argv.slice(2);
