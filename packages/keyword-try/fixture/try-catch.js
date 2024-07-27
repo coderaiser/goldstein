@@ -4,8 +4,8 @@ try {
 
 try {
     hello();
-} catch (error) {} finally {}
+} catch(error) {} finally {}
 
 try {
     hello();
-} catch ({message}) {}
+} catch({message}) {}
