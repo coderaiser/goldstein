@@ -35,7 +35,7 @@
     "acorn-typescript": "^1.4.13",
     "estree-to-babel": "^9.0.0",
     "estree-util-attach-comments": "^3.0.0",
-    "putout": "^35.0.0",
+    "putout": "^36.0.3",
     "try-catch": "^3.0.1"
   },
   "license": "MIT",
