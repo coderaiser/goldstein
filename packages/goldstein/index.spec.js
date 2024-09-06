@@ -79,6 +79,22 @@ test('goldstein: compile: try await', (t) => {
     t.end();
 });
 
+test('goldstein: compile: operator: safe-assignment', (t) => {
+    const result = compile(montag`
+        const [error, result] ?= await fetch('xx');
+    `);
+    
+    const expected = montag`
+        import tryToCatch from 'try-to-catch';
+        
+        const [error, result] = await tryToCatch(fetch, 'xx');
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
 test('goldstein: compile: should', (t) => {
     const result = compile(montag`
         should hello(a, b, c);

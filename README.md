@@ -299,6 +299,36 @@ import tryToCatch from 'try-catch';
 const [error, result] = await tryToCatch(hello, 'world');
 ```
 
+### [`operator-safe-assignment`](https://github.com/arthurfiorette/proposal-safe-assignment-operator)
+
+You can use `?=` instead of [`try`](#try):
+
+```gs
+const [error, result] ?= hello('world');
+```
+
+Is the same as:
+
+```js
+import tryCatch from 'try-catch';
+
+const [error, result] = tryCatch(hello, 'world');
+```
+
+and
+
+```gs
+const [error, result] ?= await hello('world');
+```
+
+Is the same as:
+
+```js
+import tryToCatch from 'try-catch';
+
+const [error, result] = await tryToCatch(hello, 'world');
+```
+
 ### `should`
 
 `should` can be used as an expression (just like [`try`](https://github.com/coderaiser/goldstein/edit/master/README.md#try)).
