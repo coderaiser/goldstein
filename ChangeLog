@@ -1,3 +1,10 @@
+2024.09.06, v5.18.0
+
+feature:
+- 641db76 goldstein: eslint-plugin-putout v23.1.0
+- 84be18f goldstein: @putout/plugin-try-catch v4.0.0
+- b2b030b goldstein: add support of safe assignment operator (https://github.com/arthurfiorette/proposal-safe-assignment-operator/issues/41)
+
 2024.07.27, v5.17.0
 
 feature:
