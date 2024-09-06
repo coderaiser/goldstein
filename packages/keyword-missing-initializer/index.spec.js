@@ -19,4 +19,3 @@ test('goldstein: missing-initializer: no safeAssignment', (t) => {
     t.raise('no-safe-assignment', `Enable 'operator-safe-assignment' to have ability to use '?=' (1:26)`);
     t.end();
 });
-

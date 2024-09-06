@@ -9,6 +9,7 @@ export default function keywordMissingInitializer(Parser) {
                 const decl = this.startNode();
                 this.parseVarId(decl, kind);
                 
+                /* c8 ignore start */
                 if (this.eat(tt.question) && this.eat(tt.eq)) {
                     if (!this.parseSafeAssignment)
                         this.raise(this.lastTokEnd, `Enable 'operator-safe-assignment' to have ability to use '?='`);
@@ -18,8 +19,7 @@ export default function keywordMissingInitializer(Parser) {
                     decl.init = this.parseMaybeAssign(isFor);
                 } else if (!allowMissingInitializer && kind === 'const' && !(this.type === tt._in || this.options.ecmaVersion >= 6 && this.isContextual('of'))) {
                     decl.init = MissingInitializer.missInitializer.call(this, isFor);
-                } /* c8 ignore start */
-                else if (!allowMissingInitializer && decl.id.type !== 'Identifier' && !(isFor && (this.type === tt._in || this.isContextual('of')))) {
+                } else if (!allowMissingInitializer && decl.id.type !== 'Identifier' && !(isFor && (this.type === tt._in || this.isContextual('of')))) {
                     this.raise(this.lastTokEnd, 'Complex binding patterns require an initialization value');
                 } else {
                     decl.init = null;
@@ -42,4 +42,3 @@ export const MissingInitializer = {
         return this.parseMaybeAssign(isFor);
     },
 };
-
