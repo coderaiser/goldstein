@@ -1,3 +1,10 @@
+2024.10.27, v5.19.0
+
+feature:
+- 76cb57d goldstein: @putout/printer v10.0.1
+- ee20f4e goldstein: estree-to-babel v10.0.0
+- ebd230e goldstein: esbuild v0.24.0
+
 2024.09.06, v5.18.0
 
 feature:
