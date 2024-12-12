@@ -513,6 +513,19 @@ The same as:
 const a = require('a');
 ```
 
+### Export without `const`
+
+```gs
+export x = () => {};
+```
+
+The same as:
+
+```js
+export const x = () => {};
+```
+
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

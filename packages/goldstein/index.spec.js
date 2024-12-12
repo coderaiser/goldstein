@@ -589,3 +589,17 @@ test('goldstein: compile: missing comma', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: compile: export-no-const', (t) => {
+    const source = montag`
+        export x = () => {};
+    `;
+    
+    const result = compile(source);
+    const expected = montag`
+        export const x = () => {};\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
