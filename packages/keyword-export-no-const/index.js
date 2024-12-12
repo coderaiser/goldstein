@@ -22,8 +22,8 @@ export default function keywordExportNoConst(Parser) {
             // export * from '...'
             if (this.eat(tt.star))
                 return this.parseExportAllDeclaration(node, exports);
-            /* c8 ignore end */
             
+            /* c8 ignore end */
             /* c8 ignore start */
             if (this.eat(tt._default)) {
                 // export default ...

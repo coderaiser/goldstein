@@ -525,7 +525,6 @@ The same as:
 export const x = () => {};
 ```
 
-
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!
