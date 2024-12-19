@@ -45,7 +45,7 @@ export default function keywordExportNoConst(Parser) {
                     node.declaration = VariableDeclaration('const', [
                         VariableDeclarator(node.declaration.expression.left, node.declaration.expression.right),
                     ]);
-                else
+                else if (node.declaration.id)
                     this.checkExport(exports, node.declaration.id, node.declaration.id.start);
                 
                 node.specifiers = [];

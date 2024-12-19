@@ -607,10 +607,14 @@ test('goldstein: compile: export-no-const', (t) => {
 test('goldstein: wrong brace', (t) => {
     const result = compile(montag`
         import a from 'a');
+        
+        export const minify = (source, options = {}) => {};
     `);
     
     const expected = montag`
         import a from 'a';
+        
+        export const minify = (source, options = {}) => {};
     
     `;
     
