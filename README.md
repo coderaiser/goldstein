@@ -525,6 +525,13 @@ The same as:
 export const x = () => {};
 ```
 
+### Wrong brace `)`
+
+```diff
+-import a from 'a');
++import a from 'a';
+```
+
 ## How to contribute?
 
 Clone the registry, create a new keyword with a prefix `keyword-`, then create directory `fixture` and put there two files with extensions `.js` and `.gs`. Half way done 🥳!

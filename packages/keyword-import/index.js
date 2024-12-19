@@ -35,6 +35,7 @@ export default function keywordImport(Parser) {
                 node.source.value = value.replace(/\.gs$/, '.js');
             }
             
+            super.eat(tokTypes.parenR);
             this.semicolon();
             
             return this.finishNode(node, 'ImportDeclaration');

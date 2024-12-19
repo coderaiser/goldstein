@@ -603,3 +603,17 @@ test('goldstein: compile: export-no-const', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: wrong brace', (t) => {
+    const result = compile(montag`
+        import a from 'a');
+    `);
+    
+    const expected = montag`
+        import a from 'a';
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

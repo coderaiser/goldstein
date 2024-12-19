@@ -12,3 +12,8 @@ test('goldstein: keyword: import: identifier', (t) => {
     t.compile('import-identifier');
     t.end();
 });
+
+test('goldstein: keyword: import: wrong-brace', (t) => {
+    t.compile('wrong-brace');
+    t.end();
+});
