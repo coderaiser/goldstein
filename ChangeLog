@@ -1,3 +1,8 @@
+2024.12.19, v5.21.1
+
+feature:
+- d949ff5 goldstein: keyword-export-no-const: no declaration.id
+
 2024.12.19, v5.21.0
 
 feature:
