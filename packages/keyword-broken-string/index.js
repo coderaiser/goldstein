@@ -86,4 +86,3 @@ function isNewLine(code) {
         || code === 0x2028
         || code === 0x2029;
 }
-
