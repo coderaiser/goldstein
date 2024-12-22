@@ -621,3 +621,17 @@ test('goldstein: wrong brace', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: punctuation: mobile quote', (t) => {
+    const result = compile(montag`
+        const a = ‘hello world’;
+    `);
+    
+    const expected = montag`
+        const a = 'hello world';
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

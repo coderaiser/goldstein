@@ -451,18 +451,18 @@ function hello() {}
 
 ### Broken String
 
-When you accidentally broke string:
+When you accidentally broke string, Goldstein will fix it:
 
-```gs
-const a = 'hello
-const b = 'world';
+```diff
+-const a = 'hello
++const a = 'hello';
+-const a = ‘hello world’;
++const a = 'hello world';
 ```
 
-Goldstein will fix it to:
+to:
 
 ```js
-const a = 'hello';
-const b = 'world';
 ```
 
 ### Missing Initializer

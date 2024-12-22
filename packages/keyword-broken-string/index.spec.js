@@ -17,3 +17,18 @@ test('goldstein: broken-string: infinite', (t) => {
     t.compile('infinite');
     t.end();
 });
+
+test('goldstein: punctuation: mobile-quote', (t) => {
+    t.compile('mobile-quote');
+    t.end();
+});
+
+test('goldstein: punctuation: mobile-quote-open', (t) => {
+    t.compile('mobile-quote-open');
+    t.end();
+});
+
+test('goldstein: punctuation: mobile-quote-close', (t) => {
+    t.compile('mobile-quote-close');
+    t.end();
+});

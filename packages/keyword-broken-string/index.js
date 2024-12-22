@@ -1,7 +1,17 @@
 import {tokTypes as tt} from '../operator/index.js';
 
+const QUOTE = `'`.charCodeAt(0);
+const MOBILE_CLOSE_QUOTE = '’'.charCodeAt(0);
+const MOBILE_OPEN_QUOTE = '‘'.charCodeAt(0);
+
 export default function keywordBrokenString(Parser) {
     return class extends Parser {
+        getTokenFromCode(code) {
+            if (code === MOBILE_OPEN_QUOTE)
+                return this.readString(MOBILE_CLOSE_QUOTE);
+            
+            return super.getTokenFromCode(code);
+        }
         parseVarStatement(node, kind, allowMissingInitializer) {
             this.next();
             this.parseVar(node, false, kind, allowMissingInitializer);
@@ -20,8 +30,13 @@ export default function keywordBrokenString(Parser) {
                 if (!ch)
                     break;
                 
+                if (ch === QUOTE || ch === MOBILE_CLOSE_QUOTE)
+                    break;
+                
+                /* c8 ignore start */
                 if (ch === quote)
                     break;
+                /* c8 ignore end */
                 
                 /* c8 ignore start */
                 if (ch === 92) {
