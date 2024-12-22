@@ -38,8 +38,6 @@ export default function keywordBrokenString(Parser) {
                 if (ch === quote)
                     break;
                 
-                /* c8 ignore end */
-                /* c8 ignore start */
                 if (ch === 92) {
                     // '\'
                     out += this.input.slice(chunkStart, this.pos);
