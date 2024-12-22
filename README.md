@@ -460,11 +460,6 @@ When you accidentally broke string, Goldstein will fix it:
 +const a = 'hello world';
 ```
 
-to:
-
-```js
-```
-
 ### Missing Initializer
 
 Forget to add assignment (`=`), not problem!
