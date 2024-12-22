@@ -21,6 +21,18 @@ export default function keywordBrokenString(Parser) {
             return this.finishNode(node, 'VariableDeclaration');
         }
         
+        goldsteinWrongQuoteStart(ch) {
+            if (!ch)
+                return true;
+            
+            return ch === QUOTE || ch === MOBILE_CLOSE_QUOTE;
+        }
+        
+        goldsteinWrongQuoteEnd() {
+            if (this.input[this.pos - 1] === ';')
+                --this.pos;
+        }
+        
         readString(quote) {
             let out = '';
             let chunkStart = ++this.pos;
@@ -28,10 +40,7 @@ export default function keywordBrokenString(Parser) {
             for (;;) {
                 const ch = this.input.charCodeAt(this.pos);
                 
-                if (!ch)
-                    break;
-                
-                if (ch === QUOTE || ch === MOBILE_CLOSE_QUOTE)
+                if (this.goldsteinWrongQuoteStart(ch))
                     break;
                 
                 /* c8 ignore start */
@@ -56,9 +65,7 @@ export default function keywordBrokenString(Parser) {
                     /* c8 ignore end */
                 } else {
                     if (isNewLine(ch)) {
-                        if (this.input[this.pos - 1] === ';')
-                            --this.pos;
-                        
+                        this.goldsteinWrongQuoteEnd();
                         break;
                     }
                     
@@ -79,3 +86,4 @@ function isNewLine(code) {
         || code === 0x2028
         || code === 0x2029;
 }
+
