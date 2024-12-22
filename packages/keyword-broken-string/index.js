@@ -12,6 +12,7 @@ export default function keywordBrokenString(Parser) {
             
             return super.getTokenFromCode(code);
         }
+        
         parseVarStatement(node, kind, allowMissingInitializer) {
             this.next();
             this.parseVar(node, false, kind, allowMissingInitializer);
@@ -36,8 +37,8 @@ export default function keywordBrokenString(Parser) {
                 /* c8 ignore start */
                 if (ch === quote)
                     break;
-                /* c8 ignore end */
                 
+                /* c8 ignore end */
                 /* c8 ignore start */
                 if (ch === 92) {
                     // '\'
