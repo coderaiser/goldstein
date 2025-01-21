@@ -1,3 +1,8 @@
+2025.01.21, v5.25.0
+
+feature:
+- 8d69b27 goldstein: estree-to-babel v10.1.0
+
 2025.01.21, v5.24.0
 
 feature:
