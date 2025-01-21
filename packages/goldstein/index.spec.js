@@ -635,3 +635,17 @@ test('goldstein: punctuation: mobile quote', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: parse: parenthesized', (t) => {
+    const result = compile(montag`
+        const buildEnv = (is17 || is20) && console.log('x');
+    `);
+    
+    const expected = montag`
+        const buildEnv = (is17 || is20) && console.log('x');
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
