@@ -649,3 +649,17 @@ test('goldstein: parse: parenthesized', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: parse: optional chaining', (t) => {
+    const result = compile(montag`
+        parentPath.parentPath?.isTryStatement();
+    `);
+    
+    const expected = montag`
+        parentPath.parentPath?.isTryStatement();
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
