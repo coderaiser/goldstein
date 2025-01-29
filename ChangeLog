@@ -1,3 +1,9 @@
+2025.01.29, v5.25.1
+
+feature:
+- 07183c4 goldstein: eslint-plugin-putout v24.0.0
+- 4e33640 goldstein: putout v38.0.0
+
 2025.01.21, v5.25.0
 
 feature:
