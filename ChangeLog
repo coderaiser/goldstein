@@ -1,3 +1,11 @@
+2025.02.10, v5.26.0
+
+fix:
+- e27d2fb goldstein: hashbang
+
+feature:
+- e60ddb8 goldstein: esbuild v0.25.0
+
 2025.01.29, v5.25.1
 
 feature:
