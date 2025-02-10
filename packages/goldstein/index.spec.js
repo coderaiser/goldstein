@@ -663,3 +663,20 @@ test('goldstein: parse: optional chaining', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: parse: hashbang', (t) => {
+    const result = compile(montag`
+        #!/usr/bin/env node
+        
+        const a = 5;
+    `);
+    
+    const expected = montag`
+        #!/usr/bin/env node
+        
+        const a = 5;\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

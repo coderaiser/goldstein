@@ -21,6 +21,7 @@ import keywordAssignFrom from '../keyword-assign-from/index.js';
 import internalParseMaybeAssign from '../internal-parse-maybe-assign/index.js';
 import operatorSafeAssignment from '../operator-safe-assignment/index.js';
 import keywordExportNoConst from '../keyword-export-no-const/index.js';
+import {fixHashbang} from './fixes/hashbang.js';
 
 const {values} = Object;
 
@@ -63,6 +64,8 @@ export const parse = (source, options = {}) => {
     ]);
     
     const ast = parse(source);
+    
+    fixHashbang(ast);
     
     if (options.type === 'estree')
         return ast;

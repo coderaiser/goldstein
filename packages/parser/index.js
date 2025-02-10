@@ -20,6 +20,7 @@ const createParse = (parser) => (source) => {
         ranges: true,
         onComment: comments,
         preserveParens: true,
+        allowHashBang: true,
     };
     
     const ast = parser.parse(source, options);
