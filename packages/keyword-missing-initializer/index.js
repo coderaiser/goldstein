@@ -17,7 +17,7 @@ export default function keywordMissingInitializer(Parser) {
                     decl.init = this.parseSafeAssignment(); /* c8 ignore start */
                 } else if (this.eat(tt.eq)) {
                     decl.init = this.parseMaybeAssign(isFor);
-                } else if (!allowMissingInitializer && kind === 'const' && !(this.type === tt._in || this.options.ecmaVersion >= 6 && this.isContextual('of'))) {
+                } else if (!allowMissingInitializer && kind === 'const' && this.type !== tt._in && !(this.options.ecmaVersion >= 6 && this.isContextual('of'))) {
                     decl.init = MissingInitializer.missInitializer.call(this, isFor);
                 } else if (!allowMissingInitializer && decl.id.type !== 'Identifier' && !(isFor && (this.type === tt._in || this.isContextual('of')))) {
                     this.raise(this.lastTokEnd, 'Complex binding patterns require an initialization value');
