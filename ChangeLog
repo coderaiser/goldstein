@@ -1,3 +1,9 @@
+2025.02.17, v5.26.1
+
+feature:
+- 53401b5 goldstein: @putout/plugin-declare v5.0.0
+- 80d3688 goldstein: @putout/printer v13.0.0
+
 2025.02.10, v5.26.0
 
 fix:
