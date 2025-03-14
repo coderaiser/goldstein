@@ -80,7 +80,6 @@ function createIf({test, isParenL}) {
     
     node.consequent = this.parseStatement('if');
     node.alternate = this.eat(tt._else) ? this.parseStatement('if') : null;
-    node.loc = {};
     node.range = [];
     node.type = 'IfStatement';
     
