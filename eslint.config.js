@@ -1,8 +1,6 @@
-import {safeAlign} from 'eslint-plugin-putout/config';
-import {
-    matchToFlat,
-    createESLintConfig,
-} from '@putout/eslint-flat';
+import {safeAlign} from 'eslint-plugin-putout';
+import {matchToFlat} from '@putout/eslint-flat';
+import {defineConfig} from 'eslint/config';
 
 export const match = {
     '**/bin/**': {
@@ -10,4 +8,4 @@ export const match = {
     },
 };
 
-export default createESLintConfig([safeAlign, matchToFlat(match)]);
+export default defineConfig([safeAlign, matchToFlat(match)]);
