@@ -1,3 +1,12 @@
+2025.03.14, v5.27.0
+
+fix:
+- ba84d6a goldstein: empty loc
+
+feature:
+- f781982 goldstein: @putout/test v12.1.0
+- 3c85787 goldstein: eslint-plugin-putout v25.1.2
+
 2025.02.17, v5.26.1
 
 feature:
