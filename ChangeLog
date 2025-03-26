@@ -1,3 +1,16 @@
+2025.03.26, v6.0.0
+
+feature:
+- 14bc734 goldstein: supertape v11.0.4
+- 1f56593 goldstein: redlint v4.1.1
+- 1dc7799 goldstein: putout v39.1.0
+- 3a411e0 goldstein: madrun v11.0.0
+- 8625cff goldstein: eslint-plugin-putout v26.1.0
+- de100b9 goldstein: @putout/test v13.0.0
+- 460b817 goldstein: @putout/printer v14.1.1
+- 6b5fd64 goldstein: @putout/eslint-flat v3.0.0
+- 4eecbfe goldstein: drop support of node < 20
+
 2025.03.14, v5.27.0
 
 fix:
