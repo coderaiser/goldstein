@@ -1,8 +1,8 @@
 import {transform} from 'putout';
 import {print} from '@putout/printer';
-import tryCatchPlugin from '@putout/plugin-try-catch';
-import declarePlugin from '@putout/plugin-declare';
-import logicalExpressionsPlugin from '@putout/plugin-logical-expressions';
+import * as tryCatchPlugin from '@putout/plugin-try-catch';
+import * as declarePlugin from '@putout/plugin-declare';
+import * as logicalExpressionsPlugin from '@putout/plugin-logical-expressions';
 import {parse} from './parser.js';
 
 export {convert} from '../convert/index.js';
