@@ -1,3 +1,11 @@
+2025.04.09, v6.0.1
+
+feature:
+- 7df9a4e goldstein: putout v40.0.1
+- 219f54a goldstein: estree-to-babel v11.0.2
+- 8525d2a goldstein: check-dts v0.9.0
+- 44818e8 goldstein: @putout/plugin-try-catch v5.0.0
+
 2025.03.26, v6.0.0
 
 feature:
