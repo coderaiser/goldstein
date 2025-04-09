@@ -6,8 +6,8 @@ export default function keywordImport(Parser) {
     return class extends Parser {
         parseImport(node) {
             this.next();
-            
             // import '...'
+            
             /* c8 ignore start */
             if (this.type === tokTypes.string) {
                 node.specifiers = empty;
