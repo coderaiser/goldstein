@@ -1,4 +1,4 @@
-import estreeToBabel from 'estree-to-babel';
+import {estreeToBabel} from 'estree-to-babel';
 import typescript from 'acorn-typescript';
 import {extendParser} from '../parser/index.js';
 import keywordFn from '../keyword-fn/index.js';

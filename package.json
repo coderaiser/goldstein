@@ -33,7 +33,7 @@
     "@putout/printer": "^14.1.1",
     "acorn": "^8.7.1",
     "acorn-typescript": "^1.4.13",
-    "estree-to-babel": "^10.1.0",
+    "estree-to-babel": "^11.0.2",
     "estree-util-attach-comments": "^3.0.0",
     "putout": "^39.1.0",
     "try-catch": "^3.0.1"

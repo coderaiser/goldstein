@@ -5,7 +5,7 @@ import process from 'node:process';
 import {extend} from 'supertape';
 import {print} from 'putout';
 import tryCatch from 'try-catch';
-import estreeToBabel from 'estree-to-babel';
+import {estreeToBabel} from 'estree-to-babel';
 import {extendParser} from '../parser/index.js';
 import {fixEmpty} from '../goldstein/index.js';
 

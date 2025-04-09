@@ -1,4 +1,4 @@
-import estreeToBabel from 'estree-to-babel';
+import {estreeToBabel} from 'estree-to-babel';
 import {transform} from 'putout';
 import {print} from '../printer/index.js';
 import * as removeImportTry from './remove-import-try/index.js';
