@@ -29,7 +29,7 @@
   "dependencies": {
     "@putout/plugin-declare": "^5.0.0",
     "@putout/plugin-logical-expressions": "^7.0.0",
-    "@putout/plugin-try-catch": "^5.0.0",
+    "@putout/plugin-try-catch": "^6.0.0",
     "@putout/printer": "^14.1.1",
     "acorn": "^8.7.1",
     "acorn-typescript": "^1.4.13",
