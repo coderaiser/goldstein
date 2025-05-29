@@ -1,3 +1,9 @@
+2025.05.29, v6.0.2
+
+feature:
+- 7dcb1b1 goldstein: eslint-plugin-putout v27.0.0
+- 843620e goldstein: @putout/plugin-try-catch v6.0.0
+
 2025.04.09, v6.0.1
 
 feature:
