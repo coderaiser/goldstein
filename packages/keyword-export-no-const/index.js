@@ -1,10 +1,8 @@
 import {types} from 'putout';
 import {tokTypes as tt} from '../operator/index.js';
 
-const {
-    VariableDeclaration,
-    VariableDeclarator,
-} = types;
+const {variableDeclarator} = types;
+const {variableDeclaration} = types;
 
 export default function keywordExportNoConst(Parser) {
     return class extends Parser {
@@ -42,8 +40,8 @@ export default function keywordExportNoConst(Parser) {
                     this.checkVariableExport(exports, node.declaration.declarations);
                 
                 if (node.declaration.type === 'ExpressionStatement')
-                    node.declaration = VariableDeclaration('const', [
-                        VariableDeclarator(node.declaration.expression.left, node.declaration.expression.right),
+                    node.declaration = variableDeclaration('const', [
+                        variableDeclarator(node.declaration.expression.left, node.declaration.expression.right),
                     ]);
                 else if (node.declaration.id)
                     this.checkExport(exports, node.declaration.id, node.declaration.id.start);

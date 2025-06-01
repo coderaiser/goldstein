@@ -1,6 +1,8 @@
 {
     "rules": {
         "putout/apply-namespace-specifier": "off",
+        "putout/apply-lowercase-to-node-builders": "on",
+        "putout/declare": "on",
         "github/convert-npm-to-bun": "off"
     },
     "match": {

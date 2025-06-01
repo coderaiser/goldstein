@@ -1,7 +1,7 @@
 import {types} from 'putout';
 import {tokTypes as tt} from '../operator/index.js';
 
-const {Identifier} = types;
+const {identifier} = types;
 
 export default function keywordCurry(Parser) {
     return class extends Parser {
@@ -21,7 +21,7 @@ export default function keywordCurry(Parser) {
             if (!isParenL)
                 this.raise(this.start, `After '~' should always go '(' when you use curry`);
             
-            node.callee = Identifier('currify');
+            node.callee = identifier('currify');
             node.arguments = [base, this.parseExpression()];
             
             this.expect(tt.parenR);

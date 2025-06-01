@@ -1,9 +1,9 @@
 import {types} from 'putout';
 
 const {
-    ObjectProperty,
-    ObjectPattern,
-    Identifier,
+    identifier,
+    objectPattern,
+    objectProperty,
 } = types;
 
 const COMPUTED = false;
@@ -14,9 +14,9 @@ export const transform = (name, args) => (vars, path) => {
     
     path.scope.block.async = true;
     
-    const id = Identifier(name);
-    const param = ObjectPattern([
-        ObjectProperty(id, id, COMPUTED, SHORTHAND),
+    const id = identifier(name);
+    const param = objectPattern([
+        objectProperty(id, id, COMPUTED, SHORTHAND),
     ]);
     
     block.params = [param];
