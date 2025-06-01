@@ -1,8 +1,10 @@
 import {types} from 'putout';
 import {tokTypes as tt} from '../operator/index.js';
 
-const {variableDeclarator} = types;
-const {variableDeclaration} = types;
+const {
+    variableDeclarator,
+    variableDeclaration,
+} = types;
 
 export default function keywordExportNoConst(Parser) {
     return class extends Parser {
