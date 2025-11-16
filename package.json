@@ -27,7 +27,7 @@
     "wisdom": "madrun wisdom"
   },
   "dependencies": {
-    "@putout/plugin-declare": "^5.0.0",
+    "@putout/plugin-declare": "^6.0.0",
     "@putout/plugin-logical-expressions": "^8.0.0",
     "@putout/plugin-try-catch": "^6.0.0",
     "@putout/printer": "^15.0.0",
