@@ -1,3 +1,16 @@
+2025.12.04, v6.1.1
+
+feature:
+- 06d9983 goldstein: putout v41.0.0
+- 3019fea goldstein: madrun v11.0.4
+- 6399a1d goldstein: eslint-plugin-putout v29.0.2
+- 5f92d0f goldstein: @putout/printer v16.0.0
+- 8b1f138 goldstein: esbuild v0.27.0
+- 9dbd2de goldstein: @putout/plugin-declare v6.0.0
+- 572f326 goldstein: eslint-plugin-putout v28.0.5
+- fb48298 goldstein: @putout/test v14.0.0
+- d25e6a2 goldstein: @putout/plugin-logical-expressions v8.0.0
+
 2025.06.01, v6.1.0
 
 feature:
