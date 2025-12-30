@@ -36,7 +36,7 @@
     "estree-to-babel": "^11.0.2",
     "estree-util-attach-comments": "^3.0.0",
     "putout": "^41.0.0",
-    "try-catch": "^3.0.1"
+    "try-catch": "^4.0.2"
   },
   "license": "MIT",
   "devDependencies": {
