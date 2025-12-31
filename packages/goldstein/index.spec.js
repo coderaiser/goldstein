@@ -1,6 +1,6 @@
 import {test} from 'supertape';
 import montag from 'montag';
-import tryCatch from 'try-catch';
+import {tryCatch} from 'try-catch';
 import {
     compile,
     keywords,
@@ -53,7 +53,7 @@ test('goldstein: compile: try', (t) => {
     `);
     
     const expected = montag`
-        import tryCatch from 'try-catch';
+        import {tryCatch} from 'try-catch';
         
         tryCatch(hello, a, b, c);
     
@@ -69,7 +69,7 @@ test('goldstein: compile: try await', (t) => {
     `);
     
     const expected = montag`
-        import tryToCatch from 'try-to-catch';
+        import {tryToCatch} from 'try-to-catch';
         
         const [error] = await tryToCatch(hello);
     
@@ -85,7 +85,7 @@ test('goldstein: compile: operator: safe-assignment', (t) => {
     `);
     
     const expected = montag`
-        import tryToCatch from 'try-to-catch';
+        import {tryToCatch} from 'try-to-catch';
         
         const [error, result] = await tryToCatch(fetch, 'xx');
     
@@ -101,7 +101,7 @@ test('goldstein: compile: should', (t) => {
     `);
     
     const expected = montag`
-        import tryCatch from 'try-catch';
+        import {tryCatch} from 'try-catch';
         
         tryCatch(hello, a, b, c);
     

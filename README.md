@@ -280,7 +280,7 @@ const [error, result] = try hello('world');
 Is the same as:
 
 ```js
-import tryCatch from 'try-catch';
+import {tryCatch} from 'try-catch';
 
 const [error, result] = tryCatch(hello, 'world');
 ```
@@ -310,7 +310,7 @@ const [error, result] ?= hello('world');
 Is the same as:
 
 ```js
-import tryCatch from 'try-catch';
+import {tryCatch} from 'try-catch';
 
 const [error, result] = tryCatch(hello, 'world');
 ```
