@@ -40,7 +40,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@cloudcmd/stub": "^4.0.1",
+    "@cloudcmd/stub": "^5.0.0",
     "@putout/eslint-flat": "^3.0.0",
     "@putout/plugin-goldstein": "./rules/goldstein",
     "@putout/test": "^15.0.0",
