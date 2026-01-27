@@ -12,11 +12,10 @@ import * as removeUnnamedObjectProperty from '../keyword-useless-comma/remove-un
 
 export const compile = (source, options = {}) => {
     const ast = parse(source, options);
+    const {rules} = options;
     
     transform(ast, source, {
-        rules: {
-            ...options.rules,
-        },
+        rules,
         plugins: [
             ['try-catch', tryCatchPlugin],
             ['declare', declarePlugin],
