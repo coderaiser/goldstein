@@ -1,7 +1,7 @@
 import {types} from 'putout';
+import {tokTypes as tt} from '#operator';
 import {setGoldsteinTry} from '../types/try.js';
 import {MissingInitializer} from '../keyword-missing-initializer/index.js';
-import {tokTypes as tt} from '../operator/index.js';
 
 const {assign} = Object;
 

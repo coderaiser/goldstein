@@ -1,11 +1,11 @@
 import {types} from 'putout';
-import {setGoldsteinTry} from '../types/try.js';
 import {
     BIND_LEXICAL,
     BIND_SIMPLE_CATCH,
     SCOPE_SIMPLE_CATCH,
     tokTypes as tt,
-} from '../operator/index.js';
+} from '#operator';
+import {setGoldsteinTry} from '../types/try.js';
 
 const {
     isCallExpression,

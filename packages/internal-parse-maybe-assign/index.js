@@ -1,6 +1,6 @@
 import {tokTypes as tt} from 'acorn';
 import {types} from 'putout';
-import {DestructuringErrors} from '../operator/index.js';
+import {DestructuringErrors} from '#operator';
 
 const {isArrayExpression} = types;
 

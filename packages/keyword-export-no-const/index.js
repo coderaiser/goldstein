@@ -1,5 +1,5 @@
 import {types} from 'putout';
-import {tokTypes as tt} from '../operator/index.js';
+import {tokTypes as tt} from '#operator';
 
 const {
     variableDeclarator,

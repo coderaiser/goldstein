@@ -1,4 +1,4 @@
-import {tokTypes} from '../operator/index.js';
+import {tokTypes} from '#operator';
 
 const empty = [];
 

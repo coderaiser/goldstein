@@ -1,5 +1,5 @@
 import {types} from 'putout';
-import {addKeyword, TokenType} from '../operator/index.js';
+import {addKeyword, TokenType} from '#operator';
 
 const {
     isObjectExpression,

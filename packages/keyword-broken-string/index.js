@@ -1,4 +1,4 @@
-import {tokTypes as tt} from '../operator/index.js';
+import {tokTypes as tt} from '#operator';
 
 const QUOTE = `'`.charCodeAt(0);
 const MOBILE_CLOSE_QUOTE = '’'.charCodeAt(0);

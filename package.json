@@ -7,6 +7,9 @@
   "exports": {
     ".": "./packages/goldstein/index.js"
   },
+  "imports": {
+    "#operator": "./packages/operator/index.js"
+  },
   "bin": {
     "gs": "bin/gs.js"
   },

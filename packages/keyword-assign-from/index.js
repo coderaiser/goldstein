@@ -1,4 +1,4 @@
-import {tokTypes as tt} from '../operator/index.js';
+import {tokTypes as tt} from '#operator';
 import {parseMaybeAssign} from '../internal-parse-maybe-assign/index.js';
 
 export default function fn(Parser) {

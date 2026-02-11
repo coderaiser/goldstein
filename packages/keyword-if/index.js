@@ -1,4 +1,4 @@
-import {tokTypes as tt} from '../operator/index.js';
+import {tokTypes as tt} from '#operator';
 import {setGoldsteinIf} from '../types/if.js';
 
 export default function fn(Parser) {

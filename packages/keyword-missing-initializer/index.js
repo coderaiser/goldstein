@@ -1,4 +1,4 @@
-import {tokTypes as tt} from '../operator/index.js';
+import {tokTypes as tt} from '#operator';
 
 export default function keywordMissingInitializer(Parser) {
     return class extends Parser {

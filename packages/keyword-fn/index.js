@@ -1,4 +1,4 @@
-import {addKeyword, TokenType} from '../operator/index.js';
+import {addKeyword, TokenType} from '#operator';
 
 const KEYWORD_FN = 'fn';
 

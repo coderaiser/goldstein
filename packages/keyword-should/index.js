@@ -3,7 +3,7 @@ import {
     addKeyword,
     TokenType,
     tokTypes as tt,
-} from '../operator/index.js';
+} from '#operator';
 
 const {
     isCallExpression,

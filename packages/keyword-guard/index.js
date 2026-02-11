@@ -2,7 +2,7 @@ import {
     addKeyword,
     TokenType,
     tokTypes,
-} from '../operator/index.js';
+} from '#operator';
 
 export default function newSpeak(Parser) {
     const {keywordTypes} = Parser.acorn;
