@@ -35,6 +35,7 @@
     "@putout/plugin-try-catch": "^7.0.0",
     "@putout/printer": "^17.0.0",
     "acorn": "^8.7.1",
+    "acorn-loose": "^8.5.2",
     "acorn-typescript": "^1.4.13",
     "estree-to-babel": "^12.0.0",
     "estree-util-attach-comments": "^3.0.0",

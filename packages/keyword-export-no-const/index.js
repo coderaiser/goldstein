@@ -4,12 +4,16 @@ import {tokTypes as tt} from '#operator';
 const {
     variableDeclarator,
     variableDeclaration,
+    exportDefaultSpecifier,
+    identifier,
 } = types;
 
 export default function keywordExportNoConst(Parser) {
     return class extends Parser {
         shouldParseExportStatement() {
-            if (!this.type.keyword)
+            const keyword = this.input.slice(this.pos + 1, this.pos + ' from'.length);
+            
+            if (!this.type.keyword && keyword !== 'from')
                 return true;
             
             return super.shouldParseExportStatement();
@@ -53,7 +57,17 @@ export default function keywordExportNoConst(Parser) {
             } else {
                 // export { x, y as z } [from '...']
                 node.declaration = null;
-                node.specifiers = this.parseExportSpecifiers(exports);
+                
+                if (this.type.label === 'name') {
+                    const {value} = this;
+                    
+                    node.specifiers = [
+                        exportDefaultSpecifier(identifier(value)),
+                    ];
+                    this.next();
+                } else {
+                    node.specifiers = this.parseExportSpecifiers(exports);
+                }
                 
                 if (this.eatContextual('from')) {
                     if (this.type !== tt.string)

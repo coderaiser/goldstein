@@ -520,6 +520,20 @@ The same as:
 export const x = () => {};
 ```
 
+### `export default from`
+
+[ECMAScript Proposal: export default from](https://github.com/tc39/proposal-export-default-from).
+
+```js
+export hello from './x.js';
+```
+
+The same as:
+
+```js
+export {default} from './x.js';
+```
+
 ### Wrong brace `)`
 
 ```diff

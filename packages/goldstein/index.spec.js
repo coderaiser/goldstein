@@ -680,3 +680,16 @@ test('goldstein: parse: hashbang', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: parse: export default from', (t) => {
+    const result = compile(montag`
+        export x from './x.js';
+    `);
+    
+    const expected = montag`
+        export x from './x.js';\n
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});
