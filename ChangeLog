@@ -1,3 +1,12 @@
+2026.02.11, v7.0.4
+
+feature:
+- 1c07bf5 goldstein: apply private import: #operator
+- e2ba82d goldstein: eslint v10.0.0
+- 5de2959 goldstein: eslint-plugin-putout v30.0.1
+- 522853b goldstein: @putout/eslint-flat v4.0.0
+- 9bfa72f goldstein: @cloudcmd/stub v5.0.0
+
 2026.01.11, v7.0.3
 
 feature:
