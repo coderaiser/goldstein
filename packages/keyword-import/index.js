@@ -18,6 +18,7 @@ export default function keywordImport(Parser) {
                 
                 if (this.type === tokTypes.string) {
                     node.source = this.parseLiteral(this.value);
+                    node.attributes = this.parseWithClause();
                 } else if (this.type === tokTypes.name) {
                     const {value} = this;
                     

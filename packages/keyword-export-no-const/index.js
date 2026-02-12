@@ -74,9 +74,7 @@ export default function keywordExportNoConst(Parser) {
                         this.unexpected();
                     
                     node.source = this.parseExprAtom();
-                    
-                    if (this.options.ecmaVersion >= 16)
-                        node.attributes = this.parseWithClause();
+                    node.attributes = this.parseWithClause();
                 } else {
                     for (let i = 0, list = node.specifiers; i < list.length; ++i) {
                         // check for keywords used as local names

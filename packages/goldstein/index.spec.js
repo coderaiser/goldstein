@@ -693,3 +693,21 @@ test('goldstein: parse: export default from', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: parse: exports', (t) => {
+    const result = compile(montag`
+        import a from '../package.json' with {
+            type: 'json',
+        };
+    `);
+    
+    const expected = montag`
+        import a from '../package.json' with {
+            type: 'json',
+        };
+    
+    `;
+    
+    t.equal(result, expected);
+    t.end();
+});

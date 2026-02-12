@@ -17,3 +17,8 @@ test('goldstein: keyword: import: wrong-brace', (t) => {
     t.compile('wrong-brace');
     t.end();
 });
+
+test('goldstein: keyword: import: with', (t) => {
+    t.compile('import-with');
+    t.end();
+});
