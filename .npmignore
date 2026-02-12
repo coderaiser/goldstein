@@ -9,3 +9,4 @@ examples
 rules
 
 *.config.*
+*.lock
