@@ -711,3 +711,19 @@ test('goldstein: parse: exports', (t) => {
     t.equal(result, expected);
     t.end();
 });
+
+test('goldstein: parse: broken: no infinite loop', (t) => {
+    const [error] = tryCatch(compile, montag`
+        __putout_processor_json({
+            "exclude": [
+                "**/*.spec.*",
+                "**/fixture",
+                "test",
+                ".*.*",
+                "**/*.config.*"
+            ]);
+    `);
+    
+    t.ok(error);
+    t.end();
+});

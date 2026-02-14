@@ -10,7 +10,12 @@ export default function fn(Parser) {
             node.properties = [];
             this.next();
             
+            let i = 1;
+            
             while (!this.eat(tt.braceR)) {
+                if (++i > 10_000)
+                    break;
+                
                 if (!first) {
                     this.eat(tt.comma);
                     this.eat(tt.semi);
