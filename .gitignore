@@ -1,9 +1,10 @@
-node_modules
 *.swp
-yarn-error.log
-yarn.lock
+*.log
+*.lock
+
 .idea
 .DS_Store
-build
 
+node_modules
+build
 coverage
