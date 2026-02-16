@@ -1,3 +1,11 @@
+2026.02.17, v7.3.1
+
+feature:
+- 45d4a07 goldstein: redlint v6.0.0
+- 341cd47 goldstein: putout v42.0.1
+- 04f9c6e goldstein: madrun v13.0.0
+- dc41486 goldstein: eslint-plugin-putout v31.0.0
+
 2026.02.15, v7.3.0
 
 fix:
