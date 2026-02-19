@@ -3,8 +3,8 @@
     "all": true,
     "exclude": [
         "**/*.spec.*",
-        "**/fixture",
         "**/*.config.*",
+        "**/fixture",
         ".*.*",
         "test"
     ],
