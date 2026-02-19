@@ -30,7 +30,7 @@
     "wisdom": "madrun wisdom"
   },
   "dependencies": {
-    "@putout/plugin-declare": "^7.1.0",
+    "@putout/plugin-declare": "^8.0.0",
     "@putout/plugin-logical-expressions": "^8.0.0",
     "@putout/plugin-try-catch": "^7.0.0",
     "@putout/printer": "^17.0.0",
