@@ -31,7 +31,7 @@
     "madrun"
   ],
   "devDependencies": {
-    "@putout/test": "^9.1.0",
+    "@putout/test": "^15.1.1",
     "c8": "^10.0.0",
     "eslint": "^9.2.0",
     "eslint-plugin-putout": "^22.7.0",
@@ -39,11 +39,11 @@
     "nodemon": "^3.0.1"
   },
   "peerDependencies": {
-    "putout": ">=31"
+    "putout": ">=42"
   },
   "license": "MIT",
   "engines": {
-    "node": ">=16"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"
