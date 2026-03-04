@@ -47,7 +47,6 @@
     "@putout/eslint-flat": "^4.0.0",
     "@putout/plugin-goldstein": "./rules/goldstein",
     "@putout/test": "^15.0.0",
-    "c8": "^10.0.0",
     "check-dts": "^0.9.0",
     "esbuild": "^0.27.0",
     "esbuild-node-builtins": "^0.1.0",
@@ -59,6 +58,7 @@
     "nodemon": "^3.0.1",
     "redlint": "^6.0.0",
     "runsome": "^1.0.0",
+    "superc8": "^12.2.4",
     "supertape": "^12.0.0",
     "typescript": "^5.0.3"
   },
