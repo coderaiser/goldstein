@@ -1,3 +1,15 @@
+2026.03.04, v7.3.2
+
+feature:
+- d12f3e8 goldstein: @putout/printer v18.0.0
+- 9c3b5cc goldstein: @putout/plugin-try-catch v8.0.0
+- faa5b3a goldstein: superc8 v12.2.4
+- ac7d0b3 @putout/plugin-goldstein: madrun v13.0.0
+- 1725557 @putout/plugin-goldstein: eslint-plugin-putout v31.0.0
+- f33c085 @putout/plugin-goldstein: eslint v10.0.0
+- 1d54906 @putout/plugin-goldstein: @putout/test v15.1.1
+- cef2db3 goldstein: @putout/plugin-declare v8.0.0
+
 2026.02.17, v7.3.1
 
 feature:
