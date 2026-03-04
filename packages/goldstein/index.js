@@ -14,7 +14,7 @@ export const compile = (source, options = {}) => {
     const ast = parse(source, options);
     const {rules} = options;
     
-    transform(ast, source, {
+    transform(ast, {
         rules,
         plugins: [
             ['try-catch', tryCatchPlugin],

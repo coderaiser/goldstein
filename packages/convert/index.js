@@ -10,7 +10,7 @@ import {fixEmpty, parse} from '../goldstein/index.js';
 export const convert = (source) => {
     const ast = estreeToBabel(parse(source));
     
-    transform(ast, source, {
+    transform(ast, {
         plugins: [
             ['add-array', addArray],
             ['apply-if-let', applyIfLet],

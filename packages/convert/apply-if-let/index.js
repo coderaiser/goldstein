@@ -5,7 +5,7 @@ const {
     variableDeclarator,
 } = types;
 
-export const report = () => `Use 'add-array'`;
+export const report = () => `Use 'if let'`;
 export const replace = () => ({
     '{let __a = __b; if (__c) __d}': ({__a, __b}, path) => {
         const ifPath = path.get('body.1');

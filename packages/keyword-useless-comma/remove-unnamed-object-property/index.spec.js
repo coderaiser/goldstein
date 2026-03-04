@@ -18,7 +18,7 @@ test('goldstein: keyword: useless-comma: remove-unnamed-object-property', (t) =>
         ],
     });
     
-    transform(ast, source, {
+    transform(ast, {
         plugins: [
             ['remove', removeUnnamedIdentifier],
         ],
@@ -49,7 +49,7 @@ test('goldstein: keyword: useless-comma: remove-unnamed-object-property: StringL
         ],
     });
     
-    transform(ast, source, {
+    transform(ast, {
         plugins: [
             ['rename', removeUnnamedIdentifier],
         ],
@@ -81,7 +81,7 @@ test('goldstein: keyword: useless-comma: remove-unnamed-class-property', (t) => 
         ],
     });
     
-    transform(ast, source, {
+    transform(ast, {
         plugins: [
             ['remove', removeUnnamedIdentifier],
         ],
