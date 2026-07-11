@@ -23,6 +23,7 @@ export default function keywordExportNoConst(Parser) {
             this.next();
             
             /* c8 ignore start */
+            
             // export * from '...'
             if (this.eat(tt.star))
                 return this.parseExportAllDeclaration(node, exports);
@@ -81,6 +82,7 @@ export default function keywordExportNoConst(Parser) {
                         const spec = list[i];
                         
                         this.checkUnreserved(spec.local);
+                        
                         // check if export is defined
                         this.checkLocalExport(spec.local);
                         

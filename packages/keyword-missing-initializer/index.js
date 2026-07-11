@@ -14,7 +14,7 @@ export default function keywordMissingInitializer(Parser) {
                     if (!this.parseSafeAssignment)
                         this.raise(this.lastTokEnd, `Enable 'operator-safe-assignment' to have ability to use '?='`);
                     
-                    decl.init = this.parseSafeAssignment(); /* c8 ignore start */
+                    decl.init = this.parseSafeAssignment();/* c8 ignore start */
                 } else if (this.eat(tt.eq)) {
                     decl.init = this.parseMaybeAssign(isFor);
                 } else if (!allowMissingInitializer && kind === 'const' && this.type !== tt._in && !(this.options.ecmaVersion >= 6 && this.isContextual('of'))) {

@@ -31,7 +31,6 @@ $ cat > 1.gs
 export fn hello() {
     return 'world';
 }
-
 $ gs 1.gs
 $ cat 1.js
 function hello() {
@@ -46,7 +45,6 @@ Let's do a bit more!
 
 ```gs
 const a = () => throw 'hello';
-
 if a > 2 {
     log('hello');
 }
@@ -82,7 +80,6 @@ compile(`
         return "Hello " + text
     }
 `);
-
 // returns
 `
 function hello() {
@@ -127,7 +124,6 @@ compile(source, {
         }],
     },
 });
-
 // returns
 `
 const id = (a) => a;
@@ -156,7 +152,6 @@ parse(`
         return "Hello " + text
     }
 `);
-
 // returns Babel AST
 ```
 
@@ -250,7 +245,6 @@ fn hello() {
     guard text !== "world" else {
         return ""
     }
-
     return "Hello " + text
 }
 ```
@@ -397,7 +391,6 @@ Similar to [partial application](https://github.com/tc39/proposal-partial-applic
 ```gs
 const sum = (a, b) => a + b;
 const inc = sum~(1);
-
 inc(5);
 // returns
 6
@@ -410,7 +403,6 @@ When you import `.gs` files during compile step it will be replaced with `.js`:
 ```gs
 // hello.js
 export const hello = () => 'world';
-
 // index.js1
 import hello from './hello.gs';
 ```
@@ -489,7 +481,6 @@ const a = {
 -    b;
 +    b,
 };
-
 const a = {
 -    b(){},
 +    b(){}

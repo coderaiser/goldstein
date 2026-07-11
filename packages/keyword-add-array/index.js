@@ -20,7 +20,9 @@ export default function keywordAddArray(Parser) {
             
             assign(node, {
                 callee: memberExpression(left, identifier('push')),
-                arguments: [spreadElement(right)],
+                arguments: [
+                    spreadElement(right),
+                ],
             });
             
             return this.finishNode(node, 'CallExpression');

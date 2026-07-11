@@ -20,16 +20,20 @@ export default function stringInterpolation(Parser) {
                 if (char === '(') {
                     // keep count of parenthesis
                     parenthesis++;
+                    
                     // check if previous token was "/" (only if literal is not opened yet)
                     const prev = index - 1;
                     
                     if (chars[prev] === '/' && !literalOpened) {
                         // set previous char to "$"
                         out[prev] = '$';
+                        
                         // set current char to "{"
                         char = '{';
+                        
                         // set literalOpened to true
                         literalOpened = true;
+                        
                         // match TemplateLiteral instead of StringLiteral
                         isTemplateLiteral = true;
                     }
@@ -38,6 +42,7 @@ export default function stringInterpolation(Parser) {
                     
                     if (!parenthesis && literalOpened) {
                         char = '}';
+                        
                         // reset literalOpened to false
                         literalOpened = false;
                     }

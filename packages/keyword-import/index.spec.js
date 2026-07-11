@@ -22,3 +22,8 @@ test('goldstein: keyword: import: with', (t) => {
     t.compile('import-with');
     t.end();
 });
+
+test('goldstein: keyword: import: type', (t) => {
+    t.compile('import-type');
+    t.end();
+});

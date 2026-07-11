@@ -10,6 +10,7 @@ export default function fn(Parser) {
                 node = this.startNode();
             
             node.body = [];
+            
             // optionally parse arrow
             this.eat(tt.arrow);
             this.expect(tt.braceL);
