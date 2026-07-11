@@ -28,7 +28,7 @@ export function parseMaybeAssign(forInit, refDestructuringErrors, afterLeftParse
         
         // The tokenizer will assume an expression is allowed after
         // `yield`, but this isn't that kind of yield
-        this.exprAllowed = false;/* c8 ignore end */
+        this.exprAllowed = false; /* c8 ignore end */
     }
     
     let ownDestructuringErrors = false;
