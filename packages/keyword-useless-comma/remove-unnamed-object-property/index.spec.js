@@ -1,5 +1,5 @@
 import {test} from 'supertape';
-import montag from 'montag';
+import {montag} from 'montag';
 import {transform} from 'putout';
 import * as removeUnnamedIdentifier from './index.js';
 import {parse, print} from '../../goldstein/index.js';

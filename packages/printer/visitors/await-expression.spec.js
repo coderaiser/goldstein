@@ -1,5 +1,5 @@
 import {test} from 'supertape';
-import montag from 'montag';
+import {montag} from 'montag';
 import {estreeToBabel} from 'estree-to-babel';
 import {print} from '../index.js';
 import {parse} from '../../goldstein/index.js';

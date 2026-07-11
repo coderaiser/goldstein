@@ -1,5 +1,5 @@
 import {test} from 'supertape';
-import montag from 'montag';
+import {montag} from 'montag';
 import {tryCatch} from 'try-catch';
 import {
     compile,
@@ -198,6 +198,7 @@ test('goldstein: compile: options', (t) => {
     `;
     
     const {keywordFn} = keywords;
+    
     const result = compile(source, {
         keywords: [keywordFn],
         rules: {
@@ -596,6 +597,7 @@ test('goldstein: compile: export-no-const', (t) => {
     `;
     
     const result = compile(source);
+    
     const expected = montag`
         export const x = () => {};\n
     `;
