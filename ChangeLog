@@ -1,3 +1,14 @@
+2026.07.12, v7.4.0
+
+feature:
+- 6e867b7 goldstein: import type
+- a478fab goldstein: runsome: drop
+- fb9c10d goldstein: supertape v13.4.1
+- 4e8f208 goldstein: typescript v6.0.3
+- a4a2304 goldstein: montag v2.0.1
+- ea853f7 goldstein: esbuild v0.28.0
+- c6c41d6 goldstein: check-dts v1.0.0
+
 2026.03.04, v7.3.2
 
 feature:
