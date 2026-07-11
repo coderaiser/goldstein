@@ -57,7 +57,6 @@
     "montag": "^2.0.1",
     "nodemon": "^3.0.1",
     "redlint": "^6.0.0",
-    "runsome": "^2.0.1",
     "superc8": "^12.2.4",
     "supertape": "^13.4.1",
     "typescript": "^6.0.3"
