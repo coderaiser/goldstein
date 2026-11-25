@@ -1,3 +1,8 @@
+2026.11.25, v7.4.2
+
+fix:
+- 644c349 goldstein: keyword-useless-comma: parseIdentNode: "=" parsed as identifier
+
 2026.11.25, v7.4.1
 
 feature:
