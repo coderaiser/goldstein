@@ -1,5 +1,7 @@
 import {tokTypes as tt} from 'acorn';
 
+const isString = (a) => typeof a === 'string';
+
 export default function fn(Parser) {
     return class extends Parser {
         parseIdentNode() {
@@ -22,11 +24,15 @@ export default function fn(Parser) {
                     this.context.pop();
                 
                 this.type = tt.name; /* c8 ignore end */
-            } else {
+            } else if (this.type === tt.comma || isWord(this.value)) {
                 node.name = this.value;
+            } else {
+                this.unexpected();
             }
             
             return node;
         }
     };
 }
+
+const isWord = (value) => isString(value) && /^[\p{ID_Start}$_]/u.test(value);
