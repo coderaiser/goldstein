@@ -14,8 +14,9 @@ jobs:
           - 22.x
           - 24.x
           - 26.x
+          - ">= 27.0.0-alpha.0 <= 27.x"
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
@@ -23,7 +24,7 @@ jobs:
         with:
           bun-version: latest
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install
@@ -31,9 +32,7 @@ jobs:
       - name: Lint
         run: npm run fix:lint
       - name: Typos
-        uses: coderaiser/typos.ai@v1.1.8
-        with:
-          key: ${{ secrets.TYPOS_AI_KEY }}
+        uses: coderaiser/typos.ai@v2
       - name: Commit fixes
         uses: EndBug/add-and-commit@v10
         continue-on-error: true
